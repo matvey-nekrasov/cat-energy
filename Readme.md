@@ -1,8 +1,8 @@
 # Личный проект «Кэт энерджи» [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]
 
-* Опубликованная версия: [matveynekrasov.ru/cat-energy](https://matveynekrasov.ru/cat-energy/)
 * Студент: [Матвей Некрасов](https://up.htmlacademy.ru/adaptive/20/user/1427725)
 * Наставник: [Ярослав Шевцов](https://up.htmlacademy.ru/adaptive/20/user/170516)
+* Опубликованная версия: [matveynekrasov.ru/cat-energy](https://matveynekrasov.ru/cat-energy/)
 
 ---
 
