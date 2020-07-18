@@ -1,0 +1,27 @@
+{
+  "site": {
+    "index": {
+      "title": "HTML Academy: Кэт энерджи",
+      "href": "index.html"
+    },
+    "catalog": {
+      "title": "Каталог",
+      "href": "catalog.html"
+    }
+  },
+  "media": [
+    {
+      "resolution": "1170",
+      "name": "desktop"
+    }, {
+      "resolution": "750",
+      "name": "tablet"
+    }
+  ],
+  "dirs": {
+    "images": "img/",
+    "fonts": "fonts/",
+    "stylesheets": "css/",
+    "js": "js/"
+  }
+}

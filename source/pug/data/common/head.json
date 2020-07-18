@@ -1,0 +1,14 @@
+{
+  "head": {
+    "fonts": [
+      {
+        "name": ""
+      }
+    ],
+    "stylesheets": [
+      {
+        "name": "style"
+      }
+    ]
+  }
+}
