@@ -1,0 +1,12 @@
+extends ../common/layout.pug
+
+block vars
+  -var mainPage = false
+  -var currentPageTitle = site.form.title
+  -var currentPageHref = site.form.href
+
+block mainContent
+  p
+    | Репозиторий создан для обучения на профессиональном онлайн‑курсе «
+    a(href='https://htmlacademy.ru/intensive/adaptive') HTML и CSS, уровень 2
+    | ».

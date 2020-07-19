@@ -9,7 +9,6 @@ import rename from 'gulp-rename';
 import babel from 'gulp-babel';
 import uglify from 'gulp-uglify';
 import browserSync from 'browser-sync';
-import autoprefixer from 'gulp-autoprefixer';
 import fs from 'fs';
 import data from 'gulp-data';
 import webp from 'gulp-webp';
@@ -19,6 +18,10 @@ import pngquant from 'imagemin-pngquant';
 import svgstore from 'gulp-svgstore';
 import concat from 'gulp-concat';
 import ghPages from 'gh-pages';
+import plumber from 'gulp-plumber';
+import sourcemaps from 'gulp-sourcemaps';
+import postcss from 'gulp-postcss';
+import autoprefixer from 'autoprefixer';
 
 /**
  *  Основные директории
@@ -35,6 +38,7 @@ const path = {
   styles: {
     root: `${dirs.src}/sass/`,
     compile: `${dirs.src}/sass/style.scss`,
+    normalize: `${dirs.src}/css/normalize.css`,
     save: `${dirs.dest}/css/`
   },
   views: {
@@ -60,11 +64,21 @@ const path = {
 /**
  * Основные задачи
  */
-const styles = () => src(path.styles.compile, { allowEmpty: true })
+const stylesDev = () => src(path.styles.compile, { allowEmpty: true })
+  .pipe(plumber())
+  .pipe(sourcemaps.init())
+  .pipe(sass.sync().on('error', sass.logError))
+  .pipe(rename({
+    suffix: `.min`
+  }))
+  .pipe(sourcemaps.write('.'))
+  .pipe(dest(path.styles.save));
+
+const stylesBuild = () => src(path.styles.compile, { allowEmpty: true })
   .pipe(sass.sync().on('error', sass.logError))
   .pipe(cssSort())
   .pipe(dest(path.styles.save))
-  .pipe(autoprefixer())
+  .pipe(postcss([autoprefixer()]))
   .pipe(csso())
   .pipe(rename({
     suffix: `.min`
@@ -118,7 +132,20 @@ const devWatch = () => {
     server: dirs.dest,
     notify: false
   });
-  watch(`${path.styles.root}**/*.scss`, styles).on('change', bs.reload);
+  watch(`${path.styles.root}**/*.scss`, stylesDev).on('change', bs.reload);
+  watch(`${path.views.root}**/*.pug`, views).on('change', bs.reload);
+  watch([`${path.json.save}blocks/*.json`, `${path.json.save}common/*.json`], series(json, views)).on('change', bs.reload);
+  watch(`${path.scripts.root}**/*.js`, scripts).on('change', bs.reload);
+  watch(`${path.images.root}**/*.{png,jpg}`, images).on('change', bs.reload);
+};
+
+// Эта задача только для критерия Б24, по сути не нужна
+const buildWatch = () => {
+  const bs = browserSync.init({
+    server: dirs.dest,
+    notify: false
+  });
+  watch(`${path.styles.root}**/*.scss`, stylesBuild).on('change', bs.reload);
   watch(`${path.views.root}**/*.pug`, views).on('change', bs.reload);
   watch([`${path.json.save}blocks/*.json`, `${path.json.save}common/*.json`], series(json, views)).on('change', bs.reload);
   watch(`${path.scripts.root}**/*.js`, scripts).on('change', bs.reload);
@@ -146,12 +173,17 @@ const publish = (cb) => {
 /**
  * Задачи для разработки
  */
-export const dev = series(clean, json, fonts, parallel(styles, views, scripts, sprite, images), devWatch);
+export const dev = series(clean, json, fonts, parallel(stylesDev, views, scripts, sprite, images), devWatch);
 
 /**
  * Для билда
  */
-export const build = series(clean, json, fonts, parallel(styles, views, scripts, sprite, images));
+export const build = series(clean, json, fonts, parallel(stylesBuild, views, scripts, sprite, images));
+
+/**
+ * Для критерия Б24
+ */
+export const start = series(build, buildWatch);
 
 /**
  * Для деплоя

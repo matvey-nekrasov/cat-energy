@@ -3,6 +3,14 @@
     {
       "href": "index.html",
       "name": "Главная"
+    },
+    {
+      "href": "catalog.html",
+      "name": "Каталог продукции"
+    },
+    {
+      "href": "form.html",
+      "name": "Подбор программы"
     }
   ]
 }

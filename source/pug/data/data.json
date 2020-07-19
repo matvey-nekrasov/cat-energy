@@ -6,6 +6,14 @@
 		{
 			"href": "index.html",
 			"name": "Главная"
+		},
+		{
+			"href": "catalog.html",
+			"name": "Каталог продукции"
+		},
+		{
+			"href": "form.html",
+			"name": "Подбор программы"
 		}
 	],
 	"nav": {
@@ -32,12 +40,16 @@
 	},
 	"site": {
 		"index": {
-			"title": "HTML Academy: Кэт энерджи",
+			"title": "Cat Energy - Главная",
 			"href": "index.html"
 		},
 		"catalog": {
-			"title": "Каталог",
+			"title": "Cat Energy - Каталог продукции",
 			"href": "catalog.html"
+		},
+		"form": {
+			"title": "Cat Energy - Подбор программы",
+			"href": "form.html"
 		}
 	},
 	"media": [
