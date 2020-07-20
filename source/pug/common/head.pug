@@ -6,9 +6,8 @@ mixin stylesheets(items)
   each item in items
     link(rel="stylesheet" href=`${dirs.stylesheets}${item}.min.css`)
 
-mixin icons(items)
-  each item in items
-    link(rel=`${item.rel}` type='image/png' sizes=`${item.sizes}` href=`${dirs.images}${item.name}.png`)
+mixin icon(rel, sizes, name)
+  link(rel=`${rel}` type='image/png' sizes=`${sizes}` href=`${dirs.images}${name}.png`)
 
 block head
   head
@@ -16,9 +15,7 @@ block head
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     +fonts([''])
     +stylesheets(['style'])
-    +icons([
-      {rel: 'apple-touch-icon', sizes: '180x180', name: 'apple-touch-icon'},
-      {rel: 'icon', sizes: '32x32', name: 'favicon-32x32'},
-      {rel: 'icon', sizes: '16x16', name: 'favicon-16x16'}
-    ])
+    +icon('apple-touch-icon', '180x180', 'apple-touch-icon')
+    +icon('icon', '32x32', 'favicon-32x32')
+    +icon('icon', '16x16', 'favicon-16x16')
     title #{currentPageTitle}
