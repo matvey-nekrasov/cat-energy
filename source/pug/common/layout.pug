@@ -4,9 +4,9 @@ html(lang="ru")
   include mixin.pug
   include head.pug
   body
-    //- include svg.pug
+    include svg.pug
     include ../blocks/header.pug
     main
       block mainContent
     include ../blocks/footer.pug
-    script(src="js/script.min.js")
+    script(src=`${dirs.js}script.min.js`)

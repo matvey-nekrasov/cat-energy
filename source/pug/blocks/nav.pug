@@ -1,4 +1,18 @@
+mixin menu(items)
+  ul.menu
+    each item in items
+      li
+        a.menu__item(
+          class=currentPageHref===item.href ? "menu__item--active" : null
+          href=currentPageHref===item.href ? null : item.href
+        ) #{item.name}
+
 nav.nav
-  a.nav__logo(href=mainPage?null:nav.logo.href) CAT ENERGY Logo
-    img(src=nav.logo.src alt=nav.logo.name width=nav.logo.width height=nav.logo.height)
-  include menu.pug
+  a.nav__logo(href=mainPage ? null : site.index.href) CAT ENERGY Logo
+    img(src=`${dirs.images}logo.png` alt='' width='' height='')
+
+  +menu([
+    {href: 'index.html', name: 'Главная'},
+    {href: 'catalog.html', name: 'Каталог продукции'},
+    {href: 'form.html', name: 'Подбор программы'}
+  ])
