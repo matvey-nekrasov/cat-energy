@@ -3,7 +3,6 @@ import del from 'del';
 import sass from 'gulp-sass';
 import cssSort from 'gulp-csscomb';
 import csso from 'gulp-csso';
-import jsonMergeModule from 'gulp-merge-json';
 import pug from 'gulp-pug';
 import rename from 'gulp-rename';
 import babel from 'gulp-babel';
@@ -48,9 +47,7 @@ const path = {
     save: `${dirs.dest}`
   },
   json: {
-    root: `${dirs.src}/pug/data/**/*.json`,
-    save: `${dirs.src}/pug/data/`,
-    compiled: `${dirs.src}/pug/data/data.json`
+    data: `${dirs.src}/pug/data/data.json`
   },
   scripts: {
     root: `${dirs.src}/js/`,
@@ -86,18 +83,10 @@ const stylesBuild = () => src(path.styles.compile, { allowEmpty: true })
   }))
   .pipe(dest(path.styles.save));
 
-const jsonClean = () => del([path.json.compiled]);
-
-const jsonMerge = () => src(path.json.root)
-  .pipe(jsonMergeModule({ fileName: 'data.json' }))
-  .pipe(dest(path.json.save));
-
-const json = series(jsonClean, jsonMerge);
-
 const views = () => src(`${path.views.compile}*.pug`)
   .pipe(data((file) => {
     return JSON.parse(
-      fs.readFileSync(path.json.compiled)
+      fs.readFileSync(path.json.data)
     );
   }))
   .pipe(pug())
@@ -134,12 +123,12 @@ const devWatch = () => {
   });
   watch(`${path.styles.root}**/*.scss`, stylesDev).on('change', bs.reload);
   watch(`${path.views.root}**/*.pug`, views).on('change', bs.reload);
-  watch([`${path.json.save}blocks/*.json`, `${path.json.save}common/*.json`], series(json, views)).on('change', bs.reload);
+  watch(`${path.json.data}`, views).on('change', bs.reload);
   watch(`${path.scripts.root}**/*.js`, scripts).on('change', bs.reload);
   watch(`${path.images.root}**/*.{png,jpg}`, images).on('change', bs.reload);
 };
 
-// Эта задача только для критерия Б24, по сути не нужна
+// Эта задача только для критерия Б24, по сути не нужна, отличается только stylesBuild
 const buildWatch = () => {
   const bs = browserSync.init({
     server: dirs.dest,
@@ -147,7 +136,7 @@ const buildWatch = () => {
   });
   watch(`${path.styles.root}**/*.scss`, stylesBuild).on('change', bs.reload);
   watch(`${path.views.root}**/*.pug`, views).on('change', bs.reload);
-  watch([`${path.json.save}blocks/*.json`, `${path.json.save}common/*.json`], series(json, views)).on('change', bs.reload);
+  watch(`${path.json.data}`, views).on('change', bs.reload);
   watch(`${path.scripts.root}**/*.js`, scripts).on('change', bs.reload);
   watch(`${path.images.root}**/*.{png,jpg}`, images).on('change', bs.reload);
 };
@@ -173,12 +162,12 @@ const publish = (cb) => {
 /**
  * Задачи для разработки
  */
-export const dev = series(clean, json, fonts, parallel(stylesDev, views, scripts, sprite, images), devWatch);
+export const dev = series(clean, fonts, parallel(stylesDev, views, scripts, sprite, images), devWatch);
 
 /**
  * Для билда
  */
-export const build = series(clean, json, fonts, parallel(stylesBuild, views, scripts, sprite, images));
+export const build = series(clean, fonts, parallel(stylesBuild, views, scripts, sprite, images));
 
 /**
  * Для критерия Б24
