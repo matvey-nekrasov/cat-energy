@@ -66,28 +66,24 @@ const stylesDev = () => src(path.styles.compile, { allowEmpty: true })
   .pipe(plumber())
   .pipe(sourcemaps.init())
   .pipe(sass.sync().on('error', sass.logError))
-  .pipe(rename({
-    suffix: `.min`
-  }))
+  .pipe(rename({ suffix: `.min` }))
   .pipe(sourcemaps.write('.'))
   .pipe(dest(path.styles.save));
 
+// Эта задача с csso, который не работает с sourcemaps
 const stylesBuild = () => src(path.styles.compile, { allowEmpty: true })
   .pipe(sass.sync().on('error', sass.logError))
   .pipe(cssSort())
   .pipe(dest(path.styles.save))
   .pipe(postcss([autoprefixer()]))
   .pipe(csso())
-  .pipe(rename({
-    suffix: `.min`
-  }))
+  .pipe(rename({ suffix: `.min` }))
   .pipe(dest(path.styles.save));
 
 const views = () => src(`${path.views.compile}*.pug`)
+  .pipe(plumber())
   .pipe(data((file) => {
-    return JSON.parse(
-      fs.readFileSync(path.json.data)
-    );
+    return JSON.parse(fs.readFileSync(path.json.data));
   }))
   .pipe(pug())
   .pipe(prettify({ indent_size: 2, indent_char: ' ', inline: [''] }))
@@ -100,9 +96,7 @@ const scripts = () => src(`${path.scripts.root}*.js`)
   }))
   .pipe(dest(path.scripts.save))
   .pipe(uglify())
-  .pipe(rename({
-    suffix: '.min'
-  }))
+  .pipe(rename({ suffix: '.min' }))
   .pipe(dest(path.scripts.save));
 
 const images = () => src(`${path.images.root}**/*`)
@@ -119,7 +113,9 @@ const clean = () => del([dirs.dest]);
 const devWatch = () => {
   const bs = browserSync.init({
     server: dirs.dest,
-    notify: false
+    cors: true,
+    notify: false,
+    ui: false
   });
   watch(`${path.styles.root}**/*.scss`, stylesDev).on('change', bs.reload);
   watch(`${path.views.root}**/*.pug`, views).on('change', bs.reload);
@@ -132,7 +128,9 @@ const devWatch = () => {
 const buildWatch = () => {
   const bs = browserSync.init({
     server: dirs.dest,
-    notify: false
+    cors: true,
+    notify: false,
+    ui: false
   });
   watch(`${path.styles.root}**/*.scss`, stylesBuild).on('change', bs.reload);
   watch(`${path.views.root}**/*.pug`, views).on('change', bs.reload);
@@ -143,9 +141,7 @@ const buildWatch = () => {
 
 const sprite = () => {
   return src(`${path.images.root}**/*.svg`)
-    .pipe(svgstore({
-      inlineSvg: true
-    }))
+    .pipe(svgstore({ inlineSvg: true }))
     .pipe(rename('sprite.svg'))
     .pipe(dest(`${path.views.root}common/`))
 };
