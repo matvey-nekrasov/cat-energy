@@ -1,6 +1,6 @@
 mixin feature(icon, title, desc, link)
   .feature
-    img.feature__icon(class=`feature__icon--${icon}`)
+    img.feature__icon(class=`feature__icon--${icon}` src=`${dirs.images}.png` width='' height='' alt=`${title}`)
     h3.feature__title #{title}
     p.feature__desc #{desc}
     p.feature__link #{link}

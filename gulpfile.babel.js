@@ -21,7 +21,7 @@ import plumber from 'gulp-plumber';
 import sourcemaps from 'gulp-sourcemaps';
 import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
-import prettify  from 'gulp-prettify';
+import prettify from 'gulp-prettify';
 
 /**
  *  Основные директории
@@ -90,7 +90,7 @@ const views = () => src(`${path.views.compile}*.pug`)
     );
   }))
   .pipe(pug())
-  .pipe(prettify())
+  .pipe(prettify({ indent_size: 2, indent_char: ' ', inline: [''] }))
   .pipe(dest(path.views.save));
 
 const scripts = () => src(`${path.scripts.root}*.js`)

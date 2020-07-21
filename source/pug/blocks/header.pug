@@ -3,17 +3,21 @@ mixin menu(items)
     each item in items
       li
         a.menu__item(
-          class=currentPageHref===item.href ? "menu__item--active" : null
+          class=currentPageHref===item.href ? 'menu__item--active' : null
           href=currentPageHref===item.href ? null : item.href
         ) #{item.name}
 
 header.header
   nav.nav
-    a.nav__logo(href=mainPage ? null : site.index.href) CAT ENERGY Logo
-      img(src=`${dirs.images}logo.png` alt='' width='' height='')
+    a.nav__logo-link(href=mainPage ? null : site.index.href)
+      img.nav__logo-img(src=`${dirs.images}logo-cat.png` width='' height='' alt='Логотип Кэт Энерджи')
+    img.nav__logo-text(src=`${dirs.images}logo-cat-energy.png` width='' height='' alt='Логотип Кэт Энерджи')
+
+    button.nav__toggle(type='button')
+      span.visually-hidden Открыть меню
 
     +menu([
-      {href: 'index.html', name: 'Главная'},
-      {href: 'catalog.html', name: 'Каталог продукции'},
-      {href: 'form.html', name: 'Подбор программы'}
+      {href: "index.html", name: "Главная"},
+      {href: "catalog.html", name: "Каталог продукции"},
+      {href: "form.html", name: "Подбор программы"}
     ])

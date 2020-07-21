@@ -6,7 +6,4 @@ block vars
   -var currentPageHref = site.form.href
 
 block mainContent
-  p
-    | Репозиторий создан для обучения на профессиональном онлайн‑курсе «
-    a(href='https://htmlacademy.ru/intensive/adaptive') HTML и CSS, уровень 2
-    | ».
+  h1.visually-hidden #{site.form.title}

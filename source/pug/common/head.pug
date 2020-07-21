@@ -4,15 +4,15 @@ mixin fonts(items)
 
 mixin stylesheets(items)
   each item in items
-    link(rel="stylesheet" href=`${dirs.stylesheets}${item}.min.css`)
+    link(rel='stylesheet' href=`${dirs.stylesheets}${item}.min.css`)
 
 mixin icon(rel, sizes, name)
   link(rel=`${rel}` type='image/png' sizes=`${sizes}` href=`${dirs.images}${name}.png`)
 
 block head
   head
-    meta(charset="utf-8")
-    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
     +fonts([''])
     +stylesheets(['style'])
     +icon('apple-touch-icon', '180x180', 'apple-touch-icon')

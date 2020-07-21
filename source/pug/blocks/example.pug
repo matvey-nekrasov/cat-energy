@@ -1,3 +1,8 @@
+mixin plate(number, desc)
+  .example__plate.plate
+    span.plate__number #{number}
+    span.plate__desc #{desc}
+
 section.example
   h2.example__title.section-title Живой пример
   p.example__desc.
@@ -7,3 +12,11 @@ section.example
     изнуряющих тренировок! При этом он не
     менял своих привычек и по-прежнему
     спит по 16 часов в день.
+  +plate('5 кг', 'снижение веса')
+  +plate('60 дней', 'затрачено времени')
+  span.example__cost-title Затраты на питание:
+  span.example__cost-number 15 000 руб.
+  img.example__cat-photo.example__cat-photo--fat(src=`${dirs.images}.png` width='' height='' alt='Толстый кот')
+  img.example__cat-photo.example__cat-photo--thin.example__cat-photo--hidden(src=`${dirs.images}.png` width='' height='' alt='Худой кот')
+  a.example__btn-was(href='#') Было
+  a.example__btn-was(href='#') Стало
