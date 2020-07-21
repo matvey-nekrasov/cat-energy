@@ -1,0 +1,11 @@
+extends ../common/layout.pug
+
+block vars
+  -var mainPage = false
+  -var currentPageTitle = site.catalog.title
+  -var currentPageHref = site.catalog.href
+
+block mainContent
+  h1.page-title #{site.catalog.title}
+
+  include ../blocks/products.pug

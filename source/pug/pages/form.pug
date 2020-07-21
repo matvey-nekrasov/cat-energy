@@ -1,0 +1,9 @@
+extends ../common/layout.pug
+
+block vars
+  -var mainPage = false
+  -var currentPageTitle = site.form.title
+  -var currentPageHref = site.form.href
+
+block mainContent
+  h1.visually-hidden #{site.form.title}

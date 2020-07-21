@@ -1,0 +1,32 @@
+{
+	"site": {
+		"index": {
+			"title": "Cat Energy - Главная",
+			"href": "index.html"
+		},
+		"catalog": {
+			"title": "Каталог продукции",
+			"href": "catalog.html"
+		},
+		"form": {
+			"title": "Подбор программы",
+			"href": "form.html"
+		}
+	},
+	"media": [
+		{
+			"resolution": "1170",
+			"name": "desktop"
+		},
+		{
+			"resolution": "750",
+			"name": "tablet"
+		}
+	],
+	"dirs": {
+		"images": "img/",
+		"fonts": "fonts/",
+		"stylesheets": "css/",
+		"js": "js/"
+	}
+}

@@ -1,0 +1,24 @@
+mixin feature(icon, title, desc, link)
+  .feature
+    img.feature__icon(class=`feature__icon--${icon}` src=`${dirs.images}.png` width='' height='' alt=`${title}`)
+    h3.feature__title #{title}
+    p.feature__desc #{desc}
+    p.feature__link #{link}
+
+section.features
+  h2.visually-hidden Функциональное питание для котов
+
+  +feature(
+    'leopard',
+    'Похудение',
+    'Ваш кот весит больше собаки и почти утратил способность лазить по деревьям? Пора на диету! Cat Energy Slim поможет вашему питомцу сбросить лишний вес.',
+    'Каталог Slim'
+  )
+
+  +feature(
+    'lioness',
+    'Набор массы',
+    'Заработать авторитет среди дворовых котов и даже собак? Серия Cat Energy Pro поможет вашему коту нарастить необходимые мышцы!',
+    'Каталог Pro'
+  )
+

@@ -1,0 +1,16 @@
+mixin social(modifier, hiddenText)
+  li
+    a.social-list__link(class=`social-list__link--${modifier}` href='#')
+      span.visually-hidden #{hiddenText}
+
+footer.footer
+  img.footer__logo-text(src=`${dirs.images}logo-cat-energy.png` width='' height='' alt='Логотип Кэт Энерджи')
+
+  ul.footer__socials-list
+    +social('vkontakte', 'В контакте')
+    +social('instagram', 'Инстаграм')
+    +social('facebook', 'Фэйсбук')
+
+  a.footer__academy-link(href='https://htmlacademy.ru/intensive/adaptive') HTML Academy
+  a.footer__academy-img-link(href='https://htmlacademy.ru/intensive/adaptive')
+    img.footer__academy-img(src=`${dirs.images}.png` width='' height='' alt='Логотип HTML Academy')
