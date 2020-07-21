@@ -1,9 +1,9 @@
 mixin feature(icon, title, desc, link)
-  .feature
+  .feature.features__feature
     img.feature__icon(class=`feature__icon--${icon}` src=`${dirs.images}.png` width='' height='' alt=`${title}`)
     h3.feature__title #{title}
     p.feature__desc #{desc}
-    p.feature__link #{link}
+    a.feature__link(href="#") #{link}
 
 section.features
   h2.visually-hidden Функциональное питание для котов
@@ -21,4 +21,3 @@ section.features
     'Заработать авторитет среди дворовых котов и даже собак? Серия Cat Energy Pro поможет вашему коту нарастить необходимые мышцы!',
     'Каталог Pro'
   )
-

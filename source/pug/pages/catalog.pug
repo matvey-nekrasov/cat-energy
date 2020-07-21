@@ -6,6 +6,7 @@ block vars
   -var currentPageHref = site.catalog.href
 
 block mainContent
-  h1.page-title #{site.catalog.title}
+  h1.visually-hidden #{site.catalog.title}
 
   include ../blocks/products.pug
+  include ../blocks/products-extra.pug
