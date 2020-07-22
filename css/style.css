@@ -413,7 +413,7 @@ template
 
 body
 {
-    font: 12.30769px -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font: 12.30769px -apple-system, system-ui, blinkmacsystemfont, 'Segoe UI', 'Helvetica Neue', arial, sans-serif;
 
     min-width: 320px; 
 
@@ -468,8 +468,8 @@ a:active
 }
 
 .visually-hidden1:not(:focus):not(:active),
-input[type='checkbox'].visually-hidden,
-input[type='radio'].visually-hidden
+input[type='checkbox'].visually-hidden1,
+input[type='radio'].visually-hidden1
 {
     position: absolute;
 
