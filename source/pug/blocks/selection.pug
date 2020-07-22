@@ -1,0 +1,26 @@
+section.selection
+  h2.selection__title.heading-big #{site.form.title}
+  p.selection__desc Заполните анкету, и мы подберем программу питания для вашего кота
+
+  form(method='post' action='https://echo.htmlacademy.ru')
+    fieldset.selection__fieldset
+
+      ul.selection__list
+        li
+          label.radio.selection__radio
+            input.radio__input.visually-hidden(name='purpose' value='weight-loss' type='radio' checked='')
+            span.radio__text Похудение
+        li
+          label.radio.selection__radio
+            input.radio__input.visually-hidden(name='purpose' value='weight-gain' type='radio')
+            span.radio__text Набор массы
+        li
+          label.radio.selection__radio
+            input.radio__input.visually-hidden(name='purpose' value='dont-know' type='radio')
+            span.radio__text Не знаю (Нужен ваш совет)
+
+    fieldset.selection__fieldset.heading-middle Контактные данные (владельца кота)
+    fieldset.selection__fieldset.heading-middle Комментарий
+    fieldset.selection__fieldset.heading-middle Дополнительно
+    button.selection__submit(type='submit') Отправить заявку
+    p.selection__required * — Обязательные поля

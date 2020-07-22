@@ -1,5 +1,3 @@
-include ../blocks/buttons.pug
-
 mixin product-extra(item)
   li.product-extra
     h3.product-extra__name= item.name
@@ -8,7 +6,7 @@ mixin product-extra(item)
     +button-type1('Заказать', '#').product-extra__button
 
 section.products-extra
-  h2.products-extra__title.section-title Дополнительные товары
+  h2.products-extra__title.heading-middle Дополнительные товары
   ul
     +product-extra({
       name: "Сахарозаменитель",

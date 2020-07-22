@@ -1,5 +1,3 @@
-include ../blocks/buttons.pug
-
 mixin product(item)
   li.product
     - var productName = `Cat Energy ${item.type} ${item.weight} г`;
@@ -23,7 +21,7 @@ mixin product(item)
     +button-type1('Заказать', '#').product__button
 
 section.products
-  h2.products__title.section-title #{site.catalog.title}
+  h2.products__title.heading-big #{site.catalog.title}
   ul
     +product({
       type: "pro",
