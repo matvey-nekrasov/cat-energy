@@ -1,81 +1,79 @@
 mixin product(item)
-  li
-    article.product
-      - var productName = `Cat Energy ${item.type} ${item.weight} г`;
-      - var imgName = `product-${item.type}-${item.weight}-${item.tasteEng}`;
+  li.product
+    - var productName = `Cat Energy ${item.type} ${item.weight} г`;
+    //- Получаются такие имена: "img/product-pro-1000-chicken.png"
+    - var imgName = `product-${item.type}-${item.weight}-${item.tasteImgName}`;
 
-      img(
-        src=`${dirs.images}${imgName}.png`
-        width='' height=''
-        alt=`${productName}рам ${item.taste}`
-      )
+    img(
+      src=`${dirs.images}${imgName}.png`
+      width='' height=''
+      alt=`${productName}рамм ${item.taste}`
+    )
 
-      h3 #{productName}
-      dl
-        dt Масса
-        dd #{item.weight} г
-        dt Вкус
-        dd #{item.taste}
-        dt Цена
-        dd #{item.price} Р.
-      a.product__button.button Заказать
+    h3.products__name= productName
+    dl
+      dt Масса
+      dd #{item.weight} г
+      dt Вкус
+      dd #{item.taste}
+      dt Цена
+      dd #{item.price} Р.
+    +button-type1('Заказать', '#').product__button
 
 section.products
-  h2.visually-hidden #{site.catalog.title}
-
+  h2.products__title.heading-big #{site.catalog.title}
   ul
     +product({
       type: "pro",
       weight: 500,
       taste: "Курица",
-      tasteEng: "chicken",
+      tasteImgName: "chicken",
       price: 700,
       })
     +product({
       type: "pro",
       weight: 1000,
       taste: "Курица",
-      tasteEng: "chicken",
+      tasteImgName: "chicken",
       price: 1000,
       })
     +product({
       type: "pro",
       weight: 500,
       taste: "Рыба",
-      tasteEng: "fish",
+      tasteImgName: "fish",
       price: 700,
       })
     +product({
       type: "pro",
       weight: 1000,
       taste: "Рыба",
-      tasteEng: "fish",
+      tasteImgName: "fish",
       price: 1000,
       })
     +product({
       type: "slim",
       weight: 500,
       taste: "Гречка",
-      tasteEng: "buckwheat",
+      tasteImgName: "buckwheat",
       price: 400,
       })
     +product({
       type: "slim",
       weight: 1000,
       taste: "Гречка",
-      tasteEng: "buckwheat",
+      tasteImgName: "buckwheat",
       price: 700,
       })
     +product({
       type: "slim",
       weight: 500,
       taste: "Рис",
-      tasteEng: "rice",
+      tasteImgName: "rice",
       price: 500,
       })
 
-    li
-      article.showmore
-        h3.showmore__title Показать еще 100500 товаров
-        h3.showmore__desc На самом деле вкусов гораздо больше!
-        a.showmore__button.button Показать все
+    li.showmore
+      h3.showmore__title Показать еще 100500 товаров
+      p.showmore__desc На самом деле вкусов гораздо больше!
+      +button-type2('Показать все', '#').showmore__button

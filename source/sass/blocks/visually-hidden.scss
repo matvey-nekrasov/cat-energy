@@ -1,17 +1,17 @@
 .visually-hidden1:not(:focus):not(:active),
-input[type="checkbox"].visually-hidden,
-input[type="radio"].visually-hidden {
-    position: absolute;
+input[type="checkbox"].visually-hidden1,
+input[type="radio"].visually-hidden1 {
+  position: absolute;
 
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
 
-    border: 0;
+  border: 0;
 
-    white-space: nowrap;
-    clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    overflow: hidden;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }

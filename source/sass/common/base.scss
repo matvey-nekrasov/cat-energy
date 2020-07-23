@@ -9,12 +9,15 @@ body {
   @media #{$media-sm} {
     min-width: $width-sm;
   }
+
   @media #{$media-md} {
     min-width: $width-md;
   }
+
   @media #{$media-lg} {
     min-width: $width-lg;
   }
+
   @media #{$media-xl} {
     min-width: $width-xl;
   }
@@ -22,11 +25,13 @@ body {
 
 a {
   background-color: transparent;
+
   &:hover,
   &:focus {
     color: $color-hover;
     text-decoration: none;
   }
+
   &:active {
     color: $color-active;
   }
