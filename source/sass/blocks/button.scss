@@ -1,0 +1,14 @@
+.button {
+  display: block;
+  padding: 7px;
+  text-align: center;
+
+  color: $color-text-light;
+  font-family: $font-oswald;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 18px;
+  background-color: $color-bg-button;
+  font-weight: 400;
+}

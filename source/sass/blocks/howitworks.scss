@@ -1,0 +1,35 @@
+.howitworks {
+  //
+}
+
+.howitworks__list {
+  list-style: none;
+}
+
+.howitworks__item {
+  display: flex;
+
+  &::before {
+    content: "";
+    width: 60px;
+    height: 60px;
+    background-color: $color-bg-button;
+    background-position: center;
+  }
+
+  &--leaf::before {
+    background-image: url(#{$dirs-images}advantage-leaf@1x.png);
+  }
+
+  &--powder::before {
+    background-image: url(#{$dirs-images}advantage-powder@1x.png);
+  }
+
+  &--dining::before {
+    background-image: url(#{$dirs-images}advantage-dining@1x.png);
+  }
+
+  &--clock::before {
+    background-image: url(#{$dirs-images}advantage-clock@1x.png);
+  }
+}

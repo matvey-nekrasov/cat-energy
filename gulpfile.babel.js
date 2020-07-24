@@ -38,7 +38,6 @@ const path = {
   styles: {
     root: `${dirs.src}/sass/`,
     compile: `${dirs.src}/sass/style.scss`,
-    normalize: `${dirs.src}/css/normalize.css`,
     save: `${dirs.dest}/css/`
   },
   views: {
@@ -127,6 +126,7 @@ const devWatch = () => {
   watch(`${path.json.data}`, views).on('change', bs.reload);
   watch(`${path.scripts.root}**/*.js`, scripts).on('change', bs.reload);
   watch(`${path.images.root}**/*.{png,jpg}`, images).on('change', bs.reload);
+  watch(`${path.images.root}**/*.svg`, series(sprite, views)).on('all', bs.reload);
 };
 
 // Эта задача только для критерия Б24, по сути не нужна, отличается только stylesBuild
@@ -142,6 +142,7 @@ const buildWatch = () => {
   watch(`${path.json.data}`, views).on('change', bs.reload);
   watch(`${path.scripts.root}**/*.js`, scripts).on('change', bs.reload);
   watch(`${path.images.root}**/*.{png,jpg}`, images).on('change', bs.reload);
+  watch(`${path.images.root}**/*.svg`, series(sprite, views)).on('all', bs.reload);
 };
 
 const sprite = () => {
@@ -163,12 +164,12 @@ const publish = (cb) => {
 /**
  * Задачи для разработки
  */
-export const dev = series(clean, fonts, parallel(stylesDev, views, scripts, sprite, images), devWatch);
+export const dev = series(clean, fonts, parallel(stylesDev, scripts, sprite, images), views, devWatch);
 
 /**
  * Для билда
  */
-export const build = series(clean, fonts, parallel(stylesBuild, views, scripts, sprite, images));
+export const build = series(clean, fonts, parallel(stylesBuild, scripts, sprite, images), views);
 
 /**
  * Для критерия Б24

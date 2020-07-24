@@ -1,16 +1,27 @@
-mixin social(modifier, hiddenText)
-  li
-    a.social-list__link(class=`social-list__link--${modifier}` href='#')
-      span.visually-hidden #{hiddenText}
-
 footer.footer
-  img.footer__logo-text(src=`${dirs.images}logo-cat-energy.png` width='' height='' alt='Логотип Кэт Энерджи')
+  a.footer__logo(href=mainPage ? null : site.index.href)
+    svg(width='128' height='24' role='img' aria-label='На главную')
+      use(xlink:href='#logo-footer')
 
   ul.footer__socials-list
-    +social('vkontakte', 'В контакте')
-    +social('instagram', 'Инстаграм')
-    +social('facebook', 'Фэйсбук')
+    li
+      a.footer__socials-link(href='#')
+        svg(width='22' height='12' role='img' aria-label='В контакте')
+          use(xlink:href='#icon-vk')
+    li
+      a.footer__socials-link(href='#')
+        svg(width='16' height='16' role='img' aria-label='Инстаграм')
+          use(xlink:href='#icon-insta')
+    li
+      a.footer__socials-link(href='#')
+        svg(width='10' height='18' role='img' aria-label='Фэйсбук')
+          use(xlink:href='#icon-fb')
 
-  a.footer__academy-link(href='https://htmlacademy.ru/intensive/adaptive') HTML Academy
-  a.footer__academy-img-link(href='https://htmlacademy.ru/intensive/adaptive')
-    img.footer__academy-img(src=`${dirs.images}.png` width='' height='' alt='Логотип HTML Academy')
+  p.footer-links
+    a.footer__academy-link(href='https://htmlacademy.ru/intensive/adaptive') HTML Academy
+      span.visually-hidden Онлайн‑курс HTML и CSS. Адаптивная вёрстка и автоматизация
+    a.footer__academy-img-link(href='https://htmlacademy.ru/intensive/adaptive')
+      svg(width='27' height='34' role='img' aria-label=
+        'Онлайн‑курс HTML и CSS. Адаптивная вёрстка и автоматизация')
+        use(xlink:href='#htmlacademy')
+
