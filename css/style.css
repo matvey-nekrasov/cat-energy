@@ -1,28 +1,31 @@
 @font-face
 {
-    font-family: '';
+    font-family: 'Oswald';
+    font-weight: 200;
+    font-style: normal;
+
+    font-display: swap;
+    src: url('../fonts/oswald200.woff2') format('woff2'), url('../fonts/oswald200.woff') format('woff');
+}
+
+@font-face
+{
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-style: normal;
+
+    font-display: swap;
+    src: url('../fonts/oswaldregular.woff2') format('woff2'), url('../fonts/oswaldregular.woff') format('woff');
+}
+
+@font-face
+{
+    font-family: 'Oswald';
     font-weight: 500;
+    font-style: normal;
 
     font-display: swap;
-    src: url('../fonts/') format('woff2'), url('../fonts/') format('woff');
-}
-
-@font-face
-{
-    font-family: '';
-    font-weight: 600;
-
-    font-display: swap;
-    src: url('../fonts/') format('woff2'), url('../fonts/') format('woff');
-}
-
-@font-face
-{
-    font-family: '';
-    font-weight: 700;
-
-    font-display: swap;
-    src: url('../fonts/') format('woff2'), url('../fonts/') format('woff');
+    src: url('../fonts/oswaldmedium.woff2') format('woff2'), url('../fonts/oswaldmedium.woff') format('woff');
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -411,65 +414,15 @@ template
     display: none;
 }
 
-body
+img
 {
-    font: 12.30769px -apple-system, system-ui, blinkmacsystemfont, 'Segoe UI', 'Helvetica Neue', arial, sans-serif;
-
-    min-width: 320px; 
-
-    letter-spacing: 0;
-
-    color: #283136;
-    background-color: #fff;
-}
-@media (min-width: 576px)
-{
-    body
-    {
-        min-width: 576px;
-    }
-}
-@media (min-width: 768px)
-{
-    body
-    {
-        min-width: 768px;
-    }
-}
-@media (min-width: 992px)
-{
-    body
-    {
-        min-width: 992px;
-    }
-}
-@media (min-width: 1440px)
-{
-    body
-    {
-        min-width: 1440px;
-    }
+    max-width: 100%;
+    height: auto;
 }
 
-a
-{
-    background-color: transparent;
-}
-a:hover,
-a:focus
-{
-    text-decoration: none; 
-
-    color: #f90b11;
-}
-a:active
-{
-    color: #fda1a3;
-}
-
-.visually-hidden1:not(:focus):not(:active),
-input[type='checkbox'].visually-hidden1,
-input[type='radio'].visually-hidden1
+.visually-hidden:not(:focus):not(:active),
+input[type='checkbox'].visually-hidden,
+input[type='radio'].visually-hidden
 {
     position: absolute;
 
@@ -486,4 +439,287 @@ input[type='radio'].visually-hidden1
     border: 0;
 
     clip-path: inset(100%);
+}
+
+.body
+{
+    font-family: arial, sans-serif;
+
+    display: grid;
+
+    min-height: 100vh;
+
+    color: #000;
+    background-color: #fff; 
+
+    grid-template-rows: min-content 1fr min-content;
+}
+
+.button
+{
+    font-family: 'Oswald', arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400; 
+    line-height: 18px;
+
+    display: block;
+
+    padding: 7px;
+
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    color: #fff;
+    background-color: #68b738;
+}
+.button--type2
+{
+    color: #444;
+    background-color: #f2f2f2;
+}
+
+.header
+{
+    color: #000;
+    background-color: #fff;
+}
+
+.nav__logo
+{
+    text-decoration: none;
+}
+
+.footer
+{
+    color: #444;
+    background-color: #f2f2f2;
+}
+
+.footer__logo
+{
+    line-height: 0; 
+
+    display: block;
+
+    text-align: center;
+}
+
+.footer__socials-list
+{
+    display: flex;
+
+    width: 130px;
+    margin: 0 auto;
+    padding: 0;
+
+    list-style: none; 
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__socials-link
+{
+    line-height: 0;
+
+    display: block;
+
+    padding: 4px;
+}
+
+.footer-links
+{
+    display: flex;
+
+    width: 281px;
+    margin: 0 auto;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__academy-link
+{
+    padding: 4px;
+
+    text-decoration: none; 
+
+    color: #444;
+}
+
+.footer__academy-img-link
+{
+    line-height: 0;
+
+    display: block;
+
+    padding: 4px;
+}
+
+.heading-big
+{
+    font-family: 'Oswald', arial, sans-serif;
+    font-size: 36px;
+    font-weight: 400; 
+    line-height: 1;
+}
+
+.menu
+{
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.menu__item
+{
+    text-align: center;
+}
+
+.menu__link
+{
+    font-family: 'Oswald', arial, sans-serif;
+    font-size: 20px; 
+    font-weight: 500;
+
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.advertisement
+{
+    background-color: #64a83b;
+    background-image: url(../img/index-background-mobile@1x.jpg), linear-gradient(#fff, #fff);
+    background-repeat: no-repeat, no-repeat; 
+    background-position: center top, 0 305px;
+}
+
+.advertisement__title
+{
+    color: #fff;
+}
+
+.advertisement__desc
+{
+    font-family: 'Oswald', arial, sans-serif;
+    font-size: 14px;
+    line-height: 1; 
+
+    text-transform: uppercase;
+
+    color: #fff;
+}
+
+.feature
+{
+    background-color: #f2f2f2;
+}
+
+.feature__title
+{
+    font-family: 'Oswald', arial, sans-serif;
+    font-size: 24px;
+    font-weight: 400; 
+
+    text-transform: uppercase;
+
+    color: #000;
+}
+
+.feature__desc
+{
+    font-family: arial, sans-serif;
+    font-size: 14px;
+    line-height: 18px; 
+
+    color: #444;
+}
+
+.feature__link
+{
+    font-family: 'Oswald', arial, sans-serif;
+    font-size: 16px;
+
+    text-decoration: none; 
+    text-transform: uppercase;
+
+    color: #000;
+}
+
+.howitworks__list
+{
+    list-style: none;
+}
+
+.howitworks__item
+{
+    display: flex;
+}
+.howitworks__item::before
+{
+    width: 60px;
+    height: 60px;
+
+    content: '';
+
+    background-color: #68b738;
+    background-position: center;
+}
+.howitworks__item--leaf::before
+{
+    background-image: url(../img/advantage-leaf@1x.png);
+}
+.howitworks__item--powder::before
+{
+    background-image: url(../img/advantage-powder@1x.png);
+}
+.howitworks__item--dining::before
+{
+    background-image: url(../img/advantage-dining@1x.png);
+}
+.howitworks__item--clock::before
+{
+    background-image: url(../img/advantage-clock@1x.png);
+}
+
+.howitworks__desc
+{
+    font-family: arial, sans-serif;
+    font-size: 14px;
+    line-height: 18px; 
+
+    color: #444;
+}
+
+.products__list
+{
+    list-style: none;
+}
+
+.product__name
+{
+    font-family: 'Oswald', arial, sans-serif;
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 20px;
+
+    text-transform: uppercase; 
+
+    color: #222;
+}
+
+.product__properties-row
+{
+    display: flex;
+}
+
+.product__properties-item
+{
+    font-family: arial, sans-serif;
+    font-size: 12px; 
+    font-weight: 400;
+
+    color: #444;
 }
