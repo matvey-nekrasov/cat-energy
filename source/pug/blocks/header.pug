@@ -9,12 +9,9 @@ mixin menu(items)
 
 header.header
   nav.nav
-    a.nav__logo-cat(href=mainPage ? null : site.index.href)
-      svg(width='34' height='38' role='img' aria-label='На главную')
+    a.nav__logo(href=mainPage ? null : site.index.href)
+      svg(width='191' height='38' role='img' aria-label='На главную')
         use(xlink:href='#logo-mobile')
-    a.nav__logo-text(href=mainPage ? null : site.index.href)
-      svg(width='101' height='18' role='img' aria-label='На главную')
-        use(xlink:href='#logo-footer')
 
     button.nav__toggle(type='button') Открыть меню
       span.visually-hidden Открыть меню

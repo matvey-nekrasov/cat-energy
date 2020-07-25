@@ -33,3 +33,10 @@
     background-image: url(#{$dirs-images}advantage-clock@1x.png);
   }
 }
+
+.howitworks__desc {
+  color: $color-text-4;
+  font-family: $font-arial;
+  font-size: 14px;
+  line-height: 18px;
+}

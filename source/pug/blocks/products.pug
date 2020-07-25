@@ -1,28 +1,31 @@
 mixin product(item)
   li.product
     - var productName = `Cat Energy ${item.type} ${item.weight} г`;
-    //- Получаются такие имена: "img/product-pro-1000-chicken.png"
-    - var imgName = `product-${item.type}-${item.weight}-${item.tasteImgName}`;
+    - var imgSizeName = item.weight === 500 ? "small" : "big";
+    - var imgName = `${item.tasteImgName}-${imgSizeName}-mobile@1x.jpg`;
 
-    img(
-      src=`${dirs.images}${imgName}.png`
-      width='' height=''
+    img.product__img(
+      src=`${dirs.images}${imgName}`
+      width='140' height='144'
       alt=`${productName}рамм ${item.taste}`
     )
 
-    h3.products__name= productName
-    dl
-      dt Масса
-      dd #{item.weight} г
-      dt Вкус
-      dd #{item.taste}
-      dt Цена
-      dd #{item.price} Р.
+    h3.product__name= productName
+    dl.product__properties
+      .product__properties-row
+        dt.product__properties-item Масса
+        dd.product__properties-item #{item.weight} г
+      .product__properties-row
+        dt.product__properties-item Вкус
+        dd.product__properties-item #{item.taste}
+      .product__properties-row
+        dt.product__properties-item Цена
+        dd.product__properties-item #{item.price} Р.
     +button-type1('Заказать', '#').product__button
 
 section.products
   h2.products__title.heading-big #{site.catalog.title}
-  ul
+  ul.products__list
     +product({
       type: "pro",
       weight: 500,
@@ -73,7 +76,7 @@ section.products
       price: 500,
       })
 
-    li.showmore
-      h3.showmore__title Показать еще 100500 товаров
-      p.showmore__desc На самом деле вкусов гораздо больше!
+    li.product
+      h3.product__name Показать еще 100500 товаров
+      p.product__properties-item На самом деле вкусов гораздо больше!
       +button-type2('Показать все', '#').showmore__button

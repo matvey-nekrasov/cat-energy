@@ -1,0 +1,31 @@
+.product {
+  //
+}
+
+.product__img {
+  //
+}
+
+.product__name {
+  color: $color-text-3;
+  font-family: $font-oswald;
+  font-weight: 200;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+
+.product__properties {
+  //
+}
+
+.product__properties-row {
+  display: flex;
+}
+
+.product__properties-item {
+  color: $color-text-4;
+  font-family: $font-arial;
+  font-weight: 400;
+  font-size: 12px;
+}
