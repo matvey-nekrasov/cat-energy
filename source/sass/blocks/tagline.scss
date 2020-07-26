@@ -1,5 +1,5 @@
 .tagline {
-  background-image: url(#{$dirs-images}index-background-mobile@1x.jpg),
+  background-image: url(#{$path-images}index-background-mobile@1x.jpg),
     linear-gradient($color-bg, $color-bg);
   background-color: $color-bg-green;
   background-position: center top, 0 305px;

@@ -5,7 +5,7 @@ mixin product(item)
     - var imgName = `${item.tasteImgName}-${imgSizeName}-mobile@1x.jpg`;
 
     img.product__img(
-      src=`${dirs.images}${imgName}`
+      src=`${path.images}${imgName}`
       width='140' height='144'
       alt=`${productName}рамм ${item.taste}`
     )

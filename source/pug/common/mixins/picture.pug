@@ -16,26 +16,26 @@ mixin picture(className, alt, retina, responsive, name, extension, width, height
         media=responsive? `(min-width:${size.resolution}px)`
         : null
         srcset=retina?
-        `${site.dirs.images}${name}-${size.name}@2x.webp 2x,
-        ${site.dirs.images}${name}-${size.name}.webp 1x`
-        : `${site.dirs.images}${name}.webp`
+        `${site.path.images}${name}-${size.name}@2x.webp 2x,
+        ${site.path.images}${name}-${size.name}.webp 1x`
+        : `${site.path.images}${name}.webp`
       )
       source(
         type=`image/${extension === 'jpg'? 'jpeg' : extension}`
         media=responsive? `(min-width:${size.resolution}px)`
         : null
         srcset=retina?
-        `${site.dirs.images}${name}-${size.name}@2x.${extension} 2x,
-        ${site.dirs.images}${name}-${size.name}.${extension} 1x`
-        : `${site.dirs.images}${name}.${extension}`
+        `${site.path.images}${name}-${size.name}@2x.${extension} 2x,
+        ${site.path.images}${name}-${size.name}.${extension} 1x`
+        : `${site.path.images}${name}.${extension}`
       )
       if responsive===false
         - break
     img(
       class=className
       srcset=retina?
-      `${site.dirs.images}${name}@2x.${extension} 2x`
+      `${site.path.images}${name}@2x.${extension} 2x`
       : null
-      src=`${site.dirs.images}${name}.${extension}`
+      src=`${site.path.images}${name}.${extension}`
       width=width height=height alt=alt
     )

@@ -4,10 +4,9 @@ html(lang='ru')
   include mixin.pug
   include head.pug
   body.body
-    include svg.pug
     include ../blocks/header.pug
     main
       block mainContent
       include ../blocks/cooperation.pug
     include ../blocks/footer.pug
-    script(src=`${dirs.js}script.min.js`)
+    script(src=`${path.js}script.min.js`)

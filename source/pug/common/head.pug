@@ -1,13 +1,13 @@
 mixin fonts(items)
   each item in items
-    link(rel='preload' href=`${dirs.fonts}${item}.woff2` as='font')
+    link(rel='preload' href=`${path.fonts}${item}.woff2` as='font')
 
 mixin stylesheets(items)
   each item in items
-    link(rel='stylesheet' href=`${dirs.stylesheets}${item}.min.css`)
+    link(rel='stylesheet' href=`${path.stylesheets}${item}.min.css`)
 
 mixin icon(rel, sizes, name)
-  link(rel=`${rel}` type='image/png' sizes=`${sizes}` href=`${dirs.images}${name}.png`)
+  link(rel=`${rel}` type='image/png' sizes=`${sizes}` href=`${path.images}${name}.png`)
 
 block head
   head

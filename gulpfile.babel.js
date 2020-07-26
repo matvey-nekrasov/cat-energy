@@ -103,16 +103,32 @@ const scripts = () => src(`${path.scripts.root}*.js`)
   .pipe(rename({ suffix: '.min' }))
   .pipe(dest(path.scripts.save));
 
+const sprite = () => {
+  return src(`${path.images.root}**/*.svg`)
+    .pipe(svgstore({ inlineSvg: true }))
+    .pipe(rename('sprite.svg'))
+    .pipe(dest(path.images.save));
+};
+
 const images = () => src(`${path.images.root}**/*`)
-  .pipe(imagemin([
-    pngquant({ quality: [0.2, 0.8] }),
-    mozjpeg({ quality: 85 })
-  ]))
-  .pipe(dest(path.images.save))
-  .pipe(webp({ quality: 85 }))
+  // .pipe(imagemin([               // Не работает в x32
+  //   pngquant({ quality: [0.2, 0.8] }),
+  //   mozjpeg({ quality: 85 })
+  // ]))
+  // .pipe(dest(path.images.save))
+  // .pipe(webp({ quality: 85 }))   // Не работает в x32
   .pipe(dest(path.images.save));
 
 const clean = () => del([dirs.dest]);
+
+const fonts = () => {
+  return src(`${dirs.src}/fonts/*.{woff,woff2}`)
+    .pipe(dest(`${dirs.dest}/fonts/`))
+};
+
+const publish = (cb) => {
+  ghPages.publish(dirs.dest, cb);
+};
 
 const devWatch = () => {
   const bs = browserSync.init({
@@ -143,22 +159,6 @@ const buildWatch = () => {
   watch(`${path.scripts.root}**/*.js`, scripts).on('change', bs.reload);
   watch(`${path.images.root}**/*.{png,jpg}`, images).on('change', bs.reload);
   watch(`${path.images.root}**/*.svg`, series(sprite, views)).on('all', bs.reload);
-};
-
-const sprite = () => {
-  return src(`${path.images.root}**/*.svg`)
-    .pipe(svgstore({ inlineSvg: true }))
-    .pipe(rename('sprite.svg'))
-    .pipe(dest(`${path.views.root}common/`))
-};
-
-const fonts = () => {
-  return src(`${dirs.src}/fonts/*.{woff,woff2}`)
-    .pipe(dest(`${dirs.dest}/fonts/`))
-};
-
-const publish = (cb) => {
-  ghPages.publish(dirs.dest, cb);
 };
 
 /**
