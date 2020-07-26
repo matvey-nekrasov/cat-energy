@@ -1,4 +1,4 @@
-.advertisement {
+.tagline {
   background-image: url(#{$dirs-images}index-background-mobile@1x.jpg),
     linear-gradient($color-bg, $color-bg);
   background-color: $color-bg-green;
@@ -6,11 +6,11 @@
   background-repeat: no-repeat, no-repeat;
 }
 
-.advertisement__title {
+.tagline__title {
   color: $color-text-light;
 }
 
-.advertisement__desc {
+.tagline__desc {
   color: $color-text-light;
   font-family: $font-oswald;
   font-size: 14px;
