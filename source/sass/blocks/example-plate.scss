@@ -1,0 +1,22 @@
+.example-plate {
+  //
+}
+
+.example-plate__number {
+  color: $color-text-2;
+  font-family: $font-oswald;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.example-plate__desc {
+  box-sizing: border-box;
+  width: 87px;
+  padding: 0 10px;
+  color: #444444;
+  background-color: $color-bg-green;
+  font-family: $font-arial;
+  font-size: 12px;
+  line-height: 1;
+  text-align: center;
+}

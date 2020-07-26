@@ -1,0 +1,27 @@
+.example {
+  background-color: $color-bg-2;
+}
+
+.example__title {
+  //
+}
+
+.example__desc {
+  //
+}
+
+.example__cost {
+  color: $color-text-2;
+  font-family: $font-oswald;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.example__btn {
+  color: $color-text-2;
+  font-family: $font-oswald;
+  font-size: 16px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
