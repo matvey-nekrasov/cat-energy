@@ -1,0 +1,30 @@
+.feature {
+  background-color: $color-bg-2;
+}
+
+.feature__icon {
+  //
+}
+
+.feature__title {
+  color: $color-text;
+  font-family: $font-oswald;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.feature__desc {
+  color: $color-text-4;
+  font-family: $font-arial;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.feature__link {
+  color: $color-text;
+  font-family: $font-oswald;
+  font-size: 16px;
+  text-transform: uppercase;
+  text-decoration: none;
+}

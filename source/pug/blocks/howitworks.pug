@@ -1,13 +1,12 @@
 mixin howitworks-item(modifier, text)
-  li.howitworks__item
-    svg.howitworks__icon(class=`howitworks__icon--${modifier}` width='0' height='0')
-    p #{text}
+  li.howitworks__item(class=`howitworks__item--${modifier}`)
+    p.howitworks__desc #{text}
 
 section.howitworks
   h2.howitworks__title.heading-big Как это работает
 
   ul.howitworks__list
-    +howitworks-item('healthy', 'Функциональное питание содержит только полезные питательные вещества.')
+    +howitworks-item('leaf', 'Функциональное питание содержит только полезные питательные вещества.')
     +howitworks-item('powder', 'Выпускается в виде порошка, который нужно лишь залить кипятком и готово.')
-    +howitworks-item('eating', 'Замените один-два приема обычной еды на наше функциональное питание.')
-    +howitworks-item('timer', 'Уже через месяц наслаждайтесь изменениями к лучшему вашего питомца!')
+    +howitworks-item('dining', 'Замените один-два приема обычной еды на наше функциональное питание.')
+    +howitworks-item('clock', 'Уже через месяц наслаждайтесь изменениями к лучшему вашего питомца!')

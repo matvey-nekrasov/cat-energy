@@ -1,0 +1,19 @@
+.advertisement {
+  background-image: url(#{$dirs-images}index-background-mobile@1x.jpg),
+    linear-gradient($color-bg, $color-bg);
+  background-color: $color-bg-green;
+  background-position: center top, 0 305px;
+  background-repeat: no-repeat, no-repeat;
+}
+
+.advertisement__title {
+  color: $color-text-light;
+}
+
+.advertisement__desc {
+  color: $color-text-light;
+  font-family: $font-oswald;
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 1;
+}

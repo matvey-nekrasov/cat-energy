@@ -1,11 +1,20 @@
-// Начните писать стили здесь
 @import "common/mixin.scss";
 @import "common/fonts.scss";
 @import "common/normalize";
 @import "common/vars.scss";
-@import "common/base.scss";
+@import "common/globals.scss";
 //
 @import "blocks/visually-hidden.scss";
+@import "blocks/body.scss";
+@import "blocks/button.scss";
 @import "blocks/header.scss";
-@import "blocks/menu.scss";
+@import "blocks/nav.scss";
 @import "blocks/footer.scss";
+@import "blocks/heading-big.scss";
+@import "blocks/menu.scss";
+@import "blocks/advertisement.scss";
+@import "blocks/feature.scss";
+@import "blocks/features.scss";
+@import "blocks/howitworks.scss";
+@import "blocks/products.scss";
+@import "blocks/product.scss";

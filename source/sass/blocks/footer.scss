@@ -1,3 +1,49 @@
-.header {
-  //
+.footer {
+
+  color: $color-text-4;
+  background-color: $color-bg-2;
+}
+
+.footer__logo {
+  display: block;
+  text-align: center;
+  line-height: 0;
+}
+
+.footer__socials-list {
+  display: flex;
+  margin: 0 auto;
+  padding: 0;
+  width: 130px;
+  justify-content: space-between;
+  align-items: center;
+
+  list-style: none;
+}
+
+.footer__socials-link {
+  display: block;
+  line-height: 0;
+  padding: 4px;
+}
+
+.footer-links {
+  display: flex;
+  margin: 0 auto;
+  width: 281px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__academy-link {
+  padding: 4px;
+
+  color: $color-text-4;
+  text-decoration: none;
+}
+
+.footer__academy-img-link {
+  display: block;
+  line-height: 0;
+  padding: 4px;
 }
