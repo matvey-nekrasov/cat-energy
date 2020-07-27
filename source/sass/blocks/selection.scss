@@ -1,0 +1,58 @@
+.selection {
+  //
+}
+
+.selection__title {
+  margin: 0;
+}
+
+.selection__desc {
+  color: $color-text-1;
+  font-family: $font-oswald;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+.selection__fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.selection__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.selection__item {
+  //
+}
+
+.selection__comment {
+  display: block;
+  border: 1px solid $color-border-3;
+  min-height: 150px;
+  padding: 13px;
+  box-sizing: border-box;
+
+  resize: none;
+  color: $color-text-4;
+  font-family: $font-oswald;
+  font-size: 16px;
+  line-height: 18px;
+  text-transform: uppercase;
+
+  &::placeholder {
+    color: $color-text-4;
+  }
+}
+
+.selection__required {
+  margin: 0;
+  color: $color-text-1;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+}

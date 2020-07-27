@@ -3,7 +3,7 @@ mixin product-extra(item)
     h3.product-extra__title= item.title
     p.product-extra__quantity= item.quantity
     span.product-extra__price #{item.price} Р.
-    +button-type1('Заказать', '#')
+    +button-type1('Заказать')(href='#')
 
 section.products-extra
   h2.products-extra__title.heading-middle Дополнительные товары

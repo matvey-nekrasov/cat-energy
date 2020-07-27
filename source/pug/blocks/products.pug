@@ -21,7 +21,7 @@ mixin product(item)
       .product__properties-row
         dt.product__properties-item Цена
         dd.product__properties-item #{item.price} Р.
-    +button-type1('Заказать', '#')
+    +button-type1('Заказать')(href='#')
 
 section.products
   h2.products__title.heading-big #{site.catalog.title}
@@ -88,4 +88,4 @@ section.products
         use(href=`${path.sprite}#icon-plus`)
       h3.product__title Показать еще 100500 товаров
       p.product__properties-item На самом деле вкусов гораздо больше!
-      +button-type2('Показать все', '#').showmore__button
+      +button-type2('Показать все')(href='#').showmore__button
