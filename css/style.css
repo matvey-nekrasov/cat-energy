@@ -490,9 +490,41 @@ input[type='radio'].visually-hidden
     text-decoration: none;
 }
 
+.cooperation--bg
+{
+    background-color: #f2f2f2;
+}
+
+.cooperation__title
+{
+    font-family: 'Oswald', arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+
+    margin: 0;
+
+    text-transform: uppercase; 
+
+    color: #111;
+}
+
+.cooperation__address
+{
+    font-size: 14px;
+    font-style: normal; 
+    line-height: 20px;
+
+    color: #444;
+}
+
+.cooperation__map-img
+{
+    vertical-align: bottom;
+}
+
 .footer
 {
-    color: #444;
     background-color: #f2f2f2;
 }
 
@@ -561,8 +593,44 @@ input[type='radio'].visually-hidden
 {
     font-family: 'Oswald', arial, sans-serif;
     font-size: 36px;
-    font-weight: 400; 
+    font-weight: 400;
     line-height: 1;
+
+    margin: 0;
+
+    color: #111;
+}
+.heading-big--light
+{
+    color: #fff;
+}
+
+.heading-middle
+{
+    font-family: 'Oswald', arial, sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1;
+
+    margin: 0;
+
+    color: #000;
+}
+.heading-middle--light
+{
+    color: #fff;
+}
+
+.paragraph
+{
+    font-family: arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400; 
+    line-height: 18px;
+
+    margin: 0;
+
+    color: #444;
 }
 
 .menu
@@ -588,7 +656,7 @@ input[type='radio'].visually-hidden
     text-transform: uppercase;
 }
 
-.advertisement
+.tagline
 {
     background-color: #64a83b;
     background-image: url(../img/index-background-mobile@1x.jpg), linear-gradient(#fff, #fff);
@@ -596,20 +664,27 @@ input[type='radio'].visually-hidden
     background-position: center top, 0 305px;
 }
 
-.advertisement__title
+.tagline__title
 {
-    color: #fff;
+    margin: 0;
 }
 
-.advertisement__desc
+.tagline__desc
 {
     font-family: 'Oswald', arial, sans-serif;
     font-size: 14px;
     line-height: 1; 
 
+    margin: 0;
+
     text-transform: uppercase;
 
     color: #fff;
+}
+
+.tagline__img
+{
+    vertical-align: bottom;
 }
 
 .feature
@@ -623,6 +698,8 @@ input[type='radio'].visually-hidden
     font-size: 24px;
     font-weight: 400; 
 
+    margin: 0;
+
     text-transform: uppercase;
 
     color: #000;
@@ -630,11 +707,7 @@ input[type='radio'].visually-hidden
 
 .feature__desc
 {
-    font-family: arial, sans-serif;
-    font-size: 14px;
-    line-height: 18px; 
-
-    color: #444;
+    margin: 0;
 }
 
 .feature__link
@@ -648,8 +721,21 @@ input[type='radio'].visually-hidden
     color: #000;
 }
 
+.howitworks__title
+{
+    margin: 0;
+}
+
+.howitworks__desc
+{
+    margin: 0;
+}
+
 .howitworks__list
 {
+    margin: 0;
+    padding: 0; 
+
     list-style: none;
 }
 
@@ -684,30 +770,156 @@ input[type='radio'].visually-hidden
     background-image: url(../img/advantage-clock@1x.png);
 }
 
-.howitworks__desc
+.example
+{
+    background-color: #f2f2f2;
+}
+
+.example__title
+{
+    margin: 0;
+}
+
+.example__desc
+{
+    margin: 0;
+}
+
+.example__cost
+{
+    font-family: 'Oswald', arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+
+    margin: 0;
+
+    text-transform: uppercase; 
+
+    color: #111;
+}
+
+.example__btn
+{
+    font-family: 'Oswald', arial, sans-serif;
+    font-size: 16px;
+
+    text-decoration: none; 
+    text-transform: uppercase;
+
+    color: #111;
+}
+
+.example__switch
+{
+    position: relative;
+
+    width: 84px;
+    height: 14px;
+
+    border: 1px solid #cdcdcd;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+.example__switch-button
+{
+    position: absolute;
+    top: 4px;
+    left: 6px;
+
+    width: 35px;
+    height: 6px;
+
+    border-radius: 6px;
+    background-color: #68b738;
+}
+
+.example__cat-photo
+{
+    vertical-align: bottom;
+}
+
+.example-plate
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.example-plate__number
+{
+    font-family: 'Oswald', arial, sans-serif;
+    font-size: 24px;
+    line-height: 1;
+
+    margin: 0;
+    padding: 17px;
+
+    text-align: center;
+    text-transform: uppercase; 
+
+    color: #111;
+    border: 1px solid #cdcdcd;
+    border-radius: 3px;
+}
+
+.example-plate__desc
 {
     font-family: arial, sans-serif;
-    font-size: 14px;
-    line-height: 18px; 
+    font-size: 12px;
+    line-height: 1;
+
+    display: flex;
+
+    box-sizing: border-box;
+    max-width: 87px;
+    min-height: 21px;
+    margin: 0;
+    margin-top: -12px;
+    padding: 0 10px;
+
+    text-align: center; 
 
     color: #444;
+    background-color: #f2f2f2;
+
+    align-self: center;
+    align-items: center;
 }
 
 .products__list
 {
+    margin: 0;
+    padding: 0; 
+
     list-style: none;
 }
 
-.product__name
+.products__title
+{
+    margin: 0;
+}
+
+.product__img
+{
+    vertical-align: bottom;
+}
+
+.product__title
 {
     font-family: 'Oswald', arial, sans-serif;
     font-size: 16px;
-    font-weight: 200;
     line-height: 20px;
+
+    margin: 0;
 
     text-transform: uppercase; 
 
     color: #222;
+}
+
+.product__properties
+{
+    margin: 0;
 }
 
 .product__properties-row
@@ -721,5 +933,188 @@ input[type='radio'].visually-hidden
     font-size: 12px; 
     font-weight: 400;
 
+    margin: 0;
+
     color: #444;
+}
+
+.products-extra__title
+{
+    margin: 0;
+}
+
+.products-extra__list
+{
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.product-extra__title
+{
+    font-family: 'Oswald', arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+
+    margin: 0;
+
+    text-transform: uppercase; 
+
+    color: #222;
+}
+
+.product-extra__quantity
+{
+    font-size: 14px; 
+
+    margin: 0;
+
+    color: #444;
+}
+
+.product-extra__price
+{
+    font-size: 14px; 
+
+    color: #444;
+}
+
+.order-all
+{
+    background-color: #68b738;
+}
+
+.order-all__icon
+{
+    display: block;
+
+    margin: 0 auto;
+}
+
+.order-all__text
+{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+
+    margin: 0;
+
+    text-align: center; 
+
+    color: #fff;
+}
+
+.selection__title
+{
+    margin: 0;
+}
+
+.selection__desc
+{
+    font-family: 'Oswald', arial, sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+
+    text-transform: uppercase; 
+
+    color: #000;
+}
+
+.selection__fieldset
+{
+    margin: 0;
+    padding: 0;
+
+    border: none;
+}
+
+.selection__list
+{
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.selection__comment
+{
+    font-family: 'Oswald', arial, sans-serif;
+    font-size: 16px;
+    line-height: 18px;
+
+    display: block;
+
+    box-sizing: border-box;
+    min-height: 150px;
+    padding: 13px;
+
+    resize: none;
+    text-transform: uppercase; 
+
+    color: #444;
+    border: 1px solid #e7e7e7;
+}
+.selection__comment::placeholder
+{
+    color: #444;
+}
+
+.selection__required
+{
+    font-size: 14px;
+    font-weight: 400;
+
+    margin: 0;
+
+    text-align: center; 
+
+    color: #000;
+}
+
+.form-text__text
+{
+    font-family: 'Oswald', arial, sans-serif;
+    font-size: 16px;
+    line-height: 18px;
+
+    text-transform: uppercase; 
+
+    color: #444;
+}
+
+.form-text__input
+{
+    font-family: 'Oswald', arial, sans-serif;
+    font-size: 16px;
+    line-height: 18px;
+
+    padding: 15px;
+
+    text-transform: uppercase; 
+
+    color: #444;
+    border: 1px solid #e7e7e7;
+}
+
+.form-radio__text
+{
+    font-family: 'Oswald', arial, sans-serif;
+    font-size: 16px;
+    line-height: 18px;
+
+    text-transform: uppercase; 
+
+    color: #222;
+}
+
+.form-checkbox__text
+{
+    font-family: 'Oswald', arial, sans-serif;
+    font-size: 16px;
+    line-height: 18px;
+
+    text-transform: uppercase; 
+
+    color: #000;
 }
