@@ -1,16 +1,16 @@
 mixin product(item)
   article.product
-    - var productName = `Cat Energy ${item.type} ${item.weight} г`;
+    - var productTitle = `Cat Energy ${item.type} ${item.weight} г`;
     - var imgSizeName = item.weight === 500 ? "small" : "big";
     - var imgName = `${item.tasteImgName}-${imgSizeName}-mobile@1x.jpg`;
 
     img.product__img(
       src=`${path.images}${imgName}`
       width='140' height='144'
-      alt=`${productName}рамм ${item.taste}`
+      alt=`${productTitle}рамм ${item.taste}`
     )
 
-    h3.product__name= productName
+    h3.product__title= productTitle
     dl.product__properties
       .product__properties-row
         dt.product__properties-item Масса
@@ -21,7 +21,7 @@ mixin product(item)
       .product__properties-row
         dt.product__properties-item Цена
         dd.product__properties-item #{item.price} Р.
-    +button-type1('Заказать', '#').product__button
+    +button-type1('Заказать', '#')
 
 section.products
   h2.products__title.heading-big #{site.catalog.title}
@@ -83,7 +83,9 @@ section.products
         price: 500,
         })
 
-    li.product
-      h3.product__name Показать еще 100500 товаров
+    li.products__item
+      svg(width='30' height='30')
+        use(href=`${path.sprite}#icon-plus`)
+      h3.product__title Показать еще 100500 товаров
       p.product__properties-item На самом деле вкусов гораздо больше!
       +button-type2('Показать все', '#').showmore__button
