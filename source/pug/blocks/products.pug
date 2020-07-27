@@ -1,5 +1,5 @@
 mixin product(item)
-  li.product
+  article.product
     - var productName = `Cat Energy ${item.type} ${item.weight} г`;
     - var imgSizeName = item.weight === 500 ? "small" : "big";
     - var imgName = `${item.tasteImgName}-${imgSizeName}-mobile@1x.jpg`;
@@ -26,55 +26,62 @@ mixin product(item)
 section.products
   h2.products__title.heading-big #{site.catalog.title}
   ul.products__list
-    +product({
-      type: "pro",
-      weight: 500,
-      taste: "Курица",
-      tasteImgName: "chicken",
-      price: 700,
-      })
-    +product({
-      type: "pro",
-      weight: 1000,
-      taste: "Курица",
-      tasteImgName: "chicken",
-      price: 1000,
-      })
-    +product({
-      type: "pro",
-      weight: 500,
-      taste: "Рыба",
-      tasteImgName: "fish",
-      price: 700,
-      })
-    +product({
-      type: "pro",
-      weight: 1000,
-      taste: "Рыба",
-      tasteImgName: "fish",
-      price: 1000,
-      })
-    +product({
-      type: "slim",
-      weight: 500,
-      taste: "Гречка",
-      tasteImgName: "buckwheat",
-      price: 400,
-      })
-    +product({
-      type: "slim",
-      weight: 1000,
-      taste: "Гречка",
-      tasteImgName: "buckwheat",
-      price: 700,
-      })
-    +product({
-      type: "slim",
-      weight: 500,
-      taste: "Рис",
-      tasteImgName: "rice",
-      price: 500,
-      })
+    li.products__item
+      +product({
+        type: "pro",
+        weight: 500,
+        taste: "Курица",
+        tasteImgName: "chicken",
+        price: 700,
+        })
+    li.products__item
+      +product({
+        type: "pro",
+        weight: 1000,
+        taste: "Курица",
+        tasteImgName: "chicken",
+        price: 1000,
+        })
+    li.products__item
+      +product({
+        type: "pro",
+        weight: 500,
+        taste: "Рыба",
+        tasteImgName: "fish",
+        price: 700,
+        })
+    li.products__item
+      +product({
+        type: "pro",
+        weight: 1000,
+        taste: "Рыба",
+        tasteImgName: "fish",
+        price: 1000,
+        })
+    li.products__item
+      +product({
+        type: "slim",
+        weight: 500,
+        taste: "Гречка",
+        tasteImgName: "buckwheat",
+        price: 400,
+        })
+    li.products__item
+      +product({
+        type: "slim",
+        weight: 1000,
+        taste: "Гречка",
+        tasteImgName: "buckwheat",
+        price: 700,
+        })
+    li.products__item
+      +product({
+        type: "slim",
+        weight: 500,
+        taste: "Рис",
+        tasteImgName: "rice",
+        price: 500,
+        })
 
     li.product
       h3.product__name Показать еще 100500 товаров

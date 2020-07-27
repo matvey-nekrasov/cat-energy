@@ -1,33 +1,36 @@
 mixin product-extra(item)
-  li.product-extra
-    h3.product-extra__name= item.name
+  article.product-extra
+    h3.product-extra__title= item.title
     p.product-extra__quantity= item.quantity
     span.product-extra__price #{item.price} Р.
     +button-type1('Заказать', '#').product-extra__button
 
 section.products-extra
   h2.products-extra__title.heading-middle Дополнительные товары
-  ul
-    +product-extra({
-      name: "Сахарозаменитель",
-      quantity: "1 упаковка (100 г)",
-      price: 200
-      })
+  ul.products-extra__list
+    li.products-extra__item
+      +product-extra({
+        title: "Сахарозаменитель",
+        quantity: "1 упаковка (100 г)",
+        price: 200
+        })
+
+    li.products-extra__item
+      +product-extra({
+        title: "Питьевая вода",
+        quantity: "5 литров",
+        price: 50
+        })
+
+    li.products-extra__item
+      +product-extra({
+        title: "Молоко",
+        quantity: "1 литр",
+        price: 100
+        })
 
     +product-extra({
-      name: "Питьевая вода",
-      quantity: "5 литров",
-      price: 50
-      })
-
-    +product-extra({
-      name: "Молоко",
-      quantity: "1 литр",
-      price: 100
-      })
-
-    +product-extra({
-      name: "Витамины",
+      title: "Витамины",
       quantity: "1 упаковка (30 г)",
       price: 300
       })

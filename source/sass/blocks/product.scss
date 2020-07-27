@@ -2,11 +2,16 @@
   //
 }
 
+.products__title {
+  margin: 0;
+}
+
 .product__img {
-  //
+  vertical-align: bottom;
 }
 
 .product__name {
+  margin: 0;
   color: $color-text-3;
   font-family: $font-oswald;
   font-weight: 200;
@@ -16,7 +21,7 @@
 }
 
 .product__properties {
-  //
+  margin: 0;
 }
 
 .product__properties-row {
@@ -24,6 +29,7 @@
 }
 
 .product__properties-item {
+  margin: 0;
   color: $color-text-4;
   font-family: $font-arial;
   font-weight: 400;

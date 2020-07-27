@@ -1,21 +1,21 @@
 footer.footer
   a.footer__logo(href=mainPage ? null : site.index.href)
     svg(width='128' height='24' role='img' aria-label='На главную')
-      use(xlink:href='#logo-footer')
+      use(href=`${path.sprite}#logo-footer`)
 
   ul.footer__socials-list
     li
       a.footer__socials-link(href='#')
         svg(width='22' height='12' role='img' aria-label='В контакте')
-          use(xlink:href='#icon-vk')
+          use(href=`${path.sprite}#icon-vk`)
     li
       a.footer__socials-link(href='#')
         svg(width='16' height='16' role='img' aria-label='Инстаграм')
-          use(xlink:href='#icon-insta')
+          use(href=`${path.sprite}#icon-insta`)
     li
       a.footer__socials-link(href='#')
         svg(width='10' height='18' role='img' aria-label='Фэйсбук')
-          use(xlink:href='#icon-fb')
+          use(href=`${path.sprite}#icon-fb`)
 
   p.footer-links
     a.footer__academy-link(href='https://htmlacademy.ru/intensive/adaptive') HTML Academy
@@ -23,5 +23,4 @@ footer.footer
     a.footer__academy-img-link(href='https://htmlacademy.ru/intensive/adaptive')
       svg(width='27' height='34' role='img' aria-label=
         'Онлайн‑курс HTML и CSS. Адаптивная вёрстка и автоматизация')
-        use(xlink:href='#htmlacademy')
-
+        use(href=`${path.sprite}#htmlacademy`)
