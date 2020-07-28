@@ -88,8 +88,8 @@ const views = () => src(`${path.views.compile}*.pug`)
   .pipe(prettify({
     indent_size: 2,
     indent_char: ' ',
-    inline: [''], // перенос строки для всех инлайн элементов
-    "end_with_newline": true // перенос строки в конце файла
+    inline: [], // перенос строки для всех инлайн элементов
+    end_with_newline: true // перенос строки в конце файла
   }))
   .pipe(dest(path.views.save));
 

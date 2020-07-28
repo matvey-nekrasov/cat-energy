@@ -1,0 +1,17 @@
+.container {
+  outline: 1px solid rebeccapurple;
+  margin: 0 auto;
+
+  width: $width-mobile;
+  padding: 0 $width-padding;
+
+  @media #{$media-tablet} {
+    width: $width-tablet;
+    padding: 0 $width-padding;
+  }
+
+  @media #{$media-desktop} {
+    width: $width-desktop;
+    padding: 0 $width-padding;
+  }
+}

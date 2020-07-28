@@ -2,6 +2,20 @@
   //
 }
 
+.nav__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .nav__logo {
   text-decoration: none;
+}
+
+.nav__toggle {
+  border: none;
+  padding: 4px;
+  background-color: transparent;
+  line-height: 0;
+  cursor: pointer;
 }

@@ -20,18 +20,16 @@ $color-border-2: #d9d9d9;
 $color-border-3: #e7e7e7;
 
 //Размеры
-$width-xs: 320px;
-$width-sm: 576px;
-$width-md: 768px;
-$width-lg: 992px;
-$width-xl: 1440px;
+$width-mobile: 280px;
+$width-tablet: 708px;
+$width-desktop: 1220px;
+$width-padding: 20px;
+$width-scrollbar: 20px;
 
 //Медиа
-$media-sm: "screen and (min-width: #{$width-sm})";
-$media-md: "screen and (min-width: #{$width-md})";
-$media-lg: "screen and (min-width: #{$width-lg})";
-$media-xl: "screen and (min-width: #{$width-xl})";
-$media-xxl: "screen and (min-width: #{$width-xl})";
+$media-mobile: "screen and (min-width: #{$width-mobile + $width-padding * 2 + $width-scrollbar})";
+$media-tablet: "screen and (min-width: #{$width-tablet + $width-padding * 2 + $width-scrollbar})";
+$media-desktop: "screen and (min-width: #{$width-desktop + $width-padding * 2 + $width-scrollbar})";
 
 //Пути
 $path-images: "../img/";
