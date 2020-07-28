@@ -447,12 +447,36 @@ input[type='radio'].visually-hidden
 
     display: grid;
 
+    min-width: 280px;
     min-height: 100vh;
 
     color: #000;
     background-color: #fff; 
 
     grid-template-rows: min-content 1fr min-content;
+}
+
+.container
+{
+    width: 280px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+@media screen and (min-width: 768px)
+{
+    .container
+    {
+        width: 708px;
+        padding: 0 20px;
+    }
+}
+@media screen and (min-width: 1280px)
+{
+    .container
+    {
+        width: 1220px;
+        padding: 0 20px;
+    }
 }
 
 .button
@@ -482,12 +506,31 @@ input[type='radio'].visually-hidden
 .header
 {
     color: #000;
-    background-color: #fff;
+}
+
+.nav__wrapper
+{
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
 }
 
 .nav__logo
 {
     text-decoration: none;
+}
+
+.nav__toggle
+{
+    line-height: 0;
+
+    padding: 4px;
+
+    cursor: pointer; 
+
+    border: none;
+    background-color: transparent;
 }
 
 .cooperation--bg
@@ -518,6 +561,13 @@ input[type='radio'].visually-hidden
     color: #444;
 }
 
+.cooperation__map-link
+{
+    display: block;
+
+    text-align: center;
+}
+
 .cooperation__map-img
 {
     vertical-align: bottom;
@@ -528,11 +578,19 @@ input[type='radio'].visually-hidden
     background-color: #f2f2f2;
 }
 
+.footer__wrapper
+{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
 .footer__logo
 {
     line-height: 0; 
 
-    display: block;
+    padding: 4px;
 
     text-align: center;
 }
@@ -560,7 +618,7 @@ input[type='radio'].visually-hidden
     padding: 4px;
 }
 
-.footer-links
+.footer__links
 {
     display: flex;
 
@@ -661,7 +719,7 @@ input[type='radio'].visually-hidden
     background-color: #64a83b;
     background-image: url(../img/index-background-mobile@1x.jpg), linear-gradient(#fff, #fff);
     background-repeat: no-repeat, no-repeat; 
-    background-position: center top, 0 305px;
+    background-position: center top, 0 306px;
 }
 
 .tagline__title
@@ -687,12 +745,12 @@ input[type='radio'].visually-hidden
     vertical-align: bottom;
 }
 
-.feature
+.advantage
 {
     background-color: #f2f2f2;
 }
 
-.feature__title
+.advantage__title
 {
     font-family: 'Oswald', arial, sans-serif;
     font-size: 24px;
@@ -705,12 +763,12 @@ input[type='radio'].visually-hidden
     color: #000;
 }
 
-.feature__desc
+.advantage__desc
 {
     margin: 0;
 }
 
-.feature__link
+.advantage__link
 {
     font-family: 'Oswald', arial, sans-serif;
     font-size: 16px;
@@ -742,11 +800,16 @@ input[type='radio'].visually-hidden
 .howitworks__item
 {
     display: flex;
+
+    align-items: center;
 }
 .howitworks__item::before
 {
-    width: 60px;
+    display: block;
+
+    min-width: 60px;
     height: 60px;
+    margin-right: 20px;
 
     content: '';
 
