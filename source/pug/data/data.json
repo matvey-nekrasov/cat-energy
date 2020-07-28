@@ -23,10 +23,11 @@
 			"name": "tablet"
 		}
 	],
-	"dirs": {
-		"images": "img/",
+  "path": {
+    "images": "img/",
+    "sprite": "img/sprite.svg",
 		"fonts": "fonts/",
 		"stylesheets": "css/",
 		"js": "js/"
-	}
+  }
 }

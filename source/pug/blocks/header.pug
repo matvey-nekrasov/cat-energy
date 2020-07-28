@@ -11,7 +11,7 @@ header.header
   nav.nav
     a.nav__logo(href=mainPage ? null : site.index.href)
       svg(width='191' height='38' role='img' aria-label='На главную')
-        use(xlink:href='#logo-mobile')
+        use(href=`${path.sprite}#logo-mobile`)
 
     button.nav__toggle(type='button') Открыть меню
       span.visually-hidden Открыть меню

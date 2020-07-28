@@ -3,17 +3,21 @@ $font-arial: arial, sans-serif;
 $font-oswald: "Oswald", arial, sans-serif;
 
 //Цвета
-$color-text: #000000;
+$color-text-1: #000000;
 $color-text-2: #111111;
 $color-text-3: #222222;
 $color-text-4: #444444;
-$color-text-light: #ffffff;
+$color-text-light-1: #ffffff;
 
-$color-bg: #ffffff;
+$color-bg-1: #ffffff;
 $color-bg-2: #f2f2f2;
 $color-bg-3: #eaeaea;
-$color-bg-green: #64a83b;
+$color-bg-green-1: #64a83b;
 $color-bg-button: #68b738;
+
+$color-border-1: #cdcdcd;
+$color-border-2: #d9d9d9;
+$color-border-3: #e7e7e7;
 
 //Размеры
 $width-xs: 320px;
@@ -30,4 +34,4 @@ $media-xl: "screen and (min-width: #{$width-xl})";
 $media-xxl: "screen and (min-width: #{$width-xl})";
 
 //Пути
-$dirs-images: "../img/";
+$path-images: "../img/";

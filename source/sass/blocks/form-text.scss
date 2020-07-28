@@ -1,0 +1,21 @@
+.form-text {
+  //
+}
+
+.form-text__text {
+  color: $color-text-4;
+  font-family: $font-oswald;
+  font-size: 16px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+.form-text__input {
+  padding: 15px;
+  border: 1px solid $color-border-3;
+  color: $color-text-4;
+  font-family: $font-oswald;
+  font-size: 16px;
+  line-height: 18px;
+  text-transform: uppercase;
+}

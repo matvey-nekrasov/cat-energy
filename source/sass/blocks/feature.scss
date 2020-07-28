@@ -7,7 +7,8 @@
 }
 
 .feature__title {
-  color: $color-text;
+  margin: 0;
+  color: $color-text-1;
   font-family: $font-oswald;
   font-size: 24px;
   text-transform: uppercase;
@@ -15,14 +16,11 @@
 }
 
 .feature__desc {
-  color: $color-text-4;
-  font-family: $font-arial;
-  font-size: 14px;
-  line-height: 18px;
+  margin: 0;
 }
 
 .feature__link {
-  color: $color-text;
+  color: $color-text-1;
   font-family: $font-oswald;
   font-size: 16px;
   text-transform: uppercase;

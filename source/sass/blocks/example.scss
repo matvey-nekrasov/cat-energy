@@ -1,0 +1,51 @@
+.example {
+  background-color: $color-bg-2;
+}
+
+.example__title {
+  margin: 0;
+}
+
+.example__desc {
+  margin: 0;
+}
+
+.example__cost {
+  margin: 0;
+  color: $color-text-2;
+  font-family: $font-oswald;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.example__btn {
+  color: $color-text-2;
+  font-family: $font-oswald;
+  font-size: 16px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.example__switch {
+  position: relative;
+  width: 84px;
+  height: 14px;
+  border: 1px solid $color-border-1;
+  border-radius: 6px;
+  background-color: $color-bg-1;
+}
+
+.example__switch-button {
+  position: absolute;
+  top: 4px;
+  left: 6px;
+  width: 35px;
+  height: 6px;
+  border-radius: 6px;
+  background-color: $color-bg-button;
+}
+
+.example__cat-photo {
+  vertical-align: bottom;
+}

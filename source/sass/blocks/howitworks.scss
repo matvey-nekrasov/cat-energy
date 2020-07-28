@@ -2,8 +2,18 @@
   //
 }
 
+.howitworks__title {
+  margin: 0;
+}
+
+.howitworks__desc {
+  margin: 0;
+}
+
 .howitworks__list {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .howitworks__item {
@@ -18,25 +28,18 @@
   }
 
   &--leaf::before {
-    background-image: url(#{$dirs-images}advantage-leaf@1x.png);
+    background-image: url(#{$path-images}advantage-leaf@1x.png);
   }
 
   &--powder::before {
-    background-image: url(#{$dirs-images}advantage-powder@1x.png);
+    background-image: url(#{$path-images}advantage-powder@1x.png);
   }
 
   &--dining::before {
-    background-image: url(#{$dirs-images}advantage-dining@1x.png);
+    background-image: url(#{$path-images}advantage-dining@1x.png);
   }
 
   &--clock::before {
-    background-image: url(#{$dirs-images}advantage-clock@1x.png);
+    background-image: url(#{$path-images}advantage-clock@1x.png);
   }
-}
-
-.howitworks__desc {
-  color: $color-text-4;
-  font-family: $font-arial;
-  font-size: 14px;
-  line-height: 18px;
 }

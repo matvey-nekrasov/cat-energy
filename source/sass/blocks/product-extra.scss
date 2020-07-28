@@ -1,0 +1,23 @@
+.product-extra {
+  //
+}
+
+.product-extra__title {
+  margin: 0;
+  color: $color-text-3;
+  font-family: $font-oswald;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.product-extra__quantity {
+  margin: 0;
+  color: $color-text-4;
+  font-size: 14px;
+}
+
+.product-extra__price {
+  color: $color-text-4;
+  font-size: 14px;
+}
