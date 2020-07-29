@@ -1,14 +1,16 @@
 .header {
   color: $color-text-1;
 
-  @media #{$media-desktop} {
-    background-image: linear-gradient(to right, $color-bg-1 50%, $color-bg-green-1 50%);
+  &--bg-green {
+    @media #{$media-desktop} {
+      background-image: linear-gradient(to right, $color-bg-1 50%, $color-bg-green-1 50%);
 
-    &::before {
-      position: absolute;
-      top: 0;
-      right: 0;
-      // content: url(#{$path-images}index-background-mobile@1x.jpg);
+      &::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        // content: url(#{$path-images}index-background-mobile@1x.jpg);
+      }
     }
   }
 }

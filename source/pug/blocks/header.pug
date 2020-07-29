@@ -7,7 +7,7 @@ mixin menu(items)
           href=currentPageHref===item.href ? null : item.href
         ) #{item.name}
 
-header.header
+header.header(class=currentPageHref==="index.html" ? 'header--bg-green' : null)
   .container
     nav.nav
       .nav__logo-toggle-wrapper
