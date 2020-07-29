@@ -1,16 +1,16 @@
 mixin menu(items)
   ul.menu
     each item in items
-      li.menu__item
+      li
         a.menu__link(
-          class=currentPageHref===item.href ? 'menu__item--active' : null
+          class=currentPageHref===item.href ? 'menu__link--active' : null
           href=currentPageHref===item.href ? null : item.href
         ) #{item.name}
 
 header.header
   .container
     nav.nav
-      .nav__wrapper
+      .nav__logo-toggle-wrapper
         a.nav__logo(href=mainPage ? null : site.index.href)
           svg(width='191' height='38' role='img' aria-label='На главную')
             use(href=`${path.sprite}#logo-mobile`)
@@ -20,7 +20,7 @@ header.header
             use(href=`${path.sprite}#icon-mobile-menu`)
 
       +menu([
-        {href: "index.html", name: "Главная"},
-        {href: "catalog.html", name: "Каталог продукции"},
-        {href: "form.html", name: "Подбор программы"}
+        { href: "index.html", name: "Главная" },
+        { href: "catalog.html", name: "Каталог продукции" },
+        { href: "form.html", name: "Подбор программы" }
       ])

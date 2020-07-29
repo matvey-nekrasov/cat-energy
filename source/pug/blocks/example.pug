@@ -1,25 +1,34 @@
 mixin plate(number, desc)
-  .example__plate.example-plate
+  .example-plate
     span.example-plate__number #{number}
     p.example-plate__desc #{desc}
 
 section.example
   .container
-    h2.example__title.heading-big Живой пример
-    p.example__desc.paragraph.
-      Борис сбросил 5 кг за 2 месяца, просто
-      заменив свой обычный корм на Cat
-      Energy Slim. Отличный результат без
-      изнуряющих тренировок! При этом он не
-      менял своих привычек и по-прежнему
-      спит по 16 часов в день.
-    +plate('5 кг', 'снижение веса')
-    +plate('60 дней', 'затрачено времени')
-    p.example__cost Затраты на питание:
-    p.example__cost 15 000 руб.
-    img.example__cat-photo.example__cat-photo--fat(src=`${path.images}before-mobile@1x.png` width='320' height='240' alt='Толстый кот')
-    img.example__cat-photo.example__cat-photo--thin.example__cat-photo--hidden(src=`${path.images}after-mobile@1x.png` width='320' height='240' alt='Худой кот')
-    a.example__btn(href='#') Было
-    .example__switch
-      .example__switch-button
-    a.example__btn(href='#') Стало
+    .example__wrapper
+      .example__desc-wrapper
+        h2.example__title.heading-big Живой пример
+        p.example__desc.paragraph.
+          Борис сбросил 5 кг за 2 месяца, просто
+          заменив свой обычный корм на Cat
+          Energy Slim. Отличный результат без
+          изнуряющих тренировок! При этом он не
+          менял своих привычек и по-прежнему
+          спит по 16 часов в день.
+        .example__plates-cost-wrapper
+          .example__plates-wrapper
+            .example__plate
+              +plate('5 кг', 'снижение веса')
+            .example__plate
+              +plate('60 дней', 'затрачено времени')
+          .example__cost-wrapper
+            span.example__cost Затраты на питание:
+            span.example__cost 15 000 руб.
+      .example__results-wrapper
+        img.example__cat-photo.example__cat-photo--fat(src=`${path.images}before-mobile@1x.png` width='320' height='240' alt='Толстый кот')
+        img.example__cat-photo.example__cat-photo--thin.example__cat-photo--hidden(src=`${path.images}after-mobile@1x.png` width='320' height='240' alt='Худой кот')
+        .example__buttons-wrapper
+          a.example__btn(href='#') Было
+          .example__switch
+            .example__switch-button
+          a.example__btn(href='#') Стало

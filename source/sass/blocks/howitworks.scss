@@ -14,6 +14,19 @@
   list-style: none;
   margin: 0;
   padding: 0;
+
+  display: grid;
+  grid-template-rows: 1fr;
+  gap: 20px;
+
+  @media #{$media-tablet} {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  @media #{$media-desktop} {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .howitworks__item {

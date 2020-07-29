@@ -1,3 +1,18 @@
 .advantages {
   //
 }
+
+.advantages__wrapper {
+  display: grid;
+  grid-template-rows: 1fr;
+  gap: 20px;
+
+  @media #{$media-tablet} {
+    gap: 30px;
+  }
+
+  @media #{$media-desktop} {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 80px;
+  }
+}

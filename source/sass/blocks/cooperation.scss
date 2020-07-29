@@ -1,24 +1,59 @@
 .cooperation {
+  position: relative;
+
   &--bg {
     background-color: $color-bg-2;
   }
 }
 
+.cooperation__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  outline: 1px solid rebeccapurple;
+
+  @media #{$media-desktop} {
+    position: absolute;
+    top: 10px;
+  }
+}
+
 .cooperation__title {
   margin: 0;
+  max-width: 140px;
   color: $color-text-2;
   font-family: $font-oswald;
   font-size: 16px;
   line-height: 20px;
   font-weight: 400;
   text-transform: uppercase;
+
+  @media #{$media-tablet} {
+    max-width: 170px;
+    font-size: 20px;
+    line-height: 21px;
+  }
 }
 
 .cooperation__address {
+  max-width: 140px;
   color: $color-text-4;
   font-size: 14px;
   line-height: 20px;
   font-style: normal;
+
+  @media #{$media-tablet} {
+    max-width: 160px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.cooperation__address-city {
+  display: block;
+  @media #{$media-tablet} {
+    margin-top: 20px;
+  }
 }
 
 .cooperation__map-link {

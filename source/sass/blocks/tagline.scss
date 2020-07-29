@@ -1,13 +1,27 @@
 .tagline {
-  background-image: url(#{$path-images}index-background-mobile@1x.jpg),
-    linear-gradient($color-bg-1, $color-bg-1);
+  background-image: url(#{$path-images}index-background-mobile@1x.jpg), linear-gradient($color-bg-1, $color-bg-1);
   background-color: $color-bg-green-1;
   background-position: center top, 0 306px;
   background-repeat: no-repeat, no-repeat;
+
+  @media #{$media-tablet} {
+    background-image: linear-gradient($color-bg-1, $color-bg-1), linear-gradient($color-bg-1, $color-bg-1);
+  }
+
+  @media #{$media-desktop} {
+    background-image: linear-gradient(to right, $color-bg-1 50%, $color-bg-green-1 50%);
+  }
 }
 
 .tagline__title {
   margin: 0;
+  color: $color-text-light-1;
+  text-align: center;
+
+  @media #{$media-tablet} {
+    color: $color-text-1;
+    text-align: left;
+  }
 }
 
 .tagline__desc {
@@ -17,8 +31,27 @@
   font-size: 14px;
   text-transform: uppercase;
   line-height: 1;
+  text-align: center;
+
+  @media #{$media-tablet} {
+    color: $color-text-1;
+    text-align: left;
+    font-size: 20px;
+  }
 }
 
 .tagline__img {
   vertical-align: bottom;
+}
+
+.tagline__wrapper {
+  position: relative;
+  text-align: center;
+}
+
+.tagline__button {
+  @media #{$media-tablet} {
+    position: absolute;
+    top: 0;
+  }
 }
