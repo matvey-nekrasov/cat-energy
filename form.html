@@ -16,7 +16,7 @@
     <header class="header">
       <div class="container">
         <nav class="nav">
-          <div class="nav__wrapper">
+          <div class="nav__logo-toggle-wrapper">
             <a class="nav__logo" href="index.html">
               <svg width="191" height="38" role="img" aria-label="На главную">
                 <use href="img/sprite.svg#logo-mobile"></use>
@@ -29,14 +29,14 @@
             </button>
           </div>
           <ul class="menu">
-            <li class="menu__item">
+            <li>
               <a class="menu__link" href="index.html">Главная</a>
             </li>
-            <li class="menu__item">
+            <li>
               <a class="menu__link" href="catalog.html">Каталог продукции</a>
             </li>
-            <li class="menu__item">
-              <a class="menu__link menu__item--active">Подбор программы</a>
+            <li>
+              <a class="menu__link menu__link--active">Подбор программы</a>
             </li>
           </ul>
         </nav>
@@ -143,8 +143,11 @@
       </section>
       <section class="cooperation cooperation--bg">
         <div class="container">
-          <h2 class="cooperation__title">Приглашаем к сотрудничеству дилеров</h2>
-          <address class="cooperation__address">ул. Большая Конюшенная, д. 19/8 Санкт-Петербург</address>
+          <div class="cooperation__wrapper">
+            <h2 class="cooperation__title">Приглашаем к&nbsp;сотрудничеству дилеров</h2>
+            <address class="cooperation__address">ул. Большая Конюшенная, д. 19/8<span class="cooperation__address-city">Санкт-Петербург</span>
+            </address>
+          </div>
         </div>
         <a class="cooperation__map-link" href="#">
           <img class="cooperation__map-img" src="img/bg-map-mobile@1x.png" width="320" height="400" alt="Большая Конюшенная, 19/8">

@@ -16,7 +16,7 @@
     <header class="header">
       <div class="container">
         <nav class="nav">
-          <div class="nav__wrapper">
+          <div class="nav__logo-toggle-wrapper">
             <a class="nav__logo" href="index.html">
               <svg width="191" height="38" role="img" aria-label="На главную">
                 <use href="img/sprite.svg#logo-mobile"></use>
@@ -29,13 +29,13 @@
             </button>
           </div>
           <ul class="menu">
-            <li class="menu__item">
+            <li>
               <a class="menu__link" href="index.html">Главная</a>
             </li>
-            <li class="menu__item">
-              <a class="menu__link menu__item--active">Каталог продукции</a>
+            <li>
+              <a class="menu__link menu__link--active">Каталог продукции</a>
             </li>
-            <li class="menu__item">
+            <li>
               <a class="menu__link" href="form.html">Подбор программы</a>
             </li>
           </ul>
@@ -50,148 +50,176 @@
           <ul class="products__list">
             <li class="products__item">
               <article class="product">
-                <img class="product__img" src="img/chicken-small-mobile@1x.jpg" width="140" height="144" alt="Cat Energy pro 500 грамм Курица">
-                <h3 class="product__title">Cat Energy pro 500 г</h3>
-                <dl class="product__properties">
-                  <div class="product__properties-row">
-                    <dt class="product__properties-item">Масса</dt>
-                    <dd class="product__properties-item">500 г</dd>
+                <div class="product__img-properties-wrapper">
+                  <img class="product__img" src="img/chicken-small-mobile@1x.jpg" width="140" height="144" alt="Cat Energy pro 500 грамм Курица">
+                  <div class="product__properties-wrapper">
+                    <h3 class="product__title">Cat Energy pro 500 г</h3>
+                    <dl class="product__properties">
+                      <div class="product__properties-row">
+                        <dt class="product__properties-item">Масса</dt>
+                        <dd class="product__properties-item">500 г</dd>
+                      </div>
+                      <div class="product__properties-row">
+                        <dt class="product__properties-item">Вкус</dt>
+                        <dd class="product__properties-item">Курица</dd>
+                      </div>
+                      <div class="product__properties-row">
+                        <dt class="product__properties-item">Цена</dt>
+                        <dd class="product__properties-item">700 Р.</dd>
+                      </div>
+                    </dl>
                   </div>
-                  <div class="product__properties-row">
-                    <dt class="product__properties-item">Вкус</dt>
-                    <dd class="product__properties-item">Курица</dd>
-                  </div>
-                  <div class="product__properties-row">
-                    <dt class="product__properties-item">Цена</dt>
-                    <dd class="product__properties-item">700 Р.</dd>
-                  </div>
-                </dl>
+                </div>
                 <a class="button" href="#">Заказать</a>
               </article>
             </li>
             <li class="products__item">
               <article class="product">
-                <img class="product__img" src="img/chicken-big-mobile@1x.jpg" width="140" height="144" alt="Cat Energy pro 1000 грамм Курица">
-                <h3 class="product__title">Cat Energy pro 1000 г</h3>
-                <dl class="product__properties">
-                  <div class="product__properties-row">
-                    <dt class="product__properties-item">Масса</dt>
-                    <dd class="product__properties-item">1000 г</dd>
+                <div class="product__img-properties-wrapper">
+                  <img class="product__img" src="img/chicken-big-mobile@1x.jpg" width="140" height="144" alt="Cat Energy pro 1000 грамм Курица">
+                  <div class="product__properties-wrapper">
+                    <h3 class="product__title">Cat Energy pro 1000 г</h3>
+                    <dl class="product__properties">
+                      <div class="product__properties-row">
+                        <dt class="product__properties-item">Масса</dt>
+                        <dd class="product__properties-item">1000 г</dd>
+                      </div>
+                      <div class="product__properties-row">
+                        <dt class="product__properties-item">Вкус</dt>
+                        <dd class="product__properties-item">Курица</dd>
+                      </div>
+                      <div class="product__properties-row">
+                        <dt class="product__properties-item">Цена</dt>
+                        <dd class="product__properties-item">1000 Р.</dd>
+                      </div>
+                    </dl>
                   </div>
-                  <div class="product__properties-row">
-                    <dt class="product__properties-item">Вкус</dt>
-                    <dd class="product__properties-item">Курица</dd>
-                  </div>
-                  <div class="product__properties-row">
-                    <dt class="product__properties-item">Цена</dt>
-                    <dd class="product__properties-item">1000 Р.</dd>
-                  </div>
-                </dl>
+                </div>
                 <a class="button" href="#">Заказать</a>
               </article>
             </li>
             <li class="products__item">
               <article class="product">
-                <img class="product__img" src="img/fish-small-mobile@1x.jpg" width="140" height="144" alt="Cat Energy pro 500 грамм Рыба">
-                <h3 class="product__title">Cat Energy pro 500 г</h3>
-                <dl class="product__properties">
-                  <div class="product__properties-row">
-                    <dt class="product__properties-item">Масса</dt>
-                    <dd class="product__properties-item">500 г</dd>
+                <div class="product__img-properties-wrapper">
+                  <img class="product__img" src="img/fish-small-mobile@1x.jpg" width="140" height="144" alt="Cat Energy pro 500 грамм Рыба">
+                  <div class="product__properties-wrapper">
+                    <h3 class="product__title">Cat Energy pro 500 г</h3>
+                    <dl class="product__properties">
+                      <div class="product__properties-row">
+                        <dt class="product__properties-item">Масса</dt>
+                        <dd class="product__properties-item">500 г</dd>
+                      </div>
+                      <div class="product__properties-row">
+                        <dt class="product__properties-item">Вкус</dt>
+                        <dd class="product__properties-item">Рыба</dd>
+                      </div>
+                      <div class="product__properties-row">
+                        <dt class="product__properties-item">Цена</dt>
+                        <dd class="product__properties-item">700 Р.</dd>
+                      </div>
+                    </dl>
                   </div>
-                  <div class="product__properties-row">
-                    <dt class="product__properties-item">Вкус</dt>
-                    <dd class="product__properties-item">Рыба</dd>
-                  </div>
-                  <div class="product__properties-row">
-                    <dt class="product__properties-item">Цена</dt>
-                    <dd class="product__properties-item">700 Р.</dd>
-                  </div>
-                </dl>
+                </div>
                 <a class="button" href="#">Заказать</a>
               </article>
             </li>
             <li class="products__item">
               <article class="product">
-                <img class="product__img" src="img/fish-big-mobile@1x.jpg" width="140" height="144" alt="Cat Energy pro 1000 грамм Рыба">
-                <h3 class="product__title">Cat Energy pro 1000 г</h3>
-                <dl class="product__properties">
-                  <div class="product__properties-row">
-                    <dt class="product__properties-item">Масса</dt>
-                    <dd class="product__properties-item">1000 г</dd>
+                <div class="product__img-properties-wrapper">
+                  <img class="product__img" src="img/fish-big-mobile@1x.jpg" width="140" height="144" alt="Cat Energy pro 1000 грамм Рыба">
+                  <div class="product__properties-wrapper">
+                    <h3 class="product__title">Cat Energy pro 1000 г</h3>
+                    <dl class="product__properties">
+                      <div class="product__properties-row">
+                        <dt class="product__properties-item">Масса</dt>
+                        <dd class="product__properties-item">1000 г</dd>
+                      </div>
+                      <div class="product__properties-row">
+                        <dt class="product__properties-item">Вкус</dt>
+                        <dd class="product__properties-item">Рыба</dd>
+                      </div>
+                      <div class="product__properties-row">
+                        <dt class="product__properties-item">Цена</dt>
+                        <dd class="product__properties-item">1000 Р.</dd>
+                      </div>
+                    </dl>
                   </div>
-                  <div class="product__properties-row">
-                    <dt class="product__properties-item">Вкус</dt>
-                    <dd class="product__properties-item">Рыба</dd>
-                  </div>
-                  <div class="product__properties-row">
-                    <dt class="product__properties-item">Цена</dt>
-                    <dd class="product__properties-item">1000 Р.</dd>
-                  </div>
-                </dl>
+                </div>
                 <a class="button" href="#">Заказать</a>
               </article>
             </li>
             <li class="products__item">
               <article class="product">
-                <img class="product__img" src="img/buckwheat-small-mobile@1x.jpg" width="140" height="144" alt="Cat Energy slim 500 грамм Гречка">
-                <h3 class="product__title">Cat Energy slim 500 г</h3>
-                <dl class="product__properties">
-                  <div class="product__properties-row">
-                    <dt class="product__properties-item">Масса</dt>
-                    <dd class="product__properties-item">500 г</dd>
+                <div class="product__img-properties-wrapper">
+                  <img class="product__img" src="img/buckwheat-small-mobile@1x.jpg" width="140" height="144" alt="Cat Energy slim 500 грамм Гречка">
+                  <div class="product__properties-wrapper">
+                    <h3 class="product__title">Cat Energy slim 500 г</h3>
+                    <dl class="product__properties">
+                      <div class="product__properties-row">
+                        <dt class="product__properties-item">Масса</dt>
+                        <dd class="product__properties-item">500 г</dd>
+                      </div>
+                      <div class="product__properties-row">
+                        <dt class="product__properties-item">Вкус</dt>
+                        <dd class="product__properties-item">Гречка</dd>
+                      </div>
+                      <div class="product__properties-row">
+                        <dt class="product__properties-item">Цена</dt>
+                        <dd class="product__properties-item">400 Р.</dd>
+                      </div>
+                    </dl>
                   </div>
-                  <div class="product__properties-row">
-                    <dt class="product__properties-item">Вкус</dt>
-                    <dd class="product__properties-item">Гречка</dd>
-                  </div>
-                  <div class="product__properties-row">
-                    <dt class="product__properties-item">Цена</dt>
-                    <dd class="product__properties-item">400 Р.</dd>
-                  </div>
-                </dl>
+                </div>
                 <a class="button" href="#">Заказать</a>
               </article>
             </li>
             <li class="products__item">
               <article class="product">
-                <img class="product__img" src="img/buckwheat-big-mobile@1x.jpg" width="140" height="144" alt="Cat Energy slim 1000 грамм Гречка">
-                <h3 class="product__title">Cat Energy slim 1000 г</h3>
-                <dl class="product__properties">
-                  <div class="product__properties-row">
-                    <dt class="product__properties-item">Масса</dt>
-                    <dd class="product__properties-item">1000 г</dd>
+                <div class="product__img-properties-wrapper">
+                  <img class="product__img" src="img/buckwheat-big-mobile@1x.jpg" width="140" height="144" alt="Cat Energy slim 1000 грамм Гречка">
+                  <div class="product__properties-wrapper">
+                    <h3 class="product__title">Cat Energy slim 1000 г</h3>
+                    <dl class="product__properties">
+                      <div class="product__properties-row">
+                        <dt class="product__properties-item">Масса</dt>
+                        <dd class="product__properties-item">1000 г</dd>
+                      </div>
+                      <div class="product__properties-row">
+                        <dt class="product__properties-item">Вкус</dt>
+                        <dd class="product__properties-item">Гречка</dd>
+                      </div>
+                      <div class="product__properties-row">
+                        <dt class="product__properties-item">Цена</dt>
+                        <dd class="product__properties-item">700 Р.</dd>
+                      </div>
+                    </dl>
                   </div>
-                  <div class="product__properties-row">
-                    <dt class="product__properties-item">Вкус</dt>
-                    <dd class="product__properties-item">Гречка</dd>
-                  </div>
-                  <div class="product__properties-row">
-                    <dt class="product__properties-item">Цена</dt>
-                    <dd class="product__properties-item">700 Р.</dd>
-                  </div>
-                </dl>
+                </div>
                 <a class="button" href="#">Заказать</a>
               </article>
             </li>
             <li class="products__item">
               <article class="product">
-                <img class="product__img" src="img/rice-small-mobile@1x.jpg" width="140" height="144" alt="Cat Energy slim 500 грамм Рис">
-                <h3 class="product__title">Cat Energy slim 500 г</h3>
-                <dl class="product__properties">
-                  <div class="product__properties-row">
-                    <dt class="product__properties-item">Масса</dt>
-                    <dd class="product__properties-item">500 г</dd>
+                <div class="product__img-properties-wrapper">
+                  <img class="product__img" src="img/rice-small-mobile@1x.jpg" width="140" height="144" alt="Cat Energy slim 500 грамм Рис">
+                  <div class="product__properties-wrapper">
+                    <h3 class="product__title">Cat Energy slim 500 г</h3>
+                    <dl class="product__properties">
+                      <div class="product__properties-row">
+                        <dt class="product__properties-item">Масса</dt>
+                        <dd class="product__properties-item">500 г</dd>
+                      </div>
+                      <div class="product__properties-row">
+                        <dt class="product__properties-item">Вкус</dt>
+                        <dd class="product__properties-item">Рис</dd>
+                      </div>
+                      <div class="product__properties-row">
+                        <dt class="product__properties-item">Цена</dt>
+                        <dd class="product__properties-item">500 Р.</dd>
+                      </div>
+                    </dl>
                   </div>
-                  <div class="product__properties-row">
-                    <dt class="product__properties-item">Вкус</dt>
-                    <dd class="product__properties-item">Рис</dd>
-                  </div>
-                  <div class="product__properties-row">
-                    <dt class="product__properties-item">Цена</dt>
-                    <dd class="product__properties-item">500 Р.</dd>
-                  </div>
-                </dl>
+                </div>
                 <a class="button" href="#">Заказать</a>
               </article>
             </li>
@@ -253,8 +281,11 @@
       </section>
       <section class="cooperation cooperation--bg">
         <div class="container">
-          <h2 class="cooperation__title">Приглашаем к сотрудничеству дилеров</h2>
-          <address class="cooperation__address">ул. Большая Конюшенная, д. 19/8 Санкт-Петербург</address>
+          <div class="cooperation__wrapper">
+            <h2 class="cooperation__title">Приглашаем к&nbsp;сотрудничеству дилеров</h2>
+            <address class="cooperation__address">ул. Большая Конюшенная, д. 19/8<span class="cooperation__address-city">Санкт-Петербург</span>
+            </address>
+          </div>
         </div>
         <a class="cooperation__map-link" href="#">
           <img class="cooperation__map-img" src="img/bg-map-mobile@1x.png" width="320" height="400" alt="Большая Конюшенная, 19/8">

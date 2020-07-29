@@ -13,10 +13,10 @@
     <title>Cat Energy - Главная</title>
   </head>
   <body class="body">
-    <header class="header">
+    <header class="header header--bg-green">
       <div class="container">
         <nav class="nav">
-          <div class="nav__wrapper">
+          <div class="nav__logo-toggle-wrapper">
             <a class="nav__logo">
               <svg width="191" height="38" role="img" aria-label="На главную">
                 <use href="img/sprite.svg#logo-mobile"></use>
@@ -29,13 +29,13 @@
             </button>
           </div>
           <ul class="menu">
-            <li class="menu__item">
-              <a class="menu__link menu__item--active">Главная</a>
+            <li>
+              <a class="menu__link menu__link--active">Главная</a>
             </li>
-            <li class="menu__item">
+            <li>
               <a class="menu__link" href="catalog.html">Каталог продукции</a>
             </li>
-            <li class="menu__item">
+            <li>
               <a class="menu__link" href="form.html">Подбор программы</a>
             </li>
           </ul>
@@ -46,36 +46,40 @@
       <h1 class="visually-hidden">Функциональное питание для котов Cat Energy</h1>
       <section class="tagline">
         <div class="container">
-          <h2 class="tagline__title heading-big heading-big--light">Функциональное питание для котов</h2>
+          <h2 class="tagline__title heading-big">Функциональное питание для котов</h2>
           <p class="tagline__desc">Занялся собой? Займись котом!</p>
-          <img class="tagline__img" src="img/index-can-mobile@1x.png" width="280" height="270" alt="Банка с кормом Cat Energy">
-          <a class="button tagline__button" href="form.html" type="button">Подобрать программу</a>
+          <div class="tagline__wrapper">
+            <img class="tagline__img" src="img/index-can-mobile@1x.png" width="280" height="270" alt="Банка с кормом Cat Energy">
+            <a class="button tagline__button" href="form.html" type="button">Подобрать программу</a>
+          </div>
         </div>
       </section>
       <section class="advantages">
         <div class="container">
           <h2 class="visually-hidden">Преимущества функционального питания</h2>
-          <div class="advantage advantages__advantage">
-            <svg class="advantage__icon" width="50" height="53">
-              <use href="img/sprite.svg#icon-cat-slim"></use>
-            </svg>
-            <h3 class="advantage__title">Похудение</h3>
-            <p class="advantage__desc paragraph">Ваш кот весит больше собаки и почти утратил способность лазить по деревьям? Пора на диету! Cat Energy Slim поможет вашему питомцу сбросить лишний вес.</p>
-            <a class="advantage__link" href="#">Каталог Slim<svg width="32" height="10">
-                <use href="img/sprite.svg#icon-right-arrow-long"></use>
+          <div class="advantages__wrapper">
+            <div class="advantage advantages__advantage">
+              <svg class="advantage__icon" width="50" height="53">
+                <use href="img/sprite.svg#icon-cat-slim"></use>
               </svg>
-            </a>
-          </div>
-          <div class="advantage advantages__advantage">
-            <svg class="advantage__icon" width="67" height="50">
-              <use href="img/sprite.svg#icon-cat-pro"></use>
-            </svg>
-            <h3 class="advantage__title">Набор массы</h3>
-            <p class="advantage__desc paragraph">Заработать авторитет среди дворовых котов и даже собак? Серия Cat Energy Pro поможет вашему коту нарастить необходимые мышцы!</p>
-            <a class="advantage__link" href="#">Каталог Pro<svg width="32" height="10">
-                <use href="img/sprite.svg#icon-right-arrow-long"></use>
+              <h3 class="advantage__title">Похудение</h3>
+              <p class="advantage__desc paragraph">Ваш кот весит больше собаки и почти утратил способность лазить по деревьям? Пора на диету! Cat Energy Slim поможет вашему питомцу сбросить лишний вес.</p>
+              <a class="advantage__link" href="#">Каталог Slim<svg width="32" height="10">
+                  <use href="img/sprite.svg#icon-right-arrow-long"></use>
+                </svg>
+              </a>
+            </div>
+            <div class="advantage advantages__advantage">
+              <svg class="advantage__icon" width="67" height="50">
+                <use href="img/sprite.svg#icon-cat-pro"></use>
               </svg>
-            </a>
+              <h3 class="advantage__title">Набор массы</h3>
+              <p class="advantage__desc paragraph">Заработать авторитет среди дворовых котов и даже собак? Серия Cat Energy Pro поможет вашему коту нарастить необходимые мышцы!</p>
+              <a class="advantage__link" href="#">Каталог Pro<svg width="32" height="10">
+                  <use href="img/sprite.svg#icon-right-arrow-long"></use>
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -100,31 +104,52 @@
       </section>
       <section class="example">
         <div class="container">
-          <h2 class="example__title heading-big">Живой пример</h2>
-          <p class="example__desc paragraph">Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на Cat Energy Slim. Отличный результат без изнуряющих тренировок! При этом он не менял своих привычек и по-прежнему спит по 16 часов в день.</p>
-          <div class="example__plate example-plate">
-            <span class="example-plate__number">5 кг</span>
-            <p class="example-plate__desc">снижение веса</p>
+          <div class="example__wrapper">
+            <div class="example__desc-wrapper">
+              <h2 class="example__title heading-big">Живой пример</h2>
+              <p class="example__desc paragraph">Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на Cat Energy Slim. Отличный результат без изнуряющих тренировок! При этом он не менял своих привычек и по-прежнему спит по 16 часов в день.</p>
+              <div class="example__plates-cost-wrapper">
+                <div class="example__plates-wrapper">
+                  <div class="example__plate">
+                    <div class="example-plate">
+                      <span class="example-plate__number">5 кг</span>
+                      <p class="example-plate__desc">снижение веса</p>
+                    </div>
+                  </div>
+                  <div class="example__plate">
+                    <div class="example-plate">
+                      <span class="example-plate__number">60 дней</span>
+                      <p class="example-plate__desc">затрачено времени</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="example__cost-wrapper">
+                  <span class="example__cost">Затраты на питание:</span>
+                  <span class="example__cost">15 000 руб.</span>
+                </div>
+              </div>
+            </div>
+            <div class="example__results-wrapper">
+              <img class="example__cat-photo example__cat-photo--fat" src="img/before-mobile@1x.png" width="320" height="240" alt="Толстый кот">
+              <img class="example__cat-photo example__cat-photo--thin example__cat-photo--hidden" src="img/after-mobile@1x.png" width="320" height="240" alt="Худой кот">
+              <div class="example__buttons-wrapper">
+                <a class="example__btn" href="#">Было</a>
+                <div class="example__switch">
+                  <div class="example__switch-button"></div>
+                </div>
+                <a class="example__btn" href="#">Стало</a>
+              </div>
+            </div>
           </div>
-          <div class="example__plate example-plate">
-            <span class="example-plate__number">60 дней</span>
-            <p class="example-plate__desc">затрачено времени</p>
-          </div>
-          <p class="example__cost">Затраты на питание:</p>
-          <p class="example__cost">15 000 руб.</p>
-          <img class="example__cat-photo example__cat-photo--fat" src="img/before-mobile@1x.png" width="320" height="240" alt="Толстый кот">
-          <img class="example__cat-photo example__cat-photo--thin example__cat-photo--hidden" src="img/after-mobile@1x.png" width="320" height="240" alt="Худой кот">
-          <a class="example__btn" href="#">Было</a>
-          <div class="example__switch">
-            <div class="example__switch-button"></div>
-          </div>
-          <a class="example__btn" href="#">Стало</a>
         </div>
       </section>
       <section class="cooperation">
         <div class="container">
-          <h2 class="cooperation__title">Приглашаем к сотрудничеству дилеров</h2>
-          <address class="cooperation__address">ул. Большая Конюшенная, д. 19/8 Санкт-Петербург</address>
+          <div class="cooperation__wrapper">
+            <h2 class="cooperation__title">Приглашаем к&nbsp;сотрудничеству дилеров</h2>
+            <address class="cooperation__address">ул. Большая Конюшенная, д. 19/8<span class="cooperation__address-city">Санкт-Петербург</span>
+            </address>
+          </div>
         </div>
         <a class="cooperation__map-link" href="#">
           <img class="cooperation__map-img" src="img/bg-map-mobile@1x.png" width="320" height="400" alt="Большая Конюшенная, 19/8">
