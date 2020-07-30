@@ -2,41 +2,43 @@ mixin product-extra(item)
   article.product-extra
     h3.product-extra__title= item.title
     p.product-extra__quantity= item.quantity
-    span.product-extra__price #{item.price} Р.
-    +button-type1('Заказать')(href='#')
+    p.product-extra__price #{item.price} Р.
+    +button-type1('Заказать')(href='#').product-extra__button
 
 section.products-extra
   .container
     h2.products-extra__title.heading-middle Дополнительные товары
-    ul.products-extra__list
-      li.products-extra__item
-        +product-extra({
-          title: "Сахарозаменитель",
-          quantity: "1 упаковка (100 г)",
-          price: 200
-          })
+    .products-extra__wrapper
+      ul.products-extra__list
+        li.products-extra__item
+          +product-extra({
+            title: "Сахарозаменитель",
+            quantity: "1 упаковка (100 г)",
+            price: 200
+            })
 
-      li.products-extra__item
-        +product-extra({
-          title: "Питьевая вода",
-          quantity: "5 литров",
-          price: 50
-          })
+        li.products-extra__item
+          +product-extra({
+            title: "Питьевая вода",
+            quantity: "5 литров",
+            price: 50
+            })
 
-      li.products-extra__item
-        +product-extra({
-          title: "Молоко",
-          quantity: "1 литр",
-          price: 100
-          })
+        li.products-extra__item
+          +product-extra({
+            title: "Молоко",
+            quantity: "1 литр",
+            price: 100
+            })
 
-      +product-extra({
-        title: "Витамины",
-        quantity: "1 упаковка (30 г)",
-        price: 300
-        })
+        li.products-extra__item
+          +product-extra({
+            title: "Витамины",
+            quantity: "1 упаковка (30 г)",
+            price: 300
+            })
 
-      li.products-extra__item-order-all
+      .products-extra__item-order-all
         .order-all
           svg.order-all__icon(width='56' height='60')
             use(href=`${path.sprite}#icon-gift`)

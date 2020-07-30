@@ -1,8 +1,27 @@
 .product-extra {
-  //
+  display: grid;
+  grid-template-columns: auto 30%;
+  grid-template-areas:
+    "title title"
+    "quantity price"
+    "button button";
+
+  @media #{$media-tablet} {
+    grid-template-columns: 50% auto 13%;
+    grid-template-areas:
+      "title quantity price"
+      "button button button";
+  }
+
+  @media #{$media-desktop} {
+    grid-template-columns: 36% 27% 9% auto;
+    grid-template-areas: "title quantity price button";
+  }
 }
 
 .product-extra__title {
+  grid-area: title;
+  align-self: center;
   margin: 0;
   color: $color-text-3;
   font-family: $font-oswald;
@@ -12,12 +31,34 @@
 }
 
 .product-extra__quantity {
+  grid-area: quantity;
+  align-self: center;
   margin: 0;
   color: $color-text-4;
   font-size: 14px;
+
+  @media #{$media-tablet} {
+    text-align: right;
+  }
+
+  @media #{$media-desktop} {
+    text-align: left;
+  }
 }
 
 .product-extra__price {
+  grid-area: price;
+  align-self: center;
+  margin: 0;
   color: $color-text-4;
   font-size: 14px;
+  text-align: right;
+
+  @media #{$media-desktop} {
+    text-align: left;
+  }
+}
+
+.product-extra__button {
+  grid-area: button;
 }
