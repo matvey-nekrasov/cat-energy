@@ -43,6 +43,10 @@
   line-height: 20px;
   font-style: normal;
 
+  @media #{$media-tablet-only} {
+    text-align: right;
+  }
+
   @media #{$media-tablet} {
     max-width: 160px;
     font-size: 16px;

@@ -60,5 +60,6 @@ section.selection
           li.selection__item
             +form-checkbox('Витамины')(name='vitamins' type='checkbox')
 
-      +button-type1('Отправить заявку')(href='#' type='submit').selection__submit
-      p.selection__required * — Обязательные поля
+      .selection__submit-wrapper
+        +button-type1('Отправить заявку')(href='#' type='submit').selection__submit
+        p.selection__required * — Обязательные поля

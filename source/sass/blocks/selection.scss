@@ -24,6 +24,16 @@
   margin: 0;
   padding: 0;
   list-style: none;
+
+  @media #{$media-tablet} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media #{$media-desktop} {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .selection__item {
@@ -32,6 +42,7 @@
 
 .selection__comment {
   display: block;
+  width: 100%;
   border: 1px solid $color-border-3;
   min-height: 150px;
   padding: 13px;
@@ -49,10 +60,29 @@
   }
 }
 
+.selection__submit {
+  @media #{$media-tablet} {
+    width: 40%;
+  }
+}
+
 .selection__required {
   margin: 0;
   color: $color-text-1;
   font-size: 14px;
   font-weight: 400;
   text-align: center;
+
+  @media #{$media-tablet} {
+    text-align: left;
+    width: 50%;
+  }
+}
+
+.selection__submit-wrapper {
+  @media #{$media-tablet} {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
