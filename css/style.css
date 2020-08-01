@@ -1,16 +1,6 @@
 @font-face
 {
     font-family: 'Oswald';
-    font-weight: 200;
-    font-style: normal;
-
-    font-display: swap;
-    src: url('../fonts/oswald200.woff2') format('woff2'), url('../fonts/oswald200.woff') format('woff');
-}
-
-@font-face
-{
-    font-family: 'Oswald';
     font-weight: 400;
     font-style: normal;
 
@@ -463,6 +453,7 @@ input[type='radio'].visually-hidden
     padding: 0 20px; 
 
     outline: 1px solid rebeccapurple;
+    outline-offset: -1px;
 }
 @media screen and (min-width: 768px)
 {
@@ -590,6 +581,8 @@ input[type='radio'].visually-hidden
     {
         position: absolute;
         top: 10px;
+
+        background-color: #fff;
     }
 }
 
@@ -627,6 +620,13 @@ input[type='radio'].visually-hidden
     max-width: 140px;
 
     color: #444;
+}
+@media screen and (min-width: 768px) and (max-width: 1279px)
+{
+    .cooperation__address
+    {
+        text-align: right;
+    }
 }
 @media screen and (min-width: 768px)
 {
@@ -1386,12 +1386,66 @@ input[type='radio'].visually-hidden
     margin: 0;
 }
 
+@media screen and (min-width: 1280px)
+{
+    .products-extra__wrapper
+    {
+        display: grid;
+
+        grid-template-columns: auto 20%;
+        gap: 80px;
+    }
+}
+
 .products-extra__list
 {
     margin: 0;
     padding: 0;
 
     list-style: none;
+}
+
+.products-extra__item
+{
+    padding: 15px 0;
+
+    border-top: 1px solid #cdcdcd;
+}
+.products-extra__item:last-child
+{
+    border-bottom: 1px solid #cdcdcd;
+}
+
+@media screen and (min-width: 1280px)
+{
+    .products-extra__item-order-all
+    {
+        display: flex;
+    }
+}
+
+.product-extra
+{
+    display: grid;
+
+    grid-template-columns: auto 30%;
+    grid-template-areas: 'title title' 'quantity price' 'button button';
+}
+@media screen and (min-width: 768px)
+{
+    .product-extra
+    {
+        grid-template-columns: 50% auto 13%;
+        grid-template-areas: 'title quantity price' 'button button button';
+    }
+}
+@media screen and (min-width: 1280px)
+{
+    .product-extra
+    {
+        grid-template-columns: 36% 27% 9% auto;
+        grid-template-areas: 'title quantity price button';
+    }
 }
 
 .product-extra__title
@@ -1405,6 +1459,9 @@ input[type='radio'].visually-hidden
     text-transform: uppercase; 
 
     color: #222;
+
+    grid-area: title;
+    align-self: center;
 }
 
 .product-extra__quantity
@@ -1414,13 +1471,49 @@ input[type='radio'].visually-hidden
     margin: 0;
 
     color: #444;
+
+    grid-area: quantity;
+    align-self: center;
+}
+@media screen and (min-width: 768px)
+{
+    .product-extra__quantity
+    {
+        text-align: right;
+    }
+}
+@media screen and (min-width: 1280px)
+{
+    .product-extra__quantity
+    {
+        text-align: left;
+    }
 }
 
 .product-extra__price
 {
-    font-size: 14px; 
+    font-size: 14px;
+
+    margin: 0;
+
+    text-align: right; 
 
     color: #444;
+
+    grid-area: price;
+    align-self: center;
+}
+@media screen and (min-width: 1280px)
+{
+    .product-extra__price
+    {
+        text-align: left;
+    }
+}
+
+.product-extra__button
+{
+    grid-area: button;
 }
 
 .order-all
@@ -1479,6 +1572,24 @@ input[type='radio'].visually-hidden
 
     list-style: none;
 }
+@media screen and (min-width: 768px)
+{
+    .selection__list
+    {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (min-width: 1280px)
+{
+    .selection__list
+    {
+        display: grid;
+
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
 
 .selection__comment
 {
@@ -1489,6 +1600,7 @@ input[type='radio'].visually-hidden
     display: block;
 
     box-sizing: border-box;
+    width: 100%;
     min-height: 150px;
     padding: 13px;
 
@@ -1503,6 +1615,14 @@ input[type='radio'].visually-hidden
     color: #444;
 }
 
+@media screen and (min-width: 768px)
+{
+    .selection__submit
+    {
+        width: 40%;
+    }
+}
+
 .selection__required
 {
     font-size: 14px;
@@ -1513,6 +1633,33 @@ input[type='radio'].visually-hidden
     text-align: center; 
 
     color: #000;
+}
+@media screen and (min-width: 768px)
+{
+    .selection__required
+    {
+        width: 50%; 
+
+        text-align: left;
+    }
+}
+
+@media screen and (min-width: 768px)
+{
+    .selection__submit-wrapper
+    {
+        display: flex;
+
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.form-text
+{
+    display: flex;
+
+    align-items: center;
 }
 
 .form-text__text
@@ -1538,6 +1685,8 @@ input[type='radio'].visually-hidden
 
     color: #444;
     border: 1px solid #e7e7e7;
+
+    flex-grow: 1;
 }
 
 .form-radio__text

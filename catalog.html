@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preload" href="fonts/oswald200.woff2" as="font">
     <link rel="preload" href="fonts/oswaldregular.woff2" as="font">
     <link rel="preload" href="fonts/oswaldmedium.woff2" as="font">
     <link rel="stylesheet" href="css/style.min.css">
@@ -237,46 +236,50 @@
       <section class="products-extra">
         <div class="container">
           <h2 class="products-extra__title heading-middle">Дополнительные товары</h2>
-          <ul class="products-extra__list">
-            <li class="products-extra__item">
-              <article class="product-extra">
-                <h3 class="product-extra__title">Сахарозаменитель</h3>
-                <p class="product-extra__quantity">1 упаковка (100 г)</p>
-                <span class="product-extra__price">200 Р.</span>
-                <a class="button" href="#">Заказать</a>
-              </article>
-            </li>
-            <li class="products-extra__item">
-              <article class="product-extra">
-                <h3 class="product-extra__title">Питьевая вода</h3>
-                <p class="product-extra__quantity">5 литров</p>
-                <span class="product-extra__price">50 Р.</span>
-                <a class="button" href="#">Заказать</a>
-              </article>
-            </li>
-            <li class="products-extra__item">
-              <article class="product-extra">
-                <h3 class="product-extra__title">Молоко</h3>
-                <p class="product-extra__quantity">1 литр</p>
-                <span class="product-extra__price">100 Р.</span>
-                <a class="button" href="#">Заказать</a>
-              </article>
-            </li>
-            <article class="product-extra">
-              <h3 class="product-extra__title">Витамины</h3>
-              <p class="product-extra__quantity">1 упаковка (30 г)</p>
-              <span class="product-extra__price">300 Р.</span>
-              <a class="button" href="#">Заказать</a>
-            </article>
-            <li class="products-extra__item-order-all">
+          <div class="products-extra__wrapper">
+            <ul class="products-extra__list">
+              <li class="products-extra__item">
+                <article class="product-extra">
+                  <h3 class="product-extra__title">Сахарозаменитель</h3>
+                  <p class="product-extra__quantity">1 упаковка (100 г)</p>
+                  <p class="product-extra__price">200 Р.</p>
+                  <a class="button product-extra__button" href="#">Заказать</a>
+                </article>
+              </li>
+              <li class="products-extra__item">
+                <article class="product-extra">
+                  <h3 class="product-extra__title">Питьевая вода</h3>
+                  <p class="product-extra__quantity">5 литров</p>
+                  <p class="product-extra__price">50 Р.</p>
+                  <a class="button product-extra__button" href="#">Заказать</a>
+                </article>
+              </li>
+              <li class="products-extra__item">
+                <article class="product-extra">
+                  <h3 class="product-extra__title">Молоко</h3>
+                  <p class="product-extra__quantity">1 литр</p>
+                  <p class="product-extra__price">100 Р.</p>
+                  <a class="button product-extra__button" href="#">Заказать</a>
+                </article>
+              </li>
+              <li class="products-extra__item">
+                <article class="product-extra">
+                  <h3 class="product-extra__title">Витамины</h3>
+                  <p class="product-extra__quantity">1 упаковка (30 г)</p>
+                  <p class="product-extra__price">300 Р.</p>
+                  <a class="button product-extra__button" href="#">Заказать</a>
+                </article>
+              </li>
+            </ul>
+            <div class="products-extra__item-order-all">
               <div class="order-all">
                 <svg class="order-all__icon" width="56" height="60">
                   <use href="img/sprite.svg#icon-gift"></use>
                 </svg>
                 <h3 class="order-all__text">Закажите все и получите чехол для кота в подарок!</h3>
               </div>
-            </li>
-          </ul>
+            </div>
+          </div>
         </div>
       </section>
       <section class="cooperation cooperation--bg">
