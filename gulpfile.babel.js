@@ -23,6 +23,8 @@ import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import prettify from 'gulp-prettify'; // based on https://beautifier.io/
 
+const server = browserSync.create();
+
 /**
  *  Основные директории
  */
@@ -54,6 +56,7 @@ const path = {
   },
   images: {
     root: `${dirs.src}/img/`,
+    sprite: `${dirs.src}/img/sprite/`,
     save: `${dirs.dest}/img/`
   }
 };
@@ -61,13 +64,19 @@ const path = {
 /**
  * Основные задачи
  */
+const reload = (cb) => {
+  server.reload();
+  cb();
+};
+
 const stylesDev = () => src(path.styles.compile, { allowEmpty: true })
   .pipe(plumber())
   .pipe(sourcemaps.init())
   .pipe(sass.sync().on('error', sass.logError))
   .pipe(rename({ suffix: `.min` }))
   .pipe(sourcemaps.write('.'))
-  .pipe(dest(path.styles.save));
+  .pipe(dest(path.styles.save))
+  .pipe(server.stream());
 
 // Эта задача с csso, который не работает с sourcemaps
 const stylesBuild = () => src(path.styles.compile, { allowEmpty: true })
@@ -77,7 +86,8 @@ const stylesBuild = () => src(path.styles.compile, { allowEmpty: true })
   .pipe(postcss([autoprefixer()]))
   .pipe(csso())
   .pipe(rename({ suffix: `.min` }))
-  .pipe(dest(path.styles.save));
+  .pipe(dest(path.styles.save))
+  .pipe(server.stream());
 
 const views = () => src(`${path.views.compile}*.pug`)
   .pipe(plumber())
@@ -104,13 +114,15 @@ const scripts = () => src(`${path.scripts.root}*.js`)
   .pipe(dest(path.scripts.save));
 
 const sprite = () => {
-  return src(`${path.images.root}**/*.svg`)
+  return src(`${path.images.sprite}*.svg`)
     .pipe(svgstore({ inlineSvg: true }))
     .pipe(rename('sprite.svg'))
-    .pipe(dest(path.images.save));
+    .pipe(dest(path.images.save))
+    .pipe(server.stream())
+    .pipe(server.stream());
 };
 
-const images = () => src(`${path.images.root}**/*`)
+const images = () => src(`${path.images.root}*.{png,jpg,svg}`)
   // .pipe(imagemin([               // Не работает в x32
   //   pngquant({ quality: [0.2, 0.8] }),
   //   mozjpeg({ quality: 85 })
@@ -131,34 +143,34 @@ const publish = (cb) => {
 };
 
 const devWatch = () => {
-  const bs = browserSync.init({
+  server.init({
     server: dirs.dest,
     cors: true,
     notify: false,
     ui: false
   });
-  watch(`${path.styles.root}**/*.scss`, stylesDev).on('change', bs.reload);
-  watch(`${path.views.root}**/*.pug`, views).on('change', bs.reload);
-  watch(`${path.json.data}`, views).on('change', bs.reload);
-  watch(`${path.scripts.root}**/*.js`, scripts).on('change', bs.reload);
-  watch(`${path.images.root}**/*.{png,jpg}`, images).on('change', bs.reload);
-  watch(`${path.images.root}**/*.svg`, series(sprite, views)).on('all', bs.reload);
+  watch(`${path.styles.root}**/*.scss`, stylesDev);
+  watch(`${path.views.root}**/*.pug`, series(views, reload));
+  watch(`${path.json.data}`, series(views, reload));
+  watch(`${path.scripts.root}**/*.js`, series(scripts, reload));
+  watch(`${path.images.root}*.{png,jpg,svg}`, series(images, reload));
+  watch(`${path.images.sprite}*.svg`, series(sprite, reload));
 };
 
 // Эта задача только для критерия Б24, по сути не нужна, отличается только stylesBuild
 const buildWatch = () => {
-  const bs = browserSync.init({
+  server.init({
     server: dirs.dest,
     cors: true,
     notify: false,
     ui: false
   });
-  watch(`${path.styles.root}**/*.scss`, stylesBuild).on('change', bs.reload);
-  watch(`${path.views.root}**/*.pug`, views).on('change', bs.reload);
-  watch(`${path.json.data}`, views).on('change', bs.reload);
-  watch(`${path.scripts.root}**/*.js`, scripts).on('change', bs.reload);
-  watch(`${path.images.root}**/*.{png,jpg}`, images).on('change', bs.reload);
-  watch(`${path.images.root}**/*.svg`, series(sprite, views)).on('all', bs.reload);
+  watch(`${path.styles.root}**/*.scss`, stylesBuild);
+  watch(`${path.views.root}**/*.pug`, series(views, reload));
+  watch(`${path.json.data}`, series(views, reload));
+  watch(`${path.scripts.root}**/*.js`, series(scripts, reload));
+  watch(`${path.images.root}*.{png,jpg,svg}`, series(images, reload));
+  watch(`${path.images.sprite}*.svg`, series(sprite, reload));
 };
 
 /**
