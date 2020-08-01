@@ -1,16 +1,20 @@
 .menu {
   margin: 0;
   padding: 0;
-
   list-style: none;
-}
 
-.menu__item {
-  text-align: center;
+  @media #{$media-tablet} {
+    display: flex;
+    // justify-content: space-between;
+  }
 }
 
 .menu__link {
+  display: block;
+  padding: 4px;
+  color: $color-text-1;
   font-family: $font-oswald;
+  text-align: center;
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 500;

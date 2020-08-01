@@ -29,9 +29,18 @@
   max-width: 87px;
   min-height: 21px;
   color: #444444;
-  background-color: $color-bg-2;
+  background-color: $color-bg-3;
   font-family: $font-arial;
   font-size: 12px;
   line-height: 1;
   text-align: center;
+
+  @media #{$media-tablet} {
+    max-width: none;
+    background-color: $color-bg-1;
+  }
+
+  @media #{$media-desktop} {
+    background-color: $color-bg-3;
+  }
 }

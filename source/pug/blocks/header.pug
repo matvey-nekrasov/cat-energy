@@ -1,23 +1,26 @@
 mixin menu(items)
   ul.menu
     each item in items
-      li.menu__item
+      li
         a.menu__link(
-          class=currentPageHref===item.href ? 'menu__item--active' : null
+          class=currentPageHref===item.href ? 'menu__link--active' : null
           href=currentPageHref===item.href ? null : item.href
         ) #{item.name}
 
-header.header
-  nav.nav
-    a.nav__logo(href=mainPage ? null : site.index.href)
-      svg(width='191' height='38' role='img' aria-label='На главную')
-        use(href=`${path.sprite}#logo-mobile`)
+header.header(class=currentPageHref==="index.html" ? 'header--bg-green' : null)
+  .container
+    nav.nav
+      .nav__logo-toggle-wrapper
+        a.nav__logo(href=mainPage ? null : site.index.href)
+          svg(width='191' height='38' role='img' aria-label='На главную')
+            use(href=`${path.sprite}#logo-mobile`)
 
-    button.nav__toggle(type='button') Открыть меню
-      span.visually-hidden Открыть меню
+        button.nav__toggle(type='button')
+          svg(width='24' height='18' role='img' aria-label='Переключатель меню сайта')
+            use(href=`${path.sprite}#icon-mobile-menu`)
 
-    +menu([
-      {href: "index.html", name: "Главная"},
-      {href: "catalog.html", name: "Каталог продукции"},
-      {href: "form.html", name: "Подбор программы"}
-    ])
+      +menu([
+        { href: "index.html", name: "Главная" },
+        { href: "catalog.html", name: "Каталог продукции" },
+        { href: "form.html", name: "Подбор программы" }
+      ])
