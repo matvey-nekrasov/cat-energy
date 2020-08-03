@@ -4,7 +4,7 @@ mixin menu-link(href, name)
     href=currentPageHref===href ? null : href
   ) #{name}
 
-header.header(class=currentPageHref==="index.html" ? 'header--bg-green' : null)
+header.header(class=currentPageHref==="index.html" ? 'header--green' : null)
   nav.nav.nav--closed.nav--nojs
     .nav__wrapper
       a.nav__logo(href=mainPage ? null : site.index.href)

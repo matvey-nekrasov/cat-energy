@@ -4,11 +4,21 @@
   padding: 0;
 
   @media #{$media-tablet} {
-    display: flex;
+    width: 440px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @media #{$media-desktop} {
+    width: 480px;
   }
 }
 
 .menu__link {
+  // @include outline();
   display: block;
   padding: 21px $width-padding;
   border-bottom: 1px solid $color-border-3;
@@ -28,5 +38,21 @@
   &[href]:active {
     opacity: 0.3;
     text-shadow: none;
+  }
+
+  @media #{$media-tablet} {
+    font-size: 18px;
+    font-weight: 400;
+    border: none;
+    padding: 12px 0;
+
+    &--active {
+      padding-bottom: 10px;
+      border-bottom: 2px solid $color-bg-button;
+    }
+  }
+
+  @media #{$media-desktop} {
+    font-size: 20px;
   }
 }

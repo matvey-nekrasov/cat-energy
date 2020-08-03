@@ -7,7 +7,7 @@
   color: $color-text-1;
   background-color: $color-bg-1;
 
-  &::after {
-    @include media-label();
-  }
+  // &::after {
+  //   @include media-label();
+  // }
 }

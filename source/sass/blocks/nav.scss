@@ -1,12 +1,19 @@
 .nav {
+  @include outline();
+
   @media #{$media-tablet} {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: $width-tablet;
+    padding: 4px $width-padding;
+    margin: 0 auto;
+    margin-top: 28px;
   }
 
-  @media #{$media-tablet-only} {
-    display: grid;
+  @media #{$media-desktop} {
+    width: $width-desktop;
+    margin-top: 58px;
   }
 }
 
@@ -14,6 +21,10 @@
   border-bottom: 1px solid $color-border-3;
   display: flex;
   justify-content: space-between;
+
+  @media #{$media-tablet} {
+    border: none;
+  }
 }
 
 .nav__logo {
@@ -29,13 +40,14 @@
   &[href]:active {
     opacity: 0.6;
   }
+
+  @media #{$media-tablet} {
+    padding: 0;
+  }
 }
 
+// ----------------- кнопка -----------------
 .nav__toggle {
-  display: none;
-}
-
-.nav--nojs .nav__toggle {
   display: none;
 }
 
@@ -82,6 +94,10 @@
     &::after {
       transform: rotate(-45deg);
     }
+  }
+
+  .nav--nojs .nav__toggle {
+    display: none;
   }
 
   .nav--closed .menu__link {
