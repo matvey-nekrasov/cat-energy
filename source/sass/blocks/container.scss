@@ -1,6 +1,5 @@
 .container {
-  outline: 1px solid rebeccapurple;
-  outline-offset: -1px;
+  @include outline();
   margin: 0 auto;
 
   width: $width-mobile;
