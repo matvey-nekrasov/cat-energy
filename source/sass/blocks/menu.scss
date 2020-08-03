@@ -8,12 +8,10 @@
   }
 }
 
-.menu__item {
-  padding: 0 $width-padding;
-}
-
 .menu__link {
-  padding: 5px;
+  display: block;
+  padding: 21px $width-padding;
+  border-bottom: 1px solid $color-border-3;
   color: $color-text-1;
   font-family: $font-oswald;
   text-align: center;

@@ -6,7 +6,7 @@ mixin menu-link(href, name)
 
 header.header(class=currentPageHref==="index.html" ? 'header--bg-green' : null)
   nav.nav.nav--closed.nav--nojs
-    .nav__wrapper-logo-toggle.nav__wrapper-row
+    .nav__wrapper
       a.nav__logo(href=mainPage ? null : site.index.href)
         svg(width='191' height='38' role='img' aria-label='На главную')
           use(href=`${path.sprite}#logo-mobile`)
@@ -15,9 +15,9 @@ header.header(class=currentPageHref==="index.html" ? 'header--bg-green' : null)
         span.visually-hidden Открыть меню
 
     ul.menu
-      li.menu__item.nav__wrapper-row
+      li
         +menu-link('index.html', 'Главная')
-      li.menu__item.nav__wrapper-row
+      li
         +menu-link('catalog.html', 'Каталог продукции')
-      li.menu__item.nav__wrapper-row
+      li
         +menu-link('form.html', 'Подбор программы')
