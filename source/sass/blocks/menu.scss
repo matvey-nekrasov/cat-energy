@@ -1,17 +1,19 @@
 .menu {
   margin: 0;
-  padding: 0;
   list-style: none;
+  padding: 0;
 
   @media #{$media-tablet} {
     display: flex;
-    // justify-content: space-between;
   }
 }
 
+.menu__item {
+  padding: 0 $width-padding;
+}
+
 .menu__link {
-  display: block;
-  padding: 4px;
+  padding: 5px;
   color: $color-text-1;
   font-family: $font-oswald;
   text-align: center;
@@ -19,4 +21,14 @@
   text-decoration: none;
   font-weight: 500;
   font-size: 20px;
+
+  &[href]:hover {
+    opacity: 0.6;
+    text-shadow: 0 4px 4px change-color($color-text-1, $alpha: 0.25);
+  }
+
+  &[href]:active {
+    opacity: 0.3;
+    text-shadow: none;
+  }
 }
