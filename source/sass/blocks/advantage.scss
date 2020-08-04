@@ -93,14 +93,15 @@
   margin-bottom: 17px;
 
   @media #{$media-tablet} {
-    margin-left: 2px;
     border-bottom: none;
-    margin-bottom: 34px;
+    padding: 0;
+    margin-left: 2px;
+    margin-bottom: 56px;
   }
 
-  @media #{$media-tablet} {
+  @media #{$media-desktop} {
     margin-left: 2px;
-    margin-bottom: 8px;
+    margin-bottom: 30px;
   }
 }
 

@@ -1,13 +1,27 @@
 .howitworks {
-  //
+  margin-bottom: 42px;
+
+  @media #{$media-tablet} {
+    padding-bottom: 56px;
+    border-bottom: 1px solid $color-border-3;
+  }
 }
 
 .howitworks__title {
   margin: 0;
+  margin-bottom: 39px;
+
+  @media #{$media-tablet} {
+    margin-bottom: 72px;
+  }
 }
 
 .howitworks__desc {
   margin: 0;
+
+  @media #{$media-tablet} {
+    width: 240px;
+  }
 }
 
 .howitworks__list {
@@ -21,26 +35,41 @@
 
   @media #{$media-tablet} {
     grid-template-columns: 1fr 1fr;
-    gap: 30px;
+    column-gap: 60px;
+    row-gap: 87px;
   }
 
   @media #{$media-desktop} {
     grid-template-columns: repeat(4, 1fr);
+    column-gap: 80px;
   }
 }
 
 .howitworks__item {
+  position: relative;
   display: flex;
   align-items: center;
 
+  @media #{$media-tablet} {
+    flex-direction: column;
+    align-items: start;
+    min-height: 230px;
+  }
+
   &::before {
     content: "";
-    display: block;
     min-width: 60px;
     height: 60px;
     margin-right: 20px;
     background-color: $color-bg-button;
     background-position: center;
+
+    @media #{$media-tablet} {
+      margin-bottom: 32px;
+      width: 80px;
+      height: 80px;
+      background-repeat: no-repeat;
+    }
   }
 
   &--leaf::before {
@@ -57,5 +86,39 @@
 
   &--clock::before {
     background-image: url(#{$path-images}advantage-clock@1x.png);
+  }
+}
+
+@media #{$media-tablet} {
+  .howitworks__item--leaf .howitworks__desc {
+    width: 205px;
+  }
+
+  .howitworks__item--powder .howitworks__desc {
+    width: 230px;
+  }
+
+  .howitworks__item--dining .howitworks__desc {
+    width: 210px;
+  }
+
+  .howitworks__item--clock .howitworks__desc {
+    width: 245px;
+  }
+}
+
+.howitworks__index {
+  display: none;
+
+  @media #{$media-tablet} {
+    position: absolute;
+    z-index: -1;
+    display: block;
+    top: -40px;
+    left: 115px;
+    font-family: $font-oswald;
+    font-size: 280px;
+    line-height: 1;
+    color: $color-bg-2;
   }
 }

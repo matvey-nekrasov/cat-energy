@@ -1,8 +1,3 @@
-mixin plate(number, desc)
-  .example-plate
-    span.example-plate__number #{number}
-    p.example-plate__desc #{desc}
-
 section.example
   .container
     .example__wrapper
@@ -17,10 +12,12 @@ section.example
           спит по 16 часов в день.
         .example__plates-cost-wrapper
           .example__plates-wrapper
-            .example__plate
-              +plate('5 кг', 'снижение веса')
-            .example__plate
-              +plate('60 дней', 'затрачено времени')
+            .example__plate.example-plate
+                span.example-plate__number 5 кг
+                p.example-plate__desc снижение веса
+            .example__plate.example-plate
+                span.example-plate__number 60 дней
+                p.example-plate__desc затрачено времени
           .example__cost-wrapper
             span.example__cost Затраты на питание:
             span.example__cost 15 000 руб.
