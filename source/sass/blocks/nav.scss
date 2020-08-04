@@ -1,6 +1,4 @@
 .nav {
-  @include outline();
-
   @media #{$media-tablet} {
     display: flex;
     justify-content: space-between;

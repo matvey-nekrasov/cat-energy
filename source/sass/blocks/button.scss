@@ -1,6 +1,6 @@
 .button {
   display: block;
-  padding: 7px;
+  padding: 11px 10px;
   text-align: center;
 
   color: $color-text-light-1;
@@ -11,6 +11,11 @@
   line-height: 18px;
   background-color: $color-bg-button;
   font-weight: 400;
+
+  @media #{$media-tablet} {
+    font-size: 20px;
+    padding: 18px 27px;
+  }
 
   &--type2 {
     color: $color-text-4;
