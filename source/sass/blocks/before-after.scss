@@ -2,3 +2,50 @@
   //
 }
 
+.before-after__btn {
+  color: $color-text-2;
+  font-family: $font-oswald;
+  font-size: 16px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.before-after__wrapper-buttons {
+  margin: 0 auto;
+  padding-bottom: 10px;
+  width: 197px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.before-after__switch {
+  position: relative;
+  box-sizing: border-box;
+  width: 84px;
+  height: 14px;
+  border: 1px solid $color-border-1;
+  border-radius: 6px;
+  background-color: $color-bg-1;
+}
+
+.before-after__switch-button {
+  position: absolute;
+  top: 3px;
+  left: 5px;
+  width: 35px;
+  height: 6px;
+  border-radius: 6px;
+  background-color: $color-bg-button;
+}
+
+.before-after__photo {
+  top: 0;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 34px;
+
+  &--hidden {
+    display: none;
+  }
+}
