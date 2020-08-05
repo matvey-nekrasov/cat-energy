@@ -4,14 +4,15 @@ mixin product(item)
     - var imgSizeName = item.weight === 500 ? "small" : "big";
     - var imgName = `${item.tasteImgName}-${imgSizeName}-mobile@1x.jpg`;
 
-    .product__img-properties-wrapper
-      img.product__img(
-        src=`${path.images}${imgName}`
-        width='140' height='144'
-        alt=`${productTitle}рамм ${item.taste}`
-      )
+    .product__wrapper-img-properties
+      .product__wrapper-img
+        img.product__img(
+          src=`${path.images}${imgName}`
+          width='140' height='144'
+          alt=`${productTitle}рамм ${item.taste}`
+        )
 
-      .product__properties-wrapper
+      .product__wrapper-properties
         h3.product__title= productTitle
         dl.product__properties
           .product__properties-row
@@ -23,13 +24,15 @@ mixin product(item)
           .product__properties-row
             dt.product__properties-item Цена
             dd.product__properties-item #{item.price} Р.
-    +button-type1('Заказать')(href='#')
+    +button-order('Заказать')(href='#')
 
 section.products
-  .container
-    h2.products__title.heading-big #{site.catalog.title}
-    ul.products__list
-      li.products__item
+  .products__wrapper-title
+    .container
+      h2.products__title.heading-big #{site.catalog.title}
+  ul.products__list
+    li.products__item
+      .products__wrapper-item
         +product({
           type: "pro",
           weight: 500,
@@ -37,7 +40,8 @@ section.products
           tasteImgName: "chicken",
           price: 700,
           })
-      li.products__item
+    li.products__item
+      .products__wrapper-item
         +product({
           type: "pro",
           weight: 1000,
@@ -45,7 +49,8 @@ section.products
           tasteImgName: "chicken",
           price: 1000,
           })
-      li.products__item
+    li.products__item
+      .products__wrapper-item
         +product({
           type: "pro",
           weight: 500,
@@ -53,7 +58,8 @@ section.products
           tasteImgName: "fish",
           price: 700,
           })
-      li.products__item
+    li.products__item
+      .products__wrapper-item
         +product({
           type: "pro",
           weight: 1000,
@@ -61,7 +67,8 @@ section.products
           tasteImgName: "fish",
           price: 1000,
           })
-      li.products__item
+    li.products__item
+      .products__wrapper-item
         +product({
           type: "slim",
           weight: 500,
@@ -69,7 +76,8 @@ section.products
           tasteImgName: "buckwheat",
           price: 400,
           })
-      li.products__item
+    li.products__item
+      .products__wrapper-item
         +product({
           type: "slim",
           weight: 1000,
@@ -77,7 +85,8 @@ section.products
           tasteImgName: "buckwheat",
           price: 700,
           })
-      li.products__item
+    li.products__item
+      .products__wrapper-item
         +product({
           type: "slim",
           weight: 500,
@@ -86,7 +95,8 @@ section.products
           price: 500,
           })
 
-      li.products__item
+    li.products__item
+      .products__wrapper-item
         svg(width='30' height='30')
           use(href=`${path.sprite}#icon-plus`)
         h3.product__title Показать еще 100500 товаров

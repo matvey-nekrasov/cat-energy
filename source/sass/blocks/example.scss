@@ -44,7 +44,7 @@
 
 .example__wrapper-desc {
   margin: 0 auto;
-  width: $width-mobile;
+  // width: $width-mobile;
   padding: 0 $width-padding;
 
   @media #{$media-tablet} {
@@ -125,6 +125,7 @@
 
 .example__plate {
   width: 124px;
+  width: 44.3%;
 
   @media #{$media-tablet} {
     width: 162px;

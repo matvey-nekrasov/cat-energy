@@ -30,7 +30,7 @@
 
 .cooperation__title {
   margin: 0;
-  max-width: 140px;
+  max-width: 50%;
   color: $color-text-2;
   font-family: $font-oswald;
   font-size: 16px;
@@ -46,7 +46,7 @@
 }
 
 .cooperation__address {
-  max-width: 140px;
+  max-width: 50%;
   color: $color-text-4;
   font-size: 14px;
   line-height: 20px;
@@ -84,4 +84,21 @@
   @media #{$media-tablet} {
     height: 400px;
   }
+}
+
+.cooperation__wrapper-map {
+  height: 362px;
+  background-image: url(#{$path-images}bg-map-mobile@1x.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media #{$media-tablet} {
+    height: 400px;
+  }
+}
+
+.cooperation__map {
+  width: 100%;
+  height: 100%;
+  border: none;
 }
