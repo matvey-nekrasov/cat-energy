@@ -27,10 +27,11 @@ section.example
             span.example__cost 15 000 руб.
 
       .example__wrapper-before-after.before-after
-        img.before-after__photo.before-after__photo--fat(src=`${path.images}before-mobile@1x.png` width='320' height='240' alt='Толстый кот')
-        img.before-after__photo.before-after__photo--thin.before-after__photo--hidden(src=`${path.images}after-mobile@1x.png` width='320' height='240' alt='Худой кот')
+        img.example__photo.before-after__photo.before-after__photo--fat(src=`${path.images}before-mobile@1x.png` width='320' height='240' alt='Толстый кот')
+        img.example__photo.before-after__photo.before-after__photo--thin.before-after__photo--hidden(src=`${path.images}after-mobile@1x.png` width='320' height='240' alt='Худой кот')
         .before-after__wrapper-buttons
           a.before-after__btn(href='#') Было
-          .before-after__switch
-            .before-after__switch-button
+          .before-after__range
+            .before-after__handle
+              .before-after__point
           a.before-after__btn(href='#') Стало

@@ -8,6 +8,10 @@
   font-size: 16px;
   text-transform: uppercase;
   text-decoration: none;
+
+  @media #{$media-tablet} {
+    font-size: 20px;
+  }
 }
 
 .before-after__wrapper-buttons {
@@ -17,9 +21,23 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media #{$media-tablet} {
+    width: 570px;
+  }
 }
 
-.before-after__switch {
+.before-after__range {
+  @media #{$media-tablet} {
+    position: relative;
+    width: 428px;
+    height: 6px;
+    background-color: $color-border-2;
+    border-radius: 6px;
+  }
+}
+
+.before-after__handle {
   position: relative;
   box-sizing: border-box;
   width: 84px;
@@ -27,9 +45,21 @@
   border: 1px solid $color-border-1;
   border-radius: 6px;
   background-color: $color-bg-1;
+
+  @media #{$media-tablet} {
+    position: absolute;
+    margin: 0 auto;
+    top: -14px;
+    left: 0;
+    right: 0;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
 }
 
-.before-after__switch-button {
+.before-after__point {
   position: absolute;
   top: 3px;
   left: 5px;
@@ -37,10 +67,20 @@
   height: 6px;
   border-radius: 6px;
   background-color: $color-bg-button;
+
+  @media #{$media-tablet} {
+    position: absolute;
+    margin: 0 auto;
+    top: 12px;
+    left: 0;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
 }
 
 .before-after__photo {
-  top: 0;
   display: block;
   margin: 0 auto;
   margin-bottom: 34px;

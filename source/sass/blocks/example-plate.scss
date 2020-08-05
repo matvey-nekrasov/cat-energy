@@ -16,6 +16,11 @@
   line-height: 1;
   text-align: center;
   text-transform: uppercase;
+
+  @media #{$media-tablet} {
+    font-size: 30px;
+    padding: 20px;
+  }
 }
 
 .example-plate__desc {
@@ -38,6 +43,8 @@
   @media #{$media-tablet} {
     max-width: none;
     background-color: $color-bg-1;
+    margin-top: -13px;
+    font-size: 14px;
   }
 
   @media #{$media-desktop} {

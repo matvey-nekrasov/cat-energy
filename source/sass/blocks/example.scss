@@ -9,6 +9,7 @@
 
   @media #{$media-tablet} {
     background-color: transparent;
+    padding-bottom: 64px;
   }
 }
 
@@ -41,16 +42,26 @@
   width: $width-mobile;
   padding: 0 $width-padding;
 
-  @media #{$media-tablet-only} {
+  @media #{$media-tablet} {
     width: $width-tablet;
     padding: 0 $width-padding;
+    padding-bottom: 226px;
+  }
+
+  @media #{$media-desktop} {
+    width: auto;
+    padding: 0;
   }
 }
 
 .example__wrapper-before-after {
+  position: relative;
   padding-bottom: 26px;
+
   @media #{$media-tablet} {
     background-color: $color-bg-3;
+    padding-top: 366px;
+    padding-bottom: 63px;
   }
 }
 
@@ -89,6 +100,10 @@
 .example__desc {
   margin-right: 10px;
   margin-bottom: 25px;
+
+  @media #{$media-tablet} {
+    margin-bottom: 53px;
+  }
 }
 
 .example__plate {
@@ -107,7 +122,24 @@
   font-weight: 400;
   text-transform: uppercase;
 
-  @media #{$media-tablet-only} {
+  @media #{$media-tablet} {
     display: block;
+    font-size: 20px;
+    margin-top: 6px;
+  }
+
+  @media #{$media-desktop} {
+    display: inline;
+  }
+}
+
+.example__photo {
+  @media #{$media-tablet} {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -190px;
+    height: 540px;
+    width: auto;
   }
 }
