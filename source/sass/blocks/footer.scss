@@ -7,52 +7,120 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  padding-top: 34px;
 
   @media #{$media-tablet} {
     flex-direction: row;
+    padding-top: 49px;
+    padding-bottom: 51px;
+  }
+
+  @media #{$media-desktop} {
+    padding-top: 53px;
+    padding-bottom: 52px;
   }
 }
 
 .footer__logo {
-  padding: 4px;
+  padding: 5px;
   text-align: center;
   line-height: 0;
+  margin-bottom: 26px;
+
+  @media #{$media-tablet} {
+    padding: 5px 0;
+    margin: 0;
+    margin-right: 18px;
+  }
+}
+
+.footer__wrapper-socials {
+  width: 100%;
+  border-top: 1px solid $color-border-2;
+  border-bottom: 1px solid $color-border-2;
+  padding: 17px 0;
+  margin-bottom: 17px;
+
+  @media #{$media-tablet} {
+    width: auto;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
 }
 
 .footer__socials-list {
   display: flex;
-  margin: 0;
+  flex-wrap: wrap;
+  margin: 0 auto;
   padding: 0;
-  width: 130px;
+  width: 136px;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+
+.footer__wrapper-links {
+  align-self: stretch;
+  display: flex;
+  margin: 0;
+  margin-bottom: 16px;
   justify-content: space-between;
   align-items: center;
 
-  list-style: none;
+  @media #{$media-tablet} {
+    margin: 0;
+  }
 }
 
 .footer__socials-link {
   display: block;
   line-height: 0;
-  padding: 4px;
-}
-
-.footer__links {
-  align-self: stretch;
-  display: flex;
-  margin: 0;
-  justify-content: space-between;
-  align-items: center;
+  padding: 5px;
 }
 
 .footer__academy-link {
-  padding: 4px;
-
+  padding: 5px 0;
   color: $color-text-4;
   text-decoration: none;
+
+  @media #{$media-tablet} {
+    margin-right: 24px;
+  }
 }
 
 .footer__academy-img-link {
   display: block;
   line-height: 0;
-  padding: 4px;
+  padding: 5px 0;
+}
+
+.footer__socials-img--vk {
+  width: 23px;
+  height: 16px;
+
+  @media #{$media-tablet} {
+    width: 30px;
+    height: 22px;
+  }
+}
+
+.footer__socials-img--insta {
+  width: 16px;
+  height: 16px;
+
+  @media #{$media-tablet} {
+    width: 23px;
+    height: 23px;
+  }
+}
+
+.footer__socials-img--fb {
+  width: 10px;
+  height: 18px;
+
+  @media #{$media-tablet} {
+    width: 13px;
+    height: 27px;
+  }
 }
