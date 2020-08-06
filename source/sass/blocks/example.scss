@@ -1,3 +1,6 @@
+$example-btn-border-width: 1px;
+$example-btn-padding-width: 4px;
+
 .example {
   //
 }
@@ -62,12 +65,14 @@
 
 .example__wrapper-before-after {
   position: relative;
-  padding-bottom: 26px;
+  padding-bottom: 22px;
 
   @media #{$media-tablet} {
     background-color: $color-bg-3;
-    padding-top: 366px;
-    padding-bottom: 63px;
+    // padding-top: 366px;
+    // padding-bottom: 63px;
+    padding-top: 366px - $example-btn-border-width - $example-btn-padding-width;
+    padding-bottom: 63px - $example-btn-border-width - $example-btn-padding-width;
   }
 }
 
