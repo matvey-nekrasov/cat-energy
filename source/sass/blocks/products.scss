@@ -13,6 +13,11 @@
     padding-bottom: 84px;
     border-bottom: none;
   }
+
+  @media #{$media-desktop} {
+    margin-top: 75px;
+    padding-bottom: 85px;
+  }
 }
 
 .products__wrapper-item {
@@ -39,13 +44,14 @@
   padding: 0;
 
   @media #{$media-tablet} {
+    width: $width-tablet;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
-    width: $width-tablet;
   }
 
   @media #{$media-desktop} {
+    width: $width-desktop;
     grid-template-columns: repeat(4, 1fr);
     gap: 63px 80px;
   }
