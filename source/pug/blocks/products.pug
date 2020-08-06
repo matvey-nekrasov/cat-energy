@@ -1,9 +1,9 @@
 mixin product(item)
-  article.product
-    - var productTitle = `Cat Energy ${item.type} ${item.weight} г`;
-    - var imgSizeName = item.weight === 500 ? "small" : "big";
-    - var imgName = `${item.tasteImgName}-${imgSizeName}-mobile@1x.jpg`;
+  - var productTitle = `Cat Energy ${item.type} ${item.weight} г`;
+  - var imgSizeName = item.weight === 500 ? "small" : "big";
+  - var imgName = `${item.tasteImgName}-${imgSizeName}-mobile@1x.jpg`;
 
+  article.product
     .product__wrapper-img-properties
       .product__wrapper-img
         img.product__img(
@@ -11,7 +11,6 @@ mixin product(item)
           width='140' height='144'
           alt=`${productTitle}рамм ${item.taste}`
         )
-
       .product__wrapper-properties
         h3.product__title= productTitle
         dl.product__properties
@@ -32,73 +31,67 @@ section.products
       h2.products__title.heading-big #{site.catalog.title}
   ul.products__list
     li.products__item
-      .products__wrapper-item
-        +product({
-          type: "pro",
-          weight: 500,
-          taste: "Курица",
-          tasteImgName: "chicken",
-          price: 700,
-          })
+      +product({
+        type: "pro",
+        weight: 500,
+        taste: "Курица",
+        tasteImgName: "chicken",
+        price: 700,
+        })
     li.products__item
-      .products__wrapper-item
-        +product({
-          type: "pro",
-          weight: 1000,
-          taste: "Курица",
-          tasteImgName: "chicken",
-          price: 1000,
-          })
+      +product({
+        type: "pro",
+        weight: 1000,
+        taste: "Курица",
+        tasteImgName: "chicken",
+        price: 1000,
+        })
     li.products__item
-      .products__wrapper-item
-        +product({
-          type: "pro",
-          weight: 500,
-          taste: "Рыба",
-          tasteImgName: "fish",
-          price: 700,
-          })
+      +product({
+        type: "pro",
+        weight: 500,
+        taste: "Рыба",
+        tasteImgName: "fish",
+        price: 700,
+        })
     li.products__item
-      .products__wrapper-item
-        +product({
-          type: "pro",
-          weight: 1000,
-          taste: "Рыба",
-          tasteImgName: "fish",
-          price: 1000,
-          })
+      +product({
+        type: "pro",
+        weight: 1000,
+        taste: "Рыба",
+        tasteImgName: "fish",
+        price: 1000,
+        })
     li.products__item
-      .products__wrapper-item
-        +product({
-          type: "slim",
-          weight: 500,
-          taste: "Гречка",
-          tasteImgName: "buckwheat",
-          price: 400,
-          })
+      +product({
+        type: "slim",
+        weight: 500,
+        taste: "Гречка",
+        tasteImgName: "buckwheat",
+        price: 400,
+        })
     li.products__item
-      .products__wrapper-item
-        +product({
-          type: "slim",
-          weight: 1000,
-          taste: "Гречка",
-          tasteImgName: "buckwheat",
-          price: 700,
-          })
+      +product({
+        type: "slim",
+        weight: 1000,
+        taste: "Гречка",
+        tasteImgName: "buckwheat",
+        price: 700,
+        })
     li.products__item
-      .products__wrapper-item
-        +product({
-          type: "slim",
-          weight: 500,
-          taste: "Рис",
-          tasteImgName: "rice",
-          price: 500,
-          })
+      +product({
+        type: "slim",
+        weight: 500,
+        taste: "Рис",
+        tasteImgName: "rice",
+        price: 500,
+        })
 
     li.products__item
-      .products__wrapper-item
-        svg(width='30' height='30')
+      .product.product--showmore
+        svg.product__plus-sign(width='30' height='30')
           use(href=`${path.sprite}#icon-plus`)
-        h3.product__title Показать еще 100500 товаров
-        p.product__properties-item На самом деле вкусов гораздо больше!
-        +button-type2('Показать все')(href='#').showmore__button
+        h3.product__title.product__title--showmore Показать еще 100500 товаров
+        p.product__properties-item.product__properties-item--showmore На самом деле вкусов гораздо больше!
+
+        +button-type2('Показать все')(href='#')
