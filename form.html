@@ -13,33 +13,29 @@
   </head>
   <body class="body">
     <header class="header">
-      <div class="container">
-        <nav class="nav">
-          <div class="nav__logo-toggle-wrapper">
-            <a class="nav__logo" href="index.html">
-              <svg width="191" height="38" role="img" aria-label="На главную">
-                <use href="img/sprite.svg#logo-mobile"></use>
-              </svg>
-            </a>
-            <button class="nav__toggle" type="button">
-              <svg width="24" height="18" role="img" aria-label="Переключатель меню сайта">
-                <use href="img/sprite.svg#icon-mobile-menu"></use>
-              </svg>
-            </button>
-          </div>
-          <ul class="menu">
-            <li>
-              <a class="menu__link" href="index.html">Главная</a>
-            </li>
-            <li>
-              <a class="menu__link" href="catalog.html">Каталог продукции</a>
-            </li>
-            <li>
-              <a class="menu__link menu__link--active">Подбор программы</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
+      <nav class="nav nav--closed nav--nojs">
+        <div class="nav__wrapper">
+          <a class="nav__logo" href="index.html">
+            <svg width="191" height="38" role="img" aria-label="На главную">
+              <use href="img/sprite.svg#logo-mobile"></use>
+            </svg>
+          </a>
+          <button class="nav__toggle" type="button">
+            <span class="visually-hidden">Открыть меню</span>
+          </button>
+        </div>
+        <ul class="menu">
+          <li>
+            <a class="menu__link" href="index.html">Главная</a>
+          </li>
+          <li>
+            <a class="menu__link" href="catalog.html">Каталог продукции</a>
+          </li>
+          <li>
+            <a class="menu__link menu__link--active">Подбор программы</a>
+          </li>
+        </ul>
+      </nav>
     </header>
     <main>
       <h1 class="visually-hidden">Подбор программы</h1>
@@ -150,9 +146,9 @@
             </address>
           </div>
         </div>
-        <a class="cooperation__map-link" href="#">
-          <img class="cooperation__map-img" src="img/bg-map-mobile@1x.png" width="320" height="400" alt="Большая Конюшенная, 19/8">
-        </a>
+        <div class="cooperation__wrapper-map">
+          <iframe class="cooperation__map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4234.828814742169!2d30.320110179856925!3d59.93922640595866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2sBolshaya%20Konyushennaya%20St%2C%2019%2F8%2C%20Sankt-Peterburg%2C%20191186!5e0!3m2!1sen!2sru!4v1595161310637!5m2!1sen!2sru" width="320" height="362" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
       </section>
     </main>
     <footer class="footer">
@@ -163,30 +159,32 @@
               <use href="img/sprite.svg#logo-footer"></use>
             </svg>
           </a>
-          <ul class="footer__socials-list">
-            <li>
-              <a class="footer__socials-link" href="#">
-                <svg width="22" height="12" role="img" aria-label="В контакте">
-                  <use href="img/sprite.svg#icon-vk"></use>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a class="footer__socials-link" href="#">
-                <svg width="16" height="16" role="img" aria-label="Инстаграм">
-                  <use href="img/sprite.svg#icon-insta"></use>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a class="footer__socials-link" href="#">
-                <svg width="10" height="18" role="img" aria-label="Фэйсбук">
-                  <use href="img/sprite.svg#icon-fb"></use>
-                </svg>
-              </a>
-            </li>
-          </ul>
-          <p class="footer__links">
+          <div class="footer__wrapper-socials">
+            <ul class="footer__socials-list">
+              <li>
+                <a class="footer__socials-link" href="#">
+                  <svg class="footer__socials-img footer__socials-img--vk" width="23" height="16" role="img" aria-label="В контакте">
+                    <use href="img/sprite.svg#icon-vk"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a class="footer__socials-link" href="#">
+                  <svg class="footer__socials-img footer__socials-img--insta" width="16" height="16" role="img" aria-label="Инстаграм">
+                    <use href="img/sprite.svg#icon-insta"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a class="footer__socials-link" href="#">
+                  <svg class="footer__socials-img footer__socials-img--fb" width="10" height="18" role="img" aria-label="Фэйсбук">
+                    <use href="img/sprite.svg#icon-fb"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <p class="footer__wrapper-links">
             <a class="footer__academy-link" href="https://htmlacademy.ru/intensive/adaptive">HTML Academy<span class="visually-hidden">Онлайн‑курс HTML и CSS. Адаптивная вёрстка и автоматизация</span>
             </a>
             <a class="footer__academy-img-link" href="https://htmlacademy.ru/intensive/adaptive">
