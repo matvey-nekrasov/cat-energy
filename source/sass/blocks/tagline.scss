@@ -15,7 +15,7 @@ $shift-mobile-img: -139px;
     right: 0;
     bottom: 0;
     left: 50%;
-    background-color: $color-bg-green-1;
+    background-color: $color-green-1;
     background-image: url(#{$path-images}index-background-mobile@1x.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -39,7 +39,7 @@ $shift-mobile-img: -139px;
 
 .tagline__wrapper-title-desc {
   background-image: url(#{$path-images}index-background-mobile@1x.jpg);
-  background-color: $color-bg-green-1;
+  background-color: $color-green-1;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

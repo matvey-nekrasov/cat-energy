@@ -61,7 +61,7 @@
     }
 
     &:active {
-      border-color: $color-bg-button;
+      border-color: $color-green-2;
       box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
     }
   }
@@ -74,7 +74,7 @@
   width: 35px;
   height: 6px;
   border-radius: 6px;
-  background-color: $color-bg-button;
+  background-color: $color-green-2;
 
   @media #{$media-tablet} {
     top: calc(50% - 4px);
