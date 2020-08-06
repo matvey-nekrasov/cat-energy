@@ -1,6 +1,6 @@
 mixin fonts(items)
   each item in items
-    link(rel='preload' href=`${path.fonts}${item}.woff2` as='font')
+    link(rel='preload' href=`${path.fonts}${item}.woff2` as='font' type='font/woff2' crossorigin)
 
 mixin stylesheets(items)
   each item in items
@@ -13,7 +13,7 @@ block head
   head
     meta(charset='utf-8')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
-    +fonts(['oswaldregular', 'oswaldmedium'])
+    //- +fonts(['oswaldregular', 'oswaldmedium'])
     +stylesheets(['style'])
     +icon('apple-touch-icon', '180x180', 'apple-touch-icon')
     +icon('icon', '32x32', 'favicon-32x32')
