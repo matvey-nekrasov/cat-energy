@@ -1,5 +1,6 @@
 .product-extra {
   display: grid;
+  align-items: center;
   grid-template-columns: auto 30%;
   grid-template-areas:
     "title title"
@@ -21,8 +22,8 @@
 
 .product-extra__title {
   grid-area: title;
-  align-self: center;
   margin: 0;
+  margin-bottom: 11px;
   color: $color-text-3;
   font-family: $font-oswald;
   font-size: 16px;
@@ -32,8 +33,8 @@
 
 .product-extra__quantity {
   grid-area: quantity;
-  align-self: center;
   margin: 0;
+  margin-bottom: 13px;
   color: $color-text-4;
   font-size: 14px;
 
@@ -48,8 +49,8 @@
 
 .product-extra__price {
   grid-area: price;
-  align-self: center;
   margin: 0;
+  margin-bottom: 13px;
   color: $color-text-4;
   font-size: 14px;
   text-align: right;

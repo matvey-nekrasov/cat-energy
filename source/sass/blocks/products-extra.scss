@@ -64,8 +64,10 @@
 }
 
 .products-extra__item {
-  padding: 15px 0;
+  padding-top: 13px;
+  padding-bottom: 17px;
   border-top: 1px solid $color-border-1;
+  margin-bottom: 0;
 
   &:last-child {
     border-bottom: 1px solid $color-border-1;
