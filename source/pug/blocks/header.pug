@@ -5,7 +5,7 @@ mixin menu-link(href, name)
   ) #{name}
 
 header.header(class=currentPageHref==="index.html" ? 'header--green' : null)
-  nav.nav.nav--closed.nav--nojs
+  nav.nav.nav--closed
     .nav__wrapper
       a.nav__logo(href=mainPage ? null : site.index.href)
         svg(width='191' height='38' role='img' aria-label='На главную')

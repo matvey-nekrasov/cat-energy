@@ -25,7 +25,8 @@
 
     @media #{$media-tablet} {
       top: 77px;
-      left: 446px;
+      left: unset;
+      right: 62px;
       width: 200px;
       height: 211px;
     }
@@ -33,6 +34,7 @@
     @media #{$media-desktop} {
       top: 41px;
       left: 52px;
+      right: unset;
       width: 100px;
       height: 106px;
     }
@@ -47,7 +49,8 @@
 
     @media #{$media-tablet} {
       top: 91px;
-      left: 411px;
+      left: unset;
+      right: 29px;
       width: 268px;
       height: 200px;
     }
@@ -55,6 +58,7 @@
     @media #{$media-desktop} {
       top: 47px;
       left: 33px;
+      right: unset;
       width: 134px;
       height: 100px;
     }
