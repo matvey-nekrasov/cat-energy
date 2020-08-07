@@ -1,6 +1,6 @@
 .product-extra {
   display: grid;
-  align-items: center;
+  align-items: baseline;
   grid-template-columns: auto 30%;
   grid-template-areas:
     "title title"
@@ -8,14 +8,14 @@
     "button button";
 
   @media #{$media-tablet} {
-    grid-template-columns: 50% auto 13%;
+    grid-template-columns: 50% auto 14.7%;
     grid-template-areas:
       "title quantity price"
       "button button button";
   }
 
   @media #{$media-desktop} {
-    grid-template-columns: 36% 27% 9% auto;
+    grid-template-columns: 36% 27.5% 9.2% auto;
     grid-template-areas: "title quantity price button";
   }
 }
@@ -29,6 +29,15 @@
   font-size: 16px;
   font-weight: 400;
   text-transform: uppercase;
+
+  @media #{$media-tablet} {
+    font-size: 20px;
+    margin-bottom: 24px;
+  }
+
+  @media #{$media-desktop} {
+    margin-bottom: 0;
+  }
 }
 
 .product-extra__quantity {
@@ -40,6 +49,8 @@
 
   @media #{$media-tablet} {
     text-align: right;
+    margin-bottom: 0;
+    font-size: 16px;
   }
 
   @media #{$media-desktop} {
@@ -50,10 +61,13 @@
 .product-extra__price {
   grid-area: price;
   margin: 0;
-  margin-bottom: 13px;
   color: $color-text-4;
   font-size: 14px;
   text-align: right;
+
+  @media #{$media-tablet} {
+    font-size: 16px;
+  }
 
   @media #{$media-desktop} {
     text-align: left;
