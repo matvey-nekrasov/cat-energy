@@ -3,27 +3,106 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: $width-tablet;
+    padding: 4px $width-padding;
+    margin: 0 auto;
+    margin-top: 28px;
+  }
+
+  @media #{$media-desktop} {
+    width: $width-desktop;
+    margin-top: 58px;
   }
 }
 
-.nav__logo-toggle-wrapper {
+.nav__wrapper {
+  border-bottom: 1px solid $color-border-3;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+
+  @media #{$media-tablet} {
+    border: none;
+  }
 }
 
 .nav__logo {
+  padding: 0 $width-padding;
+  padding-top: 11px;
+  padding-bottom: 12px;
   text-decoration: none;
-}
 
-.nav__toggle {
-  border: none;
-  padding: 4px;
-  background-color: transparent;
-  line-height: 0;
-  cursor: pointer;
+  &[href]:hover {
+    opacity: 0.8;
+  }
+
+  &[href]:active {
+    opacity: 0.6;
+  }
 
   @media #{$media-tablet} {
+    padding: 0;
+  }
+}
+
+// ----------------- кнопка -----------------
+.nav__toggle {
+  display: none;
+}
+
+@media #{$media-mobile-only} {
+  .nav__toggle {
+    display: block;
+    position: relative;
+    width: 24px + $width-padding * 2;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .nav--closed .nav__toggle {
+    &::before {
+      position: absolute;
+      content: "";
+      top: 24px;
+      left: $width-padding;
+      right: $width-padding;
+      height: 2px;
+      background-color: $color-text-1;
+      box-shadow: 0 8px 0 0 $color-text-1, 0 16px 0 0 $color-text-1;
+    }
+  }
+
+  .nav--opened .nav__toggle {
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      top: 32px;
+      left: $width-padding;
+      right: $width-padding;
+      height: 2px;
+      background-color: $color-text-1;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+      box-shadow: none;
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  .nav--nojs .nav__toggle {
     display: none;
+  }
+
+  .nav--closed .menu__link {
+    display: none;
+  }
+
+  .nav--nojs .menu__link {
+    display: block;
   }
 }

@@ -10,3 +10,38 @@
     max-width: $width-xl;
   }
 }
+
+@mixin outline($color: rebeccapurple, $width: 1px) {
+  outline: $width solid $color;
+  outline-offset: -$width;
+}
+
+@mixin media-label() {
+  // This adds a label in the top-left corner that displays the current media query state.
+  // Use: body::after { @include media-label(); }
+  background: red;
+  color: white;
+  content: "undefined";
+  left: 0;
+  opacity: 0.8;
+  padding: 0.5em 1em;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  z-index: 99;
+
+  @media #{$media-mobile} {
+    background: orange;
+    content: "mobile";
+  }
+
+  @media #{$media-tablet} {
+    background: purple;
+    content: "tablet";
+  }
+
+  @media #{$media-desktop} {
+    background: green;
+    content: "desktop";
+  }
+}

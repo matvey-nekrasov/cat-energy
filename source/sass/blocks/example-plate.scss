@@ -7,7 +7,7 @@
 
 .example-plate__number {
   margin: 0;
-  padding: 17px;
+  padding: 15px;
   border: 1px solid $color-border-1;
   border-radius: 3px;
   color: $color-text-2;
@@ -16,6 +16,11 @@
   line-height: 1;
   text-align: center;
   text-transform: uppercase;
+
+  @media #{$media-tablet} {
+    font-size: 30px;
+    padding: 20px;
+  }
 }
 
 .example-plate__desc {
@@ -23,7 +28,7 @@
   align-self: center;
   align-items: center;
   margin: 0;
-  margin-top: -12px;
+  margin-top: -8px;
   padding: 0 10px;
   box-sizing: border-box;
   max-width: 87px;
@@ -38,6 +43,8 @@
   @media #{$media-tablet} {
     max-width: none;
     background-color: $color-bg-1;
+    margin-top: -13px;
+    font-size: 14px;
   }
 
   @media #{$media-desktop} {

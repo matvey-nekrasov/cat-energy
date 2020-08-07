@@ -1,0 +1,96 @@
+.before-after {
+  //
+}
+
+.before-after__btn {
+  color: $color-text-2;
+  font-family: $font-oswald;
+  font-size: 16px;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  @media #{$media-tablet} {
+    font-size: 20px;
+  }
+}
+
+.before-after__wrapper-buttons {
+  margin: 0 auto;
+  padding-bottom: 10px;
+  width: 197px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media #{$media-tablet} {
+    width: 570px;
+  }
+}
+
+.before-after__range {
+  @media #{$media-tablet} {
+    position: relative;
+    width: 428px;
+    height: 6px;
+    background-color: $color-border-2;
+    border-radius: 6px;
+  }
+}
+
+.before-after__handle {
+  position: relative;
+  box-sizing: border-box;
+  width: 84px;
+  height: 14px;
+  border: 1px solid $color-border-1;
+  border-radius: 6px;
+  background-color: $color-bg-1;
+
+  @media #{$media-tablet} {
+    position: absolute;
+    top: calc(50% - 17px);
+    left: calc(50% - 17px);
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16);
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.19);
+    }
+
+    &:active {
+      border-color: $color-bg-button;
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+.before-after__point {
+  position: absolute;
+  top: 3px;
+  left: 5px;
+  width: 35px;
+  height: 6px;
+  border-radius: 6px;
+  background-color: $color-bg-button;
+
+  @media #{$media-tablet} {
+    top: calc(50% - 4px);
+    left: calc(50% - 4px);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+}
+
+.before-after__photo {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 34px;
+
+  &--hidden {
+    display: none;
+  }
+}

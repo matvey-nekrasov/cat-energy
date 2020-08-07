@@ -1,5 +1,13 @@
 .advantages {
-  //
+  margin-bottom: 30px;
+
+  @media #{$media-tablet} {
+    margin-bottom: 45px;
+  }
+
+  @media #{$media-desktop} {
+    margin-bottom: 71px;
+  }
 }
 
 .advantages__wrapper {

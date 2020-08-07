@@ -1,6 +1,6 @@
 .button {
   display: block;
-  padding: 7px;
+  padding: 11px 10px;
   text-align: center;
 
   color: $color-text-light-1;
@@ -12,8 +12,28 @@
   background-color: $color-bg-button;
   font-weight: 400;
 
+  @media #{$media-tablet} {
+    font-size: 20px;
+    padding: 18px 27px;
+  }
+
   &--type2 {
+    padding-top: 12px;
+    padding-bottom: 11px;
+    font-size: 16px;
+    line-height: 1;
     color: $color-text-4;
     background-color: $color-bg-2;
+  }
+
+  &--order {
+    font-size: 16px;
+
+    @media #{$media-tablet} {
+      // font-size: 18px;
+      padding: 0;
+      padding-top: 11px;
+      padding-bottom: 10px;
+    }
   }
 }
