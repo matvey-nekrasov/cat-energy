@@ -1,10 +1,8 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html class="no-js" lang="ru">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preload" href="fonts/oswaldregular.woff2" as="font">
-    <link rel="preload" href="fonts/oswaldmedium.woff2" as="font">
     <link rel="stylesheet" href="css/style.min.css">
     <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
@@ -13,7 +11,7 @@
   </head>
   <body class="body">
     <header class="header">
-      <nav class="nav nav--closed nav--nojs">
+      <nav class="nav nav--closed">
         <div class="nav__wrapper">
           <a class="nav__logo" href="index.html">
             <svg width="191" height="38" role="img" aria-label="На главную">
@@ -242,14 +240,14 @@
               </svg>
               <h3 class="product__title product__title--showmore">Показать еще 100500 товаров</h3>
               <p class="product__properties-item product__properties-item--showmore">На самом деле вкусов гораздо больше!</p>
-              <a class="button button--type2" href="#">Показать все</a>
+              <a class="button button--grey" href="#">Показать все</a>
             </div>
           </li>
         </ul>
       </section>
       <section class="products-extra">
+        <h2 class="products-extra__title heading-middle">Дополнительные товары</h2>
         <div class="container">
-          <h2 class="products-extra__title heading-middle">Дополнительные товары</h2>
           <div class="products-extra__wrapper">
             <ul class="products-extra__list">
               <li class="products-extra__item">
@@ -257,7 +255,7 @@
                   <h3 class="product-extra__title">Сахарозаменитель</h3>
                   <p class="product-extra__quantity">1 упаковка (100 г)</p>
                   <p class="product-extra__price">200 Р.</p>
-                  <a class="button product-extra__button" href="#">Заказать</a>
+                  <a class="button button--order product-extra__button" href="#">Заказать</a>
                 </article>
               </li>
               <li class="products-extra__item">
@@ -265,7 +263,7 @@
                   <h3 class="product-extra__title">Питьевая вода</h3>
                   <p class="product-extra__quantity">5 литров</p>
                   <p class="product-extra__price">50 Р.</p>
-                  <a class="button product-extra__button" href="#">Заказать</a>
+                  <a class="button button--order product-extra__button" href="#">Заказать</a>
                 </article>
               </li>
               <li class="products-extra__item">
@@ -273,7 +271,7 @@
                   <h3 class="product-extra__title">Молоко</h3>
                   <p class="product-extra__quantity">1 литр</p>
                   <p class="product-extra__price">100 Р.</p>
-                  <a class="button product-extra__button" href="#">Заказать</a>
+                  <a class="button button--order product-extra__button" href="#">Заказать</a>
                 </article>
               </li>
               <li class="products-extra__item">
@@ -281,7 +279,7 @@
                   <h3 class="product-extra__title">Витамины</h3>
                   <p class="product-extra__quantity">1 упаковка (30 г)</p>
                   <p class="product-extra__price">300 Р.</p>
-                  <a class="button product-extra__button" href="#">Заказать</a>
+                  <a class="button button--order product-extra__button" href="#">Заказать</a>
                 </article>
               </li>
             </ul>
@@ -290,7 +288,7 @@
                 <svg class="order-all__icon" width="56" height="60">
                   <use href="img/sprite.svg#icon-gift"></use>
                 </svg>
-                <h3 class="order-all__text">Закажите все и получите чехол для кота в подарок!</h3>
+                <h3 class="order-all__text">Закажите все и&nbsp;получите чехол для кота в подарок!</h3>
               </div>
             </div>
           </div>
@@ -313,7 +311,7 @@
       <div class="container">
         <div class="footer__wrapper">
           <a class="footer__logo" href="index.html">
-            <svg width="128" height="24" role="img" aria-label="На главную">
+            <svg class="footer__logo-img" width="128" height="24" role="img" aria-label="На главную">
               <use href="img/sprite.svg#logo-footer"></use>
             </svg>
           </a>

@@ -1,14 +1,9 @@
 "use strict";
 
+document.querySelector('html').classList.remove('no-js');
 var navMain = document.querySelector('.nav');
-var navToggle = document.querySelector('.nav__toggle');
-navMain.classList.remove('nav--nojs');
+var navToggle = navMain.querySelector('.nav__toggle');
 navToggle.addEventListener('click', function () {
-  if (navMain.classList.contains('nav--closed')) {
-    navMain.classList.remove('nav--closed');
-    navMain.classList.add('nav--opened');
-  } else {
-    navMain.classList.add('nav--closed');
-    navMain.classList.remove('nav--opened');
-  }
+  navMain.classList.toggle('nav--closed');
+  navMain.classList.toggle('nav--opened');
 });
