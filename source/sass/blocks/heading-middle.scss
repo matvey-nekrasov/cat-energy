@@ -5,4 +5,8 @@
   line-height: 1;
   font-weight: 400;
   color: $color-text-1;
+
+  @media #{$media-tablet} {
+    font-size: 36px;
+  }
 }
