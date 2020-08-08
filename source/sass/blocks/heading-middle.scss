@@ -2,11 +2,60 @@
   margin: 0;
   font-family: $font-oswald;
   font-size: 24px;
-  line-height: 1;
+  line-height: 26px;
   font-weight: 400;
   color: $color-text-1;
+  display: flex;
+  align-items: baseline;
 
   @media #{$media-tablet} {
     font-size: 36px;
+    line-height: 1;
+  }
+
+  &::before {
+    content: "";
+    margin-right: 20px;
+
+    @media #{$media-tablet} {
+      padding-bottom: 0.3em;
+      border-top: 2px solid #68b738;
+      margin-right: 37px;
+      width: calc((100vw - #{$width-tablet}) / 2);
+    }
+
+    @media #{$media-desktop} {
+      margin-right: 40px;
+      width: calc((100vw - #{$width-desktop}) / 2 - 40px);
+    }
+  }
+
+  &::after {
+    content: "";
+    flex-grow: 1;
+    margin-left: 22px;
+    padding: 0;
+    padding-bottom: 0.3em;
+    border-top: 2px solid #68b738;
+
+    @media #{$media-tablet} {
+      margin-left: 35px;
+    }
+  }
+
+  &--multiline {
+    &::after {
+      margin-left: 15px;
+    }
+
+    @media #{$media-tablet} {
+      &::after {
+        margin-left: 35px;
+      }
+
+      br {
+        display: none;
+      }
+    }
   }
 }

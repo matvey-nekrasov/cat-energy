@@ -1,65 +1,63 @@
 mixin form-text(text)
-  label.form-text
+  label.form-text.selection__row-text
     span.form-text__text= text
     input.form-text__input&attributes(attributes)
 
 mixin form-radio(text)
-  label.form-radio
-    input.form-radio__input&attributes(attributes)
+  label.form-radio.selection__row-radio
+    input.form-radio__input.visually-hidden&attributes(attributes)
+    span.form-radio__icon
     span.form-radio__text= text
 
 mixin form-checkbox(text)
-  label.form-checkbox
-    input.form-checkbox__input&attributes(attributes)
+  label.form-checkbox.selection__row-checkbox
+    input.form-checkbox__input.visually-hidden&attributes(attributes)
+    span.form-checkbox__icon
     span.form-checkbox__text= text
 
 section.selection
   .container
     h2.selection__title.heading-big #{site.form.title}
+  .container.container--narrow
     p.selection__desc Заполните анкету, и мы подберем программу питания для вашего кота
 
-    form(method='post' action='https://echo.htmlacademy.ru')
+  form(method='post' action='https://echo.htmlacademy.ru')
+    .selection__wrapper-base-purpose
+      fieldset.selection__fieldset-base
+        legend.visually-hidden Данные кота
+        +form-text('Имя:*')(name='name' value='Барсик' type='text' required)
+        +form-text('Вес (кг):*')(name='weight' value='7' type='number' min='0' required)
+        +form-text('Возраст (лет):')(name='age' value='7' type='number' min='0')
 
-      fieldset.selection__fieldset
-
-        ul.selection__list
-          li.selection__item
-            +form-text('Имя:*')(name='name' value='Барсик' type='text' required)
-          li.selection__item
-            +form-text('Вес (кг):*')(name='weight' value='7' type='number' min='0' required)
-          li.selection__item
-            +form-text('Возраст (лет):')(name='age' value='7' type='number' min='0')
-
-        ul.selection__list
-          li.selection__item
-            +form-radio('Похудение')(name='purpose' value='weight-loss' type='radio' checked)
-          li.selection__item
-            +form-radio('Набор массы')(name='purpose' value='weight-gain' type='radio')
-          li.selection__item
-            +form-radio('Не знаю (Нужен ваш совет)')(name='purpose' value='dont-know' type='radio')
+      fieldset.selection__fieldset-purpose
+        legend.visually-hidden Данные кота
+        +form-radio('Похудение')(name='purpose' value='weight-loss' type='radio' checked)
+        +form-radio('Набор массы')(name='purpose' value='weight-gain' type='radio')
+        +form-radio('Не знаю (Нужен ваш совет)')(name='purpose' value='dont-know' type='radio')
 
 
-      fieldset.selection__fieldset.heading-middle Контактные данные (владельца кота)
-        ul.selection__list
-          li.selection__item
-            +form-text('E-mail:*')(name='email' value='kuklachev@gmail.com' type='email' required)
-          li.selection__item
-            +form-text('Телефон:*')(name='tel' value='8 (960) 900-60-90' type='tel' required)
+    h3.selection__subtitle-contacts.heading-middle.heading-middle--multiline Контактные данные<br>(владельца кота)
+    .container.container--narrow
+      fieldset.selection__fieldset-contacts
+        legend.visually-hidden Контактные данные владельца кота
+        +form-text('E-mail:*')(name='email' value='kuklachev@gmail.com' type='email' required)
+        +form-text('Телефон:*')(name='tel' value='8 (960) 900-60-90' type='tel' required)
 
-      fieldset.selection__fieldset.heading-middle Комментарий
+    h3.selection__subtitle-comment.heading-middle Комментарий
+    .container.container--narrow
+      fieldset.selection__fieldset-comment
         textarea.selection__comment(name='comment' placeholder='Расскажите обо всех повадках кота')
 
-      fieldset.selection__fieldset.heading-middle Дополнительно
-        ul.selection__list
-          li.selection__item
-            +form-checkbox('Сахарозаменитель')(name='sugar-substitute' type='checkbox' checked)
-          li.selection__item
-            +form-checkbox('Питьевая вода')(name='drinking-water' type='checkbox')
-          li.selection__item
-            +form-checkbox('Молоко')(name='milk' type='checkbox')
-          li.selection__item
-            +form-checkbox('Витамины')(name='vitamins' type='checkbox')
+    h3.selection__subtitle-additionally.heading-middle Дополнительно
+    .container.container--narrow
+      fieldset.selection__fieldset-additionally
+        +form-checkbox('Сахарозаменитель')(name='sugar-substitute' type='checkbox' checked)
+        +form-checkbox('Питьевая вода')(name='drinking-water' type='checkbox')
+        +form-checkbox('Молоко')(name='milk' type='checkbox')
+        +form-checkbox('Витамины')(name='vitamins' type='checkbox')
 
-      .selection__submit-wrapper
-        +button-green('Отправить заявку')(href='#' type='submit').selection__submit
+    .container.container--narrow
+      .selection__wrapper-submit
+        +button-order('Отправить заявку')(href='#' type='submit').selection__submit-btn
         p.selection__required * — Обязательные поля
+

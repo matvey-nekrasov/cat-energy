@@ -1,9 +1,6 @@
 .form-text {
   display: flex;
   align-items: center;
-}
-
-.form-text__text {
   color: $color-text-4;
   font-family: $font-oswald;
   font-size: 16px;
@@ -11,9 +8,16 @@
   text-transform: uppercase;
 }
 
+.form-text__text {
+  margin-right: 14px;
+  flex-shrink: 0;
+}
+
 .form-text__input {
   flex-grow: 1;
-  padding: 15px;
+  min-width: 5em;
+
+  padding: 13px 15px;
   border: 1px solid $color-border-3;
   color: $color-text-4;
   font-family: $font-oswald;
