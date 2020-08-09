@@ -4,24 +4,31 @@
   color: $color-text-4;
   font-family: $font-oswald;
   font-size: 16px;
-  line-height: 18px;
   text-transform: uppercase;
+
+  @media #{$media-tablet} {
+    font-size: 20px;
+  }
 }
 
 .form-text__text {
   margin-right: 14px;
   flex-shrink: 0;
+
+  @media #{$media-tablet} {
+    margin-right: 21px;
+  }
 }
 
 .form-text__input {
   flex-grow: 1;
   min-width: 5em;
-
   padding: 13px 15px;
   border: 1px solid $color-border-3;
-  color: $color-text-4;
-  font-family: $font-oswald;
-  font-size: 16px;
-  line-height: 18px;
-  text-transform: uppercase;
+  color: inherit;
+  text-transform: inherit;
+
+  @media #{$media-tablet} {
+    font-size: 20px;
+  }
 }

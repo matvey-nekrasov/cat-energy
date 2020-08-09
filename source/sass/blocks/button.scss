@@ -46,10 +46,16 @@
     font-size: 16px;
 
     @media #{$media-tablet} {
-      // font-size: 18px;
-      padding: 0;
-      padding-top: 11px;
-      padding-bottom: 10px;
+      padding: 11px 10px 10px;
+    }
+  }
+
+  &--submit {
+    font-size: 16px;
+
+    @media #{$media-tablet} {
+      font-size: 20px;
+      padding: 17px 17px;
     }
   }
 }

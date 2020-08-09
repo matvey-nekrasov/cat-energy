@@ -51,13 +51,13 @@ section.selection
     h3.selection__subtitle-additionally.heading-middle Дополнительно
     .container.container--narrow
       fieldset.selection__fieldset-additionally
-        +form-checkbox('Сахарозаменитель')(name='sugar-substitute' type='checkbox' checked)
-        +form-checkbox('Питьевая вода')(name='drinking-water' type='checkbox')
-        +form-checkbox('Молоко')(name='milk' type='checkbox')
-        +form-checkbox('Витамины')(name='vitamins' type='checkbox')
+        .selection__grid-additionally
+          +form-checkbox('Сахарозаменитель')(name='sugar-substitute' type='checkbox' checked)
+          +form-checkbox('Питьевая вода')(name='drinking-water' type='checkbox')
+          +form-checkbox('Молоко')(name='milk' type='checkbox')
+          +form-checkbox('Витамины')(name='vitamins' type='checkbox')
 
-    .container.container--narrow
       .selection__wrapper-submit
-        +button-order('Отправить заявку')(href='#' type='submit').selection__submit-btn
+        +button-submit('Отправить заявку')(href='#' type='submit').selection__submit-btn
         p.selection__required * — Обязательные поля
 
