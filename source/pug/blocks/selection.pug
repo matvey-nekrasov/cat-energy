@@ -1,5 +1,5 @@
-mixin form-text(text)
-  label.form-text.selection__row-text
+mixin form-text(text, name)
+  label.form-text(class=`selection__row-${name}`)
     span.form-text__text= text
     input.form-text__input&attributes(attributes)
 
@@ -10,7 +10,7 @@ mixin form-radio(text)
     span.form-radio__text= text
 
 mixin form-checkbox(text)
-  label.form-checkbox.selection__row-checkbox
+  label.form-checkbox
     input.form-checkbox__input.visually-hidden&attributes(attributes)
     span.form-checkbox__icon
     span.form-checkbox__text= text
@@ -25,9 +25,9 @@ section.selection
     .selection__wrapper-base-purpose
       fieldset.selection__fieldset-base
         legend.visually-hidden Данные кота
-        +form-text('Имя:*')(name='name' value='Барсик' type='text' required)
-        +form-text('Вес (кг):*')(name='weight' value='7' type='number' min='0' required)
-        +form-text('Возраст (лет):')(name='age' value='7' type='number' min='0')
+        +form-text('Имя:*', 'base')(name='name' value='Барсик' type='text' required)
+        +form-text('Вес (кг):*', 'base')(name='weight' value='7' type='number' min='0' required)
+        +form-text('Возраст (лет):', 'base')(name='age' value='7' type='number' min='0')
 
       fieldset.selection__fieldset-purpose
         legend.visually-hidden Данные кота
@@ -39,9 +39,10 @@ section.selection
     h3.selection__subtitle-contacts.heading-middle.heading-middle--multiline Контактные данные<br>(владельца кота)
     .container.container--narrow
       fieldset.selection__fieldset-contacts
-        legend.visually-hidden Контактные данные владельца кота
-        +form-text('E-mail:*')(name='email' value='kuklachev@gmail.com' type='email' required)
-        +form-text('Телефон:*')(name='tel' value='8 (960) 900-60-90' type='tel' required)
+        .selection__grid-contacts
+          legend.visually-hidden Контактные данные владельца кота
+          +form-text('E-mail:*', 'contacts')(name='email' value='kuklachev@gmail.com' type='email' required)
+          +form-text('Телефон:*', 'contacts')(name='tel' value='8 (960) 900-60-90' type='tel' required)
 
     h3.selection__subtitle-comment.heading-middle Комментарий
     .container.container--narrow
@@ -56,6 +57,8 @@ section.selection
           +form-checkbox('Питьевая вода')(name='drinking-water' type='checkbox')
           +form-checkbox('Молоко')(name='milk' type='checkbox')
           +form-checkbox('Витамины')(name='vitamins' type='checkbox')
+          //- +form-checkbox('Молоко')(name='milk' type='checkbox')
+          //- +form-checkbox('Витамины')(name='vitamins' type='checkbox')
 
       .selection__wrapper-submit
         +button-submit('Отправить заявку')(href='#' type='submit').selection__submit-btn
