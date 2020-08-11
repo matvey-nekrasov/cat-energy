@@ -15,11 +15,11 @@
 	},
 	"media": [
 		{
-			"resolution": "1170",
+			"resolution": "1280",
 			"name": "desktop"
 		},
 		{
-			"resolution": "750",
+			"resolution": "768",
 			"name": "tablet"
 		}
 	],

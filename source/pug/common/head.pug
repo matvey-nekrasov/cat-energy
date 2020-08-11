@@ -10,12 +10,11 @@ mixin icon(rel, sizes, name)
   link(rel=`${rel}` type='image/png' sizes=`${sizes}` href=`${path.images}${name}.png`)
 
 block head
-  head
-    meta(charset='utf-8')
-    meta(name='viewport' content='width=device-width, initial-scale=1.0')
-    //- +fonts(['oswaldregular', 'oswaldmedium'])
-    +stylesheets(['style'])
-    +icon('apple-touch-icon', '180x180', 'apple-touch-icon')
-    +icon('icon', '32x32', 'favicon-32x32')
-    +icon('icon', '16x16', 'favicon-16x16')
-    title #{currentPageTitle}
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  +fonts(['oswaldregular', 'oswaldmedium'])
+  +stylesheets(['style'])
+  +icon('apple-touch-icon', '180x180', 'apple-touch-icon')
+  +icon('icon', '32x32', 'favicon-32x32')
+  +icon('icon', '16x16', 'favicon-16x16')
+  title #{currentPageTitle}

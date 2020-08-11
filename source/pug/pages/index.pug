@@ -5,6 +5,9 @@ block vars
   -var currentPageTitle = site.index.title
   -var currentPageHref = site.index.href
 
+block pixelGlass
+  +pixelGlass('pg-index-mobile.png', 'pg-index-tablet.png', 'pg-index-desktop.png')
+
 block mainContent
   h1.visually-hidden Функциональное питание для котов Cat Energy
 

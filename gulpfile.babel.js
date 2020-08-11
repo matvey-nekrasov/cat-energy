@@ -58,8 +58,20 @@ const path = {
     root: `${dirs.src}/img/`,
     sprite: `${dirs.src}/img/sprite/`,
     save: `${dirs.dest}/img/`
+  },
+  pixelGlass: {
+    srcJs: 'node_modules/pixel-glass/script.js',
+    srcCss: 'node_modules/pixel-glass/styles.css',
   }
 };
+
+const pixelGlassJs = () => src(path.pixelGlass.srcJs)
+  .pipe(rename('pixel-glass.js'))
+  .pipe(dest(path.scripts.save));
+
+const pixelGlassCss = () => src(path.pixelGlass.srcCss)
+  .pipe(rename('pixel-glass.css'))
+  .pipe(dest(path.styles.save));
 
 /**
  * Основные задачи
@@ -176,7 +188,9 @@ const buildWatch = () => {
 /**
  * Задачи для разработки
  */
-export const dev = series(clean, fonts, parallel(stylesDev, scripts, sprite, images), views, devWatch);
+export const dev = series(clean, fonts,
+  parallel(stylesDev, scripts, sprite, images, pixelGlassJs, pixelGlassCss),
+  views, devWatch);
 
 /**
  * Для билда
@@ -192,5 +206,7 @@ export const start = series(build, buildWatch);
  * Для деплоя
  */
 export const deploy = series(build, publish);
+
+export const pixel = parallel(pixelGlassJs, pixelGlassCss);
 
 export default dev;
