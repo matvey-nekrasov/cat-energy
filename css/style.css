@@ -565,6 +565,8 @@ input[type='radio'].visually-hidden
 
 .header
 {
+    z-index: 1;
+
     color: #000;
 }
 @media screen and (min-width: 1280px)
@@ -1375,7 +1377,6 @@ input[type='radio'].visually-hidden
     .tagline__wrapper-desktop-bg
     {
         position: absolute;
-        z-index: -1;
         top: -118px;
         right: 0;
         bottom: 0;
