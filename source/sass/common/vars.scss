@@ -37,6 +37,7 @@ $media-tablet: "screen and (min-width: #{$width-tablet + $width-padding * 2 + $w
 $media-desktop: "screen and (min-width: #{$width-desktop + $width-padding * 2 + $width-scrollbar})";
 $media-mobile-only: "screen and (max-width: #{$width-tablet + $width-padding * 2 + $width-scrollbar - 1})";
 $media-tablet-only: "screen and (min-width: #{$width-tablet + $width-padding * 2 + $width-scrollbar}) and (max-width: #{$width-desktop + $width-padding * 2 + $width-scrollbar - 1})";
+$media-2x: "screen and (min-resolution: 2dppx)";
 
 //Пути
 $path-images: "../img/";

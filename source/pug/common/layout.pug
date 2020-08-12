@@ -4,7 +4,8 @@ html.no-js(lang='ru')
   include mixin.pug
   head
     include head.pug
-    block pixelGlass
+    if dev.pixelGlass
+      block pixelGlass
   body.body
     include ../blocks/header.pug
     main

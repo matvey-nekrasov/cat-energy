@@ -12,7 +12,7 @@
 }
 
 .form-text__text {
-  margin-right: 14px;
+  margin-right: 12px;
   flex-shrink: 0;
 
   @media #{$media-tablet} {
@@ -21,14 +21,30 @@
 }
 
 .form-text__input {
+  position: relative;
   flex-grow: 1;
   min-width: 5em;
   padding: 13px 15px;
+  padding-right: 40px;
   border: 1px solid $color-border-3;
   color: inherit;
   text-transform: inherit;
 
   @media #{$media-tablet} {
     font-size: 20px;
+  }
+
+  &--email {
+    background-image: url(#{$path-images}icon-mail.svg);
+    background-repeat: no-repeat;
+    background-size: 17px auto;
+    background-position: center right 15px;
+  }
+
+  &--phone {
+    background-image: url(#{$path-images}icon-phone.svg);
+    background-repeat: no-repeat;
+    background-size: 20px auto;
+    background-position: center right 12px;
   }
 }

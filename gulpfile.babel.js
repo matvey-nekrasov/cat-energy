@@ -207,6 +207,4 @@ export const start = series(build, buildWatch);
  */
 export const deploy = series(build, publish);
 
-export const pixel = parallel(pixelGlassJs, pixelGlassCss);
-
 export default dev;
