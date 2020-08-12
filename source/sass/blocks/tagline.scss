@@ -46,7 +46,7 @@ $shift-mobile-img: -139px;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  padding-top: 28px;
+  padding-top: 27px;
   padding-bottom: -$shift-mobile-img;
   background-image: url(#{$path-images}index-background-mobile@1x.jpg);
 
@@ -134,21 +134,20 @@ $shift-mobile-img: -139px;
   vertical-align: bottom;
   margin-top: $shift-mobile-img;
   margin-bottom: 3px;
+  width: 280px;
 
   @media #{$media-tablet} {
-    margin-top: 0;
-    margin-bottom: 4px;
+    margin-top: 5px;
+    margin-bottom: 0;
     width: 709px;
-    height: 609px;
   }
 
   @media #{$media-desktop} {
     position: absolute;
     margin-bottom: 0;
     width: 552px;
-    height: 499px;
-    top: 26px;
-    left: 478px;
+    top: 23px;
+    left: 448px;
   }
 }
 

@@ -16,6 +16,7 @@
 }
 
 .nav__wrapper {
+  // box-sizing: border-box;
   border-bottom: 1px solid $color-border-3;
   display: flex;
   justify-content: space-between;

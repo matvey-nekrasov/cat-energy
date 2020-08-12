@@ -10,14 +10,28 @@
   align-items: center;
   justify-items: center;
 
+  @media #{$media-2x} {
+    background-image: url(#{$path-images}gift-photo-mobile@2x.jpg);
+  }
+
   @media #{$media-tablet-only} {
     min-height: 200px;
     grid-template-rows: auto;
     grid-template-columns: 1fr 1fr;
+    background-image: url(#{$path-images}gift-photo-tablet@1x.jpg);
+
+    @media #{$media-2x} {
+      background-image: url(#{$path-images}gift-photo-tablet@2x.jpg);
+    }
   }
 
-  // @media #{$media-desktop} {
-  // }
+  @media #{$media-desktop} {
+    background-image: url(#{$path-images}gift-photo-desktop@1x.jpg);
+
+    @media #{$media-2x} {
+      background-image: url(#{$path-images}gift-photo-desktop@2x.jpg);
+    }
+  }
 }
 
 .order-all__icon {
@@ -30,15 +44,12 @@
 }
 
 .order-all__text {
-  // margin: 0;
   color: $color-text-light-1;
   font-size: 16px;
   line-height: 20px;
   font-weight: 400;
   text-align: center;
-  // width: 60%;
   margin: 0 55px;
-  // width: minmax(161px, 60%);
 
   @media #{$media-tablet-only} {
     text-align: left;
