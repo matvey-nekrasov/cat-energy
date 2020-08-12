@@ -19,7 +19,6 @@ $shift-mobile-img: -139px;
     background-repeat: no-repeat;
     // background-size: cover;
     background-size: 720px auto;
-    z-index: -1;
     background-image: url(#{$path-images}index-background-desktop@1x.jpg);
 
     @media #{$media-2x} {

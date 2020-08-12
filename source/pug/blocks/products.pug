@@ -1,18 +1,27 @@
 mixin product(item)
-  - var productTitle = `Cat Energy ${item.type} ${item.weight} г`;
+  - var productTitle = `Cat Energy ${item.type} ${item.weight}${'&nbsp;'}г`;
   - var imgSizeName = item.weight === 500 ? "small" : "big";
   - var imgName = `${item.tasteImgName}-${imgSizeName}-mobile@1x.jpg`;
 
   article.product
     .product__wrapper-img-properties
-      .product__wrapper-img
+      picture.product__wrapper-img
+        source(media=`(min-width:${media[0].resolution}px)`
+          srcset=`${path.images}${item.tasteImgName}-${imgSizeName}-desktop@1x.png 1x,
+          ${path.images}${item.tasteImgName}-${imgSizeName}-desktop@2x.png 2x`)
+
+        source(media=`(min-width:${media[1].resolution}px)`
+          srcset=`${path.images}${item.tasteImgName}-${imgSizeName}-tablet@1x.png 1x,
+          ${path.images}${item.tasteImgName}-${imgSizeName}-tablet@2x.png 2x`)
+
         img.product__img(
-          src=`${path.images}${imgName}`
+          src=   `${path.images}${item.tasteImgName}-${imgSizeName}-mobile@1x.jpg`
+          srcset=`${path.images}${item.tasteImgName}-${imgSizeName}-mobile@2x.jpg 2x`
           width='140' height='144'
-          alt=`${productTitle}рамм ${item.taste}`
-        )
+          alt=`${productTitle}рамм ${item.taste}`)
+
       .product__wrapper-properties
-        h3.product__title= productTitle
+        h3.product__title !{productTitle}
         dl.product__properties
           .product__properties-row
             dt.product__properties-item Масса
@@ -23,7 +32,7 @@ mixin product(item)
           .product__properties-row
             dt.product__properties-item Цена
             dd.product__properties-item #{item.price} Р.
-    +button-order('Заказать')(href='#')
+    +button-order('Заказать')(href='#').product__button
 
 section.products
   .products__wrapper-title

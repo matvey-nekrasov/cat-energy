@@ -195,7 +195,9 @@ export const dev = series(clean, fonts,
 /**
  * Для билда
  */
-export const build = series(clean, fonts, parallel(stylesBuild, scripts, sprite, images), views);
+export const build = series(clean, fonts,
+  parallel(stylesBuild, scripts, sprite, images, pixelGlassJs, pixelGlassCss),
+  views);
 
 /**
  * Для критерия Б24

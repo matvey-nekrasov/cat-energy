@@ -25,6 +25,7 @@
 
 .howitworks__desc {
   margin: 0;
+  z-index: 1;
 
   @media #{$media-tablet} {
     width: 240px;
@@ -70,6 +71,7 @@
     margin-right: 20px;
     background-color: $color-green-2;
     background-position: center;
+    z-index: 1;
 
     @media #{$media-tablet} {
       margin-bottom: 32px;
@@ -119,7 +121,6 @@
 
   @media #{$media-tablet} {
     position: absolute;
-    z-index: -1;
     display: block;
     top: -40px;
     left: 115px;

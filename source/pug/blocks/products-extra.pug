@@ -1,8 +1,8 @@
 mixin product-extra(item)
   article.product-extra
     h3.product-extra__title= item.title
-    p.product-extra__quantity= item.quantity
-    p.product-extra__price #{item.price} Р.
+    p.product-extra__desc.product-extra__quantity= item.quantity
+    p.product-extra__desc.product-extra__price #{item.price} Р.
     +button-order('Заказать')(href='#').product-extra__button
 
 section.products-extra
