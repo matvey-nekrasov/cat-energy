@@ -158,10 +158,15 @@ $example-btn-padding-width: 4px;
 .example__photo {
   @media #{$media-tablet} {
     position: absolute;
-    left: 0;
-    right: 0;
-    top: -190px;
-    height: 540px;
+    left: 46px;
+    top: -169px;
     width: auto;
+  }
+
+  @media #{$media-desktop} {
+    left: -80px;
+    top: -185px;
+    width: 120%;
+    max-width: 120%;
   }
 }
