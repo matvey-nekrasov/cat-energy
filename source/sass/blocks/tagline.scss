@@ -2,7 +2,7 @@ $shift-mobile-img: -139px;
 
 .tagline {
   @media #{$media-desktop} {
-    min-height: 581px;
+    min-height: 578px;
     position: relative;
     margin-bottom: 82px;
   }
@@ -11,7 +11,7 @@ $shift-mobile-img: -139px;
 .tagline__wrapper-desktop-bg {
   @media #{$media-desktop} {
     position: absolute;
-    top: -113px;
+    top: -118px;
     right: 0;
     bottom: 0;
     left: 50%;
@@ -62,7 +62,7 @@ $shift-mobile-img: -139px;
   }
 
   @media #{$media-desktop} {
-    padding-top: 110px;
+    padding-top: 107px;
   }
 }
 
@@ -144,6 +144,7 @@ $shift-mobile-img: -139px;
 
   @media #{$media-desktop} {
     position: absolute;
+    margin-top: 2px;
     margin-bottom: 0;
     width: 552px;
     top: 23px;
