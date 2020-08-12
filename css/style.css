@@ -1926,6 +1926,8 @@ input[type='radio'].visually-hidden
 
 .howitworks__desc
 {
+    z-index: 1; 
+
     margin: 0;
 }
 @media screen and (min-width: 768px)
@@ -1987,6 +1989,8 @@ input[type='radio'].visually-hidden
 }
 .howitworks__item::before
 {
+    z-index: 1; 
+
     min-width: 60px;
     height: 60px;
     margin-right: 20px;
@@ -2057,7 +2061,6 @@ input[type='radio'].visually-hidden
         line-height: 1;
 
         position: absolute;
-        z-index: -1;
         top: -40px;
         left: 115px;
 
