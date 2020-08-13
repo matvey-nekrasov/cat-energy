@@ -41,8 +41,16 @@ section.selection
       fieldset.selection__fieldset-contacts
         .selection__grid-contacts
           legend.visually-hidden Контактные данные владельца кота
-          +form-text('E-mail:*', 'contacts')(name='email' value='kuklachev@gmail.com' type='email' required).form-text__input--email
-          +form-text('Телефон:*', 'contacts')(name='tel' value='8 (960) 900-60-90' type='tel' required).form-text__input--phone
+          label.form-text.form-text--email.selection__row-contacts
+            span.form-text__text E-mail:*
+            input.form-text__input.form-text__input--icon(name='email' value='kuklachev@gmail.com' type='email' required)
+            svg.form-text__img.form-text__img--email(width='17' height='13')
+              use(href=`${path.sprite}#icon-mail`)
+          label.form-text.form-text--email.selection__row-contacts
+            span.form-text__text Телефон:*
+            input.form-text__input.form-text__input--icon(name='tel' value='8 (960) 900-60-90' type='tel' required)
+            svg.form-text__img.form-text__img--phone(width='20' height='20')
+              use(href=`${path.sprite}#icon-phone`)
 
     h3.selection__subtitle-comment.heading-middle Комментарий
     .container.container--narrow

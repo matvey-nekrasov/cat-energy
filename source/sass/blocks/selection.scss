@@ -244,10 +244,24 @@
     color: $color-text-4;
   }
 
+  &:hover {
+    border-color: $color-border-1;
+  }
+
+  &:focus {
+    padding: 12px;
+    border-width: 2px;
+    border-color: $color-text-4;
+  }
+
   @media #{$media-tablet} {
     padding: 16px;
     font-size: 20px;
     min-height: 174px;
+
+    &:focus {
+      padding: 15px;
+    }
   }
 }
 
