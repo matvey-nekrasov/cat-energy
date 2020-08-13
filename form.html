@@ -116,13 +116,19 @@
             <fieldset class="selection__fieldset-contacts">
               <div class="selection__grid-contacts">
                 <legend class="visually-hidden">Контактные данные владельца кота</legend>
-                <label class="form-text selection__row-contacts">
+                <label class="form-text form-text--email selection__row-contacts">
                   <span class="form-text__text">E-mail:*</span>
-                  <input class="form-text__input form-text__input--email" name="email" value="kuklachev@gmail.com" type="email" required>
+                  <input class="form-text__input form-text__input--icon" name="email" value="kuklachev@gmail.com" type="email" required>
+                  <svg class="form-text__img form-text__img--email" width="17" height="13">
+                    <use href="img/sprite.svg#icon-mail"></use>
+                  </svg>
                 </label>
-                <label class="form-text selection__row-contacts">
+                <label class="form-text form-text--email selection__row-contacts">
                   <span class="form-text__text">Телефон:*</span>
-                  <input class="form-text__input form-text__input--phone" name="tel" value="8 (960) 900-60-90" type="tel" required>
+                  <input class="form-text__input form-text__input--icon" name="tel" value="8 (960) 900-60-90" type="tel" required>
+                  <svg class="form-text__img form-text__img--phone" width="20" height="20">
+                    <use href="img/sprite.svg#icon-phone"></use>
+                  </svg>
                 </label>
               </div>
             </fieldset>
