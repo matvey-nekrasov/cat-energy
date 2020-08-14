@@ -10,30 +10,6 @@
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
     <title>Cat Energy - Главная</title>
-    <style>
-      html {
-        background-repeat: no-repeat;
-        background-position: 50% 0;
-        background-image: url("img/pg-index-mobile.png");
-      }
-
-      /* Tablet */
-      @media (min-width: 768px) {
-        html {
-          background-image: url("img/pg-index-tablet.png");
-        }
-      }
-
-      /* Desktop */
-      @media (min-width: 1280px) {
-        html {
-          background-image: url("img/pg-index-desktop.png");
-        }
-      }
-
-    </style>
-    <link href="css/pixel-glass.css" rel="stylesheet">
-    <script src="js/pixel-glass.js"></script>
   </head>
   <body class="body">
     <header class="header header--green">
@@ -76,9 +52,17 @@
           </div>
           <div class="tagline__wrapper-img-button">
             <picture>
-              <source media="(min-width:1280px)" srcset="img/index-can-desktop@1x.png 1x, img/index-can-desktop@2x.png 2x">
-              <source media="(min-width:768px)" srcset="img/index-can-tablet@1x.jpg 1x, img/index-can-tablet@2x.jpg 2x">
-              <img class="tagline__img" src="img/index-can-mobile@1x.png" srcset="img/index-can-mobile@2x.png 2x" alt="Банка с кормом Cat Energy" width="280" height="271">
+              <source type="image/webp" media="(min-width: 1280px)" srcset="img/index-can-desktop@2x.webp 2x,
+          img/index-can-desktop@1x.webp 1x">
+              <source type="image/webp" media="(min-width: 768px)" srcset="img/index-can-tablet@2x.webp 2x,
+          img/index-can-tablet@1x.webp 1x">
+              <source type="image/webp" srcset="img/index-can-mobile@2x.webp 2x,
+          img/index-can-mobile@1x.webp 1x">
+              <source type="image/png" media="(min-width: 1280px)" srcset="img/index-can-desktop@2x.png 2x,
+          img/index-can-desktop@1x.png 1x">
+              <source type="image/jpeg" media="(min-width: 768px)" srcset="img/index-can-tablet@2x.jpg 2x,
+          img/index-can-tablet@1x.jpg 1x">
+              <img class="tagline__img" srcset="img/index-can-mobile@2x.png 2x" src="img/index-can-mobile@1x.png" width="280" height="271" alt="Банка с кормом Cat Energy">
             </picture>
             <a class="button tagline__button" href="form.html" type="button">Подобрать программу</a>
           </div>
@@ -157,18 +141,30 @@
             </div>
             <div class="example__wrapper-before-after before-after">
               <picture>
-                <source media="(min-width:1280px)" srcset="img/before-desktop@1x.png 1x,
-            img/before-desktop@2x.png 2x">
-                <source media="(min-width:768px)" srcset="img/before-tablet@1x.png 1x,
-            img/before-tablet@2x.png 2x">
-                <img class="example__photo before-after__photo before-after__photo--fat" src="img/before-mobile@1x.png" srcset="img/before-mobile@2x.png 2x" width="320" height="240" alt="Толстый кот">
+                <source type="image/webp" media="(min-width: 1280px)" srcset="img/before-desktop@2x.webp 2x,
+          img/before-desktop@1x.webp 1x">
+                <source type="image/webp" media="(min-width: 768px)" srcset="img/before-tablet@2x.webp 2x,
+          img/before-tablet@1x.webp 1x">
+                <source type="image/webp" srcset="img/before-mobile@2x.webp 2x,
+          img/before-mobile@1x.webp 1x">
+                <source type="image/png" media="(min-width: 1280px)" srcset="img/before-desktop@2x.png 2x,
+          img/before-desktop@1x.png 1x">
+                <source type="image/png" media="(min-width: 768px)" srcset="img/before-tablet@2x.png 2x,
+          img/before-tablet@1x.png 1x">
+                <img class="example__photo before-after__photo before-after__photo--fat" srcset="img/before-mobile@2x.png 2x" src="img/before-mobile@1x.png" width="320" height="240" alt="Толстый кот">
               </picture>
               <picture>
-                <source media="(min-width:1280px)" srcset="img/after-desktop@1x.png 1x,
-            img/after-desktop@2x.png 2x">
-                <source media="(min-width:768px)" srcset="img/after-tablet@1x.png 1x,
-            img/after-tablet@2x.png 2x">
-                <img class="example__photo before-after__photo before-after__photo--fat before-after__photo--hidden" src="img/after-mobile@1x.png" srcset="img/after-mobile@2x.png 2x" width="320" height="240" alt="Худой кот">
+                <source type="image/webp" media="(min-width: 1280px)" srcset="img/after-desktop@2x.webp 2x,
+          img/after-desktop@1x.webp 1x">
+                <source type="image/webp" media="(min-width: 768px)" srcset="img/after-tablet@2x.webp 2x,
+          img/after-tablet@1x.webp 1x">
+                <source type="image/webp" srcset="img/after-mobile@2x.webp 2x,
+          img/after-mobile@1x.webp 1x">
+                <source type="image/png" media="(min-width: 1280px)" srcset="img/after-desktop@2x.png 2x,
+          img/after-desktop@1x.png 1x">
+                <source type="image/png" media="(min-width: 768px)" srcset="img/after-tablet@2x.png 2x,
+          img/after-tablet@1x.png 1x">
+                <img class="example__photo.before-after__photo.before-after__photo--fat.before-after__photo--hidden" srcset="img/after-mobile@2x.png 2x" src="img/after-mobile@1x.png" width="320" height="240" alt="Худой кот">
               </picture>
               <div class="before-after__wrapper-buttons">
                 <a class="before-after__btn" href="#">Было</a>

@@ -445,6 +445,13 @@ input[type='radio'].visually-hidden
 
     grid-template-rows: min-content 1fr min-content;
 }
+@media screen and (min-width: 340px)
+{
+    .body
+    {
+        padding: 0;
+    }
+}
 
 .container
 {
