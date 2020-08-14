@@ -23,6 +23,7 @@ import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import prettify from 'gulp-prettify'; // based on https://beautifier.io/
 import mergeStream from 'merge-stream';
+import { dev } from './source/pug/data/data.json';
 
 const sync = browserSync.create();
 
@@ -74,14 +75,18 @@ const reload = (cb) => {
   cb();
 };
 
-const pixelGlass = () => mergeStream(
-  src(path.pixelGlass.srcJs)
-    .pipe(rename(path.pixelGlass.destJs))
-    .pipe(dest(path.scripts.save)),
-  src(path.pixelGlass.srcCss)
-    .pipe(rename(path.pixelGlass.destCss))
-    .pipe(dest(path.styles.save))
-);
+const pixelGlass = (cb) => {
+  if (dev.isPixelGlass) {
+    return mergeStream(
+      src(path.pixelGlass.srcJs)
+        .pipe(rename(path.pixelGlass.destJs))
+        .pipe(dest(path.scripts.save)),
+      src(path.pixelGlass.srcCss)
+        .pipe(rename(path.pixelGlass.destCss))
+        .pipe(dest(path.styles.save)))
+  }
+  cb();
+};
 
 const styles = () => src(path.styles.compile, { allowEmpty: true })
   .pipe(plumber())
@@ -136,7 +141,7 @@ const sprite = () => {
     .pipe(sync.stream());
 };
 
-export const images = () => src(`${path.images.root}*.{png,jpg,svg}`)
+const images = () => src(`${path.images.root}*.{png,jpg,svg}`)
   .pipe(imagemin([
     pngquant({ quality: [0.2, 0.8] }),
     mozjpeg({ quality: 90 })
@@ -145,7 +150,7 @@ export const images = () => src(`${path.images.root}*.{png,jpg,svg}`)
   .pipe(webp({ quality: 90 }))
   .pipe(dest(path.images.save));
 
-export const clean = () => del([dirs.dest]);
+const clean = () => del([dirs.dest]);
 
 const fonts = () => {
   return src(`${dirs.src}/fonts/*.{woff,woff2}`)
@@ -156,7 +161,7 @@ const publish = (cb) => {
   ghPages.publish(dirs.dest, cb);
 };
 
-export const watchers = () => {
+const watchers = () => {
   sync.init({
     server: dirs.dest,
     cors: true,
