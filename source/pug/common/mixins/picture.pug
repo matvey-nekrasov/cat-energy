@@ -1,41 +1,33 @@
 //-
- Генерирует picture обертку с img картинкой для разных разрешений экрана и ретиной.
- @param {string} className - Класс тега img. Передается в кавычках.
- @param {string} alt - Описание изображения в теге img. Передается в кавычках.
- @param {boolean} retina - Если необходима ретина, то передается true, если графика без поддержки ретины - false.
- @param {boolean} responsive - Если нужно медиа с разными разрешениями, то передается true, если нет - false
- @param {string} name - Наименование файла. Передается в кавычках.
- @param {string} extension - Расширение файла. Передается в кавычках.
- @param {number} width - Ширина изображения.
- @param {number} height - Высота изображения.
-mixin picture(className, alt, retina, responsive, name, extension, width, height)
-  picture
-    each size in media
+  Генерирует picture обертку с img картинкой для разных разрешений экрана и ретиной.
+  @param {string} picClass - Класс тега picture. Передается в кавычках.
+  @param {string} imgClass - Класс тега img. Передается в кавычках.
+  @param {string} name - Наименование файла. Передается в кавычках.
+  @param {string} extensions - Массив расширений файлов.
+  @param {number} width - Ширина изображения.
+  @param {number} height - Высота изображения.
+  @param {string} alt - Описание изображения в теге img. Передается в кавычках.
+mixin picture(picClass, imgClass, name, extensions, width, height, alt)
+  picture(class=picClass)
+    each size, i in media
       source(
         type='image/webp'
-        media=responsive? `(min-width:${size.resolution}px)`
-        : null
-        srcset=retina?
-        `${path.images}${name}-${size.name}@2x.webp 2x,
-        ${path.images}${name}-${size.name}.webp 1x`
-        : `${path.images}${name}.webp`
+        media=i < media.length-1 ? `(min-width: ${size.resolution}px)` : null
+        srcset=`${path.images}${name}-${size.name}@2x.webp 2x,
+          ${path.images}${name}-${size.name}@1x.webp 1x`
       )
-      source(
-        type=`image/${extension === 'jpg'? 'jpeg' : extension}`
-        media=responsive? `(min-width:${size.resolution}px)`
-        : null
-        srcset=retina?
-        `${path.images}${name}-${size.name}@2x.${extension} 2x,
-        ${path.images}${name}-${size.name}.${extension} 1x`
-        : `${path.images}${name}.${extension}`
-      )
-      if responsive===false
-        - break
-    img(
-      class=className
-      srcset=retina?
-      `${path.images}${name}@2x.${extension} 2x`
-      : null
-      src=`${path.images}${name}.${extension}`
-      width=width height=height alt=alt
-    )
+    each size, i in media
+      if (i < media.length-1)
+        source(
+          type=`image/${extensions[i] === 'jpg' ? 'jpeg' : extensions[i]}`
+          media=i < media.length-1 ? `(min-width: ${size.resolution}px)` : null
+          srcset=`${path.images}${name}-${size.name}@2x.${extensions[i]} 2x,
+          ${path.images}${name}-${size.name}@1x.${extensions[i]} 1x`
+        )
+      else
+        img(
+          class=imgClass
+          srcset=`${path.images}${name}-${size.name}@2x.${extensions[i]} 2x`
+          src=`${path.images}${name}-${size.name}@1x.${extensions[i]}`
+          width=width height=height alt=alt
+        )
