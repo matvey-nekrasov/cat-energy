@@ -1,4 +1,4 @@
-import { src, dest, watch, parallel, series } from 'gulp';
+import { src, dest, parallel, series, watch } from 'gulp';
 import del from 'del';
 import sass from 'gulp-sass';
 import cssSort from 'gulp-csscomb';
@@ -22,8 +22,9 @@ import sourcemaps from 'gulp-sourcemaps';
 import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import prettify from 'gulp-prettify'; // based on https://beautifier.io/
+import mergeStream from 'merge-stream';
 
-const server = browserSync.create();
+const sync = browserSync.create();
 
 /**
  *  Основные директории
@@ -62,36 +63,28 @@ const path = {
   pixelGlass: {
     srcJs: 'node_modules/pixel-glass/script.js',
     srcCss: 'node_modules/pixel-glass/styles.css',
+    destJs: 'pixel-glass.js',
+    destCss: 'pixel-glass.css'
   }
 };
 
-const pixelGlassJs = () => src(path.pixelGlass.srcJs)
-  .pipe(rename('pixel-glass.js'))
-  .pipe(dest(path.scripts.save));
-
-const pixelGlassCss = () => src(path.pixelGlass.srcCss)
-  .pipe(rename('pixel-glass.css'))
-  .pipe(dest(path.styles.save));
-
-/**
- * Основные задачи
- */
+// Приватные задачи
 const reload = (cb) => {
-  server.reload();
+  sync.reload();
   cb();
 };
 
-const stylesDev = () => src(path.styles.compile, { allowEmpty: true })
-  .pipe(plumber())
-  .pipe(sourcemaps.init())
-  .pipe(sass.sync().on('error', sass.logError))
-  .pipe(rename({ suffix: `.min` }))
-  .pipe(sourcemaps.write('.'))
-  .pipe(dest(path.styles.save))
-  .pipe(server.stream());
+const pixelGlass = () => mergeStream(
+  src(path.pixelGlass.srcJs)
+    .pipe(rename(path.pixelGlass.destJs))
+    .pipe(dest(path.scripts.save)),
+  src(path.pixelGlass.srcCss)
+    .pipe(rename(path.pixelGlass.destCss))
+    .pipe(dest(path.styles.save))
+);
 
-// Эта задача с csso, который не работает с sourcemaps
-const stylesBuild = () => src(path.styles.compile, { allowEmpty: true })
+const styles = () => src(path.styles.compile, { allowEmpty: true })
+  .pipe(plumber())
   .pipe(sass.sync().on('error', sass.logError))
   .pipe(cssSort())
   .pipe(dest(path.styles.save))
@@ -99,7 +92,17 @@ const stylesBuild = () => src(path.styles.compile, { allowEmpty: true })
   .pipe(csso())
   .pipe(rename({ suffix: `.min` }))
   .pipe(dest(path.styles.save))
-  .pipe(server.stream());
+  .pipe(sync.stream());
+
+// Эта задача без плагинов, которые не работает с sourcemaps
+const stylesSourcemaps = () => src(path.styles.compile, { allowEmpty: true })
+  .pipe(plumber())
+  .pipe(sourcemaps.init())
+  .pipe(sass.sync().on('error', sass.logError))
+  .pipe(rename({ suffix: `.min` }))
+  .pipe(sourcemaps.write('.'))
+  .pipe(dest(path.styles.save))
+  .pipe(sync.stream());
 
 const views = () => src(`${path.views.compile}*.pug`)
   .pipe(plumber())
@@ -130,20 +133,19 @@ const sprite = () => {
     .pipe(svgstore({ inlineSvg: true }))
     .pipe(rename('sprite.svg'))
     .pipe(dest(path.images.save))
-    .pipe(server.stream())
-    .pipe(server.stream());
+    .pipe(sync.stream());
 };
 
-const images = () => src(`${path.images.root}*.{png,jpg,svg}`)
-  // .pipe(imagemin([               // Не работает в x32
-  //   pngquant({ quality: [0.2, 0.8] }),
-  //   mozjpeg({ quality: 85 })
-  // ]))
-  // .pipe(dest(path.images.save))
-  // .pipe(webp({ quality: 85 }))   // Не работает в x32
+export const images = () => src(`${path.images.root}*.{png,jpg,svg}`)
+  .pipe(imagemin([
+    pngquant({ quality: [0.2, 0.8] }),
+    mozjpeg({ quality: 90 })
+  ]))
+  .pipe(dest(path.images.save))
+  .pipe(webp({ quality: 90 }))
   .pipe(dest(path.images.save));
 
-const clean = () => del([dirs.dest]);
+export const clean = () => del([dirs.dest]);
 
 const fonts = () => {
   return src(`${dirs.src}/fonts/*.{woff,woff2}`)
@@ -154,14 +156,14 @@ const publish = (cb) => {
   ghPages.publish(dirs.dest, cb);
 };
 
-const devWatch = () => {
-  server.init({
+export const watchers = () => {
+  sync.init({
     server: dirs.dest,
     cors: true,
     notify: false,
     ui: false
   });
-  watch(`${path.styles.root}**/*.scss`, stylesDev);
+  watch(`${path.styles.root}**/*.scss`, styles);
   watch(`${path.views.root}**/*.pug`, series(views, reload));
   watch(`${path.json.data}`, series(views, reload));
   watch(`${path.scripts.root}**/*.js`, series(scripts, reload));
@@ -169,44 +171,15 @@ const devWatch = () => {
   watch(`${path.images.sprite}*.svg`, series(sprite, reload));
 };
 
-// Эта задача только для критерия Б24, по сути не нужна, отличается только stylesBuild
-const buildWatch = () => {
-  server.init({
-    server: dirs.dest,
-    cors: true,
-    notify: false,
-    ui: false
-  });
-  watch(`${path.styles.root}**/*.scss`, stylesBuild);
-  watch(`${path.views.root}**/*.pug`, series(views, reload));
-  watch(`${path.json.data}`, series(views, reload));
-  watch(`${path.scripts.root}**/*.js`, series(scripts, reload));
-  watch(`${path.images.root}*.{png,jpg,svg}`, series(images, reload));
-  watch(`${path.images.sprite}*.svg`, series(sprite, reload));
-};
+// Публичные задачи
 
-/**
- * Задачи для разработки
- */
-export const dev = series(clean, fonts,
-  parallel(stylesDev, scripts, sprite, images, pixelGlassJs, pixelGlassCss),
-  views, devWatch);
-
-/**
- * Для билда
- */
-export const build = series(clean, fonts,
-  parallel(stylesBuild, scripts, sprite, images, pixelGlassJs, pixelGlassCss),
+export const build = series(
+  clean, fonts,
+  parallel(styles, scripts, sprite, images, pixelGlass),
   views);
 
-/**
- * Для критерия Б24
- */
-export const start = series(build, buildWatch);
+export const start = series(build, watchers);
 
-/**
- * Для деплоя
- */
 export const deploy = series(build, publish);
 
-export default dev;
+export default start;
