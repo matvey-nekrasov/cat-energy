@@ -61,10 +61,6 @@
   text-transform: uppercase;
   text-align: left;
 
-  @media #{$media-mobile-only} {
-    font-size: unquote("max(5vw, 16px)");
-  }
-
   @media #{$media-tablet} {
     width: 130px;
     margin: 0 auto;
@@ -113,10 +109,6 @@
   font-family: $font-arial;
   font-weight: 400;
   font-size: 12px;
-
-  @media #{$media-mobile-only} {
-    font-size: unquote("max(3.8vw, 12px)");
-  }
 
   @media #{$media-tablet} {
     font-size: 16px;
