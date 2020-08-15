@@ -1,8 +1,11 @@
 doctype html
 block vars
-html(lang='ru')
+html.no-js(lang='ru')
   include mixin.pug
-  include head.pug
+  head
+    include head.pug
+    if dev.pixelGlass
+      block pixelGlass
   body.body
     include ../blocks/header.pug
     main

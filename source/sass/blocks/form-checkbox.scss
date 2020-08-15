@@ -1,15 +1,49 @@
 .form-checkbox {
-  //
-}
-
-.form-checkbox__text {
+  display: block;
   color: $color-text-1;
   font-family: $font-oswald;
   font-size: 16px;
-  line-height: 18px;
+  line-height: 2;
   text-transform: uppercase;
+
+  @media #{$media-tablet} {
+    font-size: 20px;
+  }
 }
 
-.form-checkbox__input {
-  //
+.form-checkbox__text {
+  margin-left: 3em;
+}
+
+.form-checkbox__icon {
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  box-shadow: inset 0 0 0 1px $color-border-1;
+  background-color: $color-text-light-1;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+// Checked
+.form-checkbox__input:checked ~ .form-checkbox__icon {
+  background-image: url("data:image/svg+xml,%3Csvg width='19' height='15' viewBox='0 0 19 15' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 11.718L1.3 5.26951L0.25 6.45739L7 14.0938L18.25 1.36648L17.2 0.09375L7 11.718Z' fill='%2368B738'/%3E%3C/svg%3E");
+}
+
+// Hover
+.form-checkbox__input:hover ~ .form-checkbox__icon {
+  box-shadow: inset 0 0 0 1px $color-border-4;
+}
+
+// Focus
+.form-checkbox__input:focus ~ .form-checkbox__icon {
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+// Active
+.form-checkbox__input:active {
+  & ~ .form-checkbox__text,
+  & ~ .form-checkbox__icon {
+    opacity: 0.3;
+  }
 }

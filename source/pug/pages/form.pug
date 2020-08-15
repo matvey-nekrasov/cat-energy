@@ -5,6 +5,9 @@ block vars
   -var currentPageTitle = site.form.title
   -var currentPageHref = site.form.href
 
+block pixelGlass
+  +pixelGlass('pg-form-mobile.png', 'pg-form-tablet.png', 'pg-form-desktop.png')
+
 block mainContent
   h1.visually-hidden #{site.form.title}
 

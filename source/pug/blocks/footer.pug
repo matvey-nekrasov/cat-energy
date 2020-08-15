@@ -2,7 +2,7 @@ footer.footer
   .container
     .footer__wrapper
       a.footer__logo(href=mainPage ? null : site.index.href)
-        svg(width='128' height='24' role='img' aria-label='На главную')
+        svg.footer__logo-img(width='128' height='24' role='img' aria-label='На главную')
           use(href=`${path.sprite}#logo-footer`)
 
       .footer__wrapper-socials

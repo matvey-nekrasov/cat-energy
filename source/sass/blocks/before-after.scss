@@ -8,9 +8,23 @@
   font-size: 16px;
   text-transform: uppercase;
   text-decoration: none;
+  padding: $example-btn-padding-width + $example-btn-border-width 0;
+
+  &:hover {
+    padding-bottom: $example-btn-padding-width;
+    border-bottom: $example-btn-border-width solid change-color($color: $color-text-1, $alpha: 0.24);
+  }
+
+  &:active {
+    padding-bottom: $example-btn-padding-width + $example-btn-border-width;
+    border-bottom: none;
+  }
 
   @media #{$media-tablet} {
     font-size: 20px;
+    padding-top: $example-btn-padding-width + $example-btn-border-width;
+    padding-bottom: $example-btn-padding-width;
+    border-bottom: $example-btn-border-width dotted change-color($color: $color-text-1, $alpha: 0.24);
   }
 }
 
@@ -61,7 +75,7 @@
     }
 
     &:active {
-      border-color: $color-bg-button;
+      border-color: $color-green-2;
       box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
     }
   }
@@ -74,7 +88,7 @@
   width: 35px;
   height: 6px;
   border-radius: 6px;
-  background-color: $color-bg-button;
+  background-color: $color-green-2;
 
   @media #{$media-tablet} {
     top: calc(50% - 4px);
@@ -88,7 +102,7 @@
 .before-after__photo {
   display: block;
   margin: 0 auto;
-  margin-bottom: 34px;
+  margin-bottom: 28px;
 
   &--hidden {
     display: none;

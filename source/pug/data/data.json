@@ -1,33 +1,36 @@
 {
-	"site": {
-		"index": {
-			"title": "Cat Energy - Главная",
-			"href": "index.html"
-		},
-		"catalog": {
-			"title": "Каталог продукции",
-			"href": "catalog.html"
-		},
-		"form": {
-			"title": "Подбор программы",
-			"href": "form.html"
-		}
-	},
-	"media": [
-		{
-			"resolution": "1170",
-			"name": "desktop"
-		},
-		{
-			"resolution": "750",
-			"name": "tablet"
-		}
-	],
+  "site": {
+    "index": {
+      "title": "Cat Energy - Главная",
+      "href": "index.html"
+    },
+    "catalog": {
+      "title": "Каталог продукции",
+      "href": "catalog.html"
+    },
+    "form": {
+      "title": "Подбор программы",
+      "href": "form.html"
+    }
+  },
+  "media": [
+    {
+      "resolution": "1280",
+      "name": "desktop"
+    },
+    {
+      "resolution": "768",
+      "name": "tablet"
+    }
+  ],
   "path": {
     "images": "img/",
     "sprite": "img/sprite.svg",
-		"fonts": "fonts/",
-		"stylesheets": "css/",
-		"js": "js/"
+    "fonts": "fonts/",
+    "stylesheets": "css/",
+    "js": "js/"
+  },
+  "dev": {
+    "pixelGlass": true
   }
 }

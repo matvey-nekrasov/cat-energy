@@ -1,13 +1,13 @@
 mixin product-extra(item)
   article.product-extra
     h3.product-extra__title= item.title
-    p.product-extra__quantity= item.quantity
-    p.product-extra__price #{item.price} Р.
-    +button-type1('Заказать')(href='#').product-extra__button
+    p.product-extra__desc.product-extra__quantity= item.quantity
+    p.product-extra__desc.product-extra__price #{item.price} Р.
+    +button-order('Заказать')(href='#').product-extra__button
 
 section.products-extra
+  h2.products-extra__title.heading-middle Дополнительные товары
   .container
-    h2.products-extra__title.heading-middle Дополнительные товары
     .products-extra__wrapper
       ul.products-extra__list
         li.products-extra__item
@@ -38,8 +38,7 @@ section.products-extra
             price: 300
             })
 
-      .products-extra__item-order-all
-        .order-all
-          svg.order-all__icon(width='56' height='60')
-            use(href=`${path.sprite}#icon-gift`)
-          h3.order-all__text Закажите все и получите чехол для кота в подарок!
+      .order-all
+        svg.order-all__icon(width='56' height='60')
+          use(href=`${path.sprite}#icon-gift`)
+        h3.order-all__text Закажите все и&nbsp;получите чехол для кота в подарок!

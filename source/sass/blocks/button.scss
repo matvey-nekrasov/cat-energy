@@ -9,31 +9,53 @@
   text-transform: uppercase;
   text-decoration: none;
   line-height: 18px;
-  background-color: $color-bg-button;
+  background-color: $color-green-2;
   font-weight: 400;
+
+  &:hover {
+    background-color: $color-green-3;
+  }
+
+  &:active {
+    color: change-color($color-text-light-1, $alpha: 0.3);
+  }
 
   @media #{$media-tablet} {
     font-size: 20px;
     padding: 18px 27px;
   }
 
-  &--type2 {
+  &--grey {
     padding-top: 12px;
     padding-bottom: 11px;
     font-size: 16px;
     line-height: 1;
     color: $color-text-4;
     background-color: $color-bg-2;
+
+    &:hover {
+      background-color: $color-bg-3;
+    }
+
+    &:active {
+      color: change-color($color-text-4, $alpha: 0.3);
+    }
   }
 
   &--order {
     font-size: 16px;
 
     @media #{$media-tablet} {
-      // font-size: 18px;
-      padding: 0;
-      padding-top: 11px;
-      padding-bottom: 10px;
+      padding: 11px 10px 10px;
+    }
+  }
+
+  &--submit {
+    font-size: 16px;
+
+    @media #{$media-tablet} {
+      font-size: 20px;
+      padding: 17px 10px;
     }
   }
 }

@@ -27,8 +27,29 @@ section.example
             span.example__cost 15 000 руб.
 
       .example__wrapper-before-after.before-after
-        img.example__photo.before-after__photo.before-after__photo--fat(src=`${path.images}before-mobile@1x.png` width='320' height='240' alt='Толстый кот')
-        img.example__photo.before-after__photo.before-after__photo--thin.before-after__photo--hidden(src=`${path.images}after-mobile@1x.png` width='320' height='240' alt='Худой кот')
+        picture
+          source(media=`(min-width:${media[0].resolution}px)`
+            srcset=`${path.images}before-desktop@1x.png 1x,
+            ${path.images}before-desktop@2x.png 2x`)
+          source(media=`(min-width:${media[1].resolution}px)`
+            srcset=`${path.images}before-tablet@1x.png 1x,
+            ${path.images}before-tablet@2x.png 2x`)
+          img.example__photo.before-after__photo.before-after__photo--fat(
+            src=`${path.images}before-mobile@1x.png`
+            srcset=`${path.images}before-mobile@2x.png 2x`
+            width='320' height='240' alt='Толстый кот')
+        picture
+          source(media=`(min-width:${media[0].resolution}px)`
+            srcset=`${path.images}after-desktop@1x.png 1x,
+            ${path.images}after-desktop@2x.png 2x`)
+          source(media=`(min-width:${media[1].resolution}px)`
+            srcset=`${path.images}after-tablet@1x.png 1x,
+            ${path.images}after-tablet@2x.png 2x`)
+          img.example__photo.before-after__photo.before-after__photo--fat.before-after__photo--hidden(
+            src=`${path.images}after-mobile@1x.png`
+            srcset=`${path.images}after-mobile@2x.png 2x`
+            width='320' height='240' alt='Худой кот')
+
         .before-after__wrapper-buttons
           a.before-after__btn(href='#') Было
           .before-after__range

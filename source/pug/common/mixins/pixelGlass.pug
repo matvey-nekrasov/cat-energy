@@ -1,0 +1,23 @@
+mixin pixelGlass(mobile, tablet, desktop)
+  style.
+    html {
+      background-repeat: no-repeat;
+      background-position: 50% 0;
+      background-image: url("#{path.images}#{mobile}");
+    }
+
+    /* Tablet */
+    @media (min-width: #{media[1].resolution}px) {
+      html {
+        background-image: url("#{path.images}#{tablet}");
+      }
+    }
+
+    /* Desktop */
+    @media (min-width: #{media[0].resolution}px) {
+      html {
+        background-image: url("#{path.images}#{desktop}");
+      }
+    }
+  link(href=`${path.stylesheets}pixel-glass.css` rel='stylesheet')
+  script(src=`${path.js}pixel-glass.js`)

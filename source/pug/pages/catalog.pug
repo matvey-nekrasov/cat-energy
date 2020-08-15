@@ -5,6 +5,9 @@ block vars
   -var currentPageTitle = site.catalog.title
   -var currentPageHref = site.catalog.href
 
+block pixelGlass
+  +pixelGlass('pg-catalog-mobile.png', 'pg-catalog-tablet.png', 'pg-catalog-desktop.png')
+
 block mainContent
   h1.visually-hidden #{site.catalog.title}
 

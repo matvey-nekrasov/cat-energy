@@ -1,8 +1,5 @@
 .container {
-  // @include outline();
   margin: 0 auto;
-
-  // width: $width-mobile;
   padding: 0 $width-padding;
 
   @media #{$media-tablet} {
@@ -13,5 +10,17 @@
   @media #{$media-desktop} {
     width: $width-desktop;
     padding: 0 $width-padding;
+  }
+
+  &--narrow {
+    @media #{$media-tablet} {
+      width: $width-tablet-form;
+      padding: 0 $width-padding;
+    }
+
+    @media #{$media-desktop} {
+      width: $width-desktop;
+      padding: 0 $width-padding;
+    }
   }
 }

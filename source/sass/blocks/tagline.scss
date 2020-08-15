@@ -2,7 +2,7 @@ $shift-mobile-img: -139px;
 
 .tagline {
   @media #{$media-desktop} {
-    min-height: 581px;
+    min-height: 578px;
     position: relative;
     margin-bottom: 82px;
   }
@@ -11,20 +11,23 @@ $shift-mobile-img: -139px;
 .tagline__wrapper-desktop-bg {
   @media #{$media-desktop} {
     position: absolute;
-    top: -113px;
+    top: -118px;
     right: 0;
     bottom: 0;
     left: 50%;
-    background-color: $color-bg-green-1;
-    background-image: url(#{$path-images}index-background-mobile@1x.jpg);
+    background-color: $color-green-1;
     background-repeat: no-repeat;
-    background-size: cover;
-    z-index: -1;
+    // background-size: cover;
+    background-size: 720px auto;
+    background-image: url(#{$path-images}index-background-desktop@1x.jpg);
+
+    @media #{$media-2x} {
+      background-image: url(#{$path-images}index-background-desktop@2x.jpg);
+    }
   }
 }
 
 .tagline__wrapper-horizontal {
-  // width: $width-mobile + $width-padding * 2; // set mobile width
   margin: 0 auto;
   position: relative;
 
@@ -38,13 +41,17 @@ $shift-mobile-img: -139px;
 }
 
 .tagline__wrapper-title-desc {
-  background-image: url(#{$path-images}index-background-mobile@1x.jpg);
-  background-color: $color-bg-green-1;
+  background-color: $color-green-1;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  padding-top: 28px;
+  padding-top: 27px;
   padding-bottom: -$shift-mobile-img;
+  background-image: url(#{$path-images}index-background-mobile@1x.jpg);
+
+  @media #{$media-2x} {
+    background-image: url(#{$path-images}index-background-mobile@2x.jpg);
+  }
 
   @media #{$media-tablet} {
     padding-top: 60px;
@@ -54,7 +61,7 @@ $shift-mobile-img: -139px;
   }
 
   @media #{$media-desktop} {
-    padding-top: 110px;
+    padding-top: 107px;
   }
 }
 
@@ -126,21 +133,21 @@ $shift-mobile-img: -139px;
   vertical-align: bottom;
   margin-top: $shift-mobile-img;
   margin-bottom: 3px;
+  width: 280px;
 
   @media #{$media-tablet} {
-    margin-top: 0;
-    margin-bottom: 4px;
+    margin-top: 5px;
+    margin-bottom: 0;
     width: 709px;
-    height: 609px;
   }
 
   @media #{$media-desktop} {
     position: absolute;
+    margin-top: 2px;
     margin-bottom: 0;
     width: 552px;
-    height: 499px;
-    top: 26px;
-    left: 478px;
+    top: 23px;
+    left: 448px;
   }
 }
 

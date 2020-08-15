@@ -93,8 +93,25 @@
   background-repeat: no-repeat;
   background-size: cover;
 
+  @media #{$media-2x} {
+    background-image: url(#{$path-images}bg-map-mobile@2x.png);
+  }
+
   @media #{$media-tablet} {
     height: 400px;
+    background-image: url(#{$path-images}bg-map-tablet@1x.png);
+
+    @media #{$media-2x} {
+      background-image: url(#{$path-images}bg-map-tablet@2x.png);
+    }
+  }
+
+  @media #{$media-desktop} {
+    background-image: url(#{$path-images}bg-map-desktop@1x.png);
+
+    @media #{$media-2x} {
+      background-image: url(#{$path-images}bg-map-desktop@2x.png);
+    }
   }
 }
 
