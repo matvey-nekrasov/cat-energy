@@ -21,6 +21,10 @@
     {
       "resolution": "768",
       "name": "tablet"
+    },
+    {
+      "resolution": "340",
+      "name": "mobile"
     }
   ],
   "path": {
@@ -31,6 +35,6 @@
     "js": "js/"
   },
   "dev": {
-    "pixelGlass": true
+    "isPixelGlass": false
   }
 }

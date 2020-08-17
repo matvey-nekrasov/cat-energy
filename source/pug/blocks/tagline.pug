@@ -5,8 +5,11 @@ section.tagline
       h2.tagline__title.heading-big Функциональное питание для котов
       p.tagline__desc Занялся собой? Займись котом!
     .tagline__wrapper-img-button
-      picture
-        source(media=`(min-width:${media[0].resolution}px)` srcset=`${path.images}index-can-desktop@1x.png 1x, ${path.images}index-can-desktop@2x.png 2x`)
-        source(media=`(min-width:${media[1].resolution}px)` srcset=`${path.images}index-can-tablet@1x.jpg 1x, ${path.images}index-can-tablet@2x.jpg 2x`)
-        img.tagline__img(src=`${path.images}index-can-mobile@1x.png` srcset=`${path.images}index-can-mobile@2x.png 2x` alt='Банка с кормом Cat Energy' width='280' height='271')
+      +picture(
+        '',
+        'tagline__img',
+        'index-can',
+        ['png', 'jpg', 'png'],
+        '280', '271',
+        'Банка с кормом Cat Energy')
       +button-green('Подобрать программу')(href= site.form.href type='button').tagline__button

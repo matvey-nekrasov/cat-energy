@@ -30,10 +30,6 @@
   font-weight: 400;
   text-transform: uppercase;
 
-  @media #{$media-mobile-only} {
-    font-size: unquote("max(5vw, 16px)");
-  }
-
   @media #{$media-tablet} {
     font-size: 20px;
     margin-bottom: 24px;
@@ -47,10 +43,6 @@
 .product-extra__desc {
   color: $color-text-4;
   font-size: 14px;
-
-  @media #{$media-mobile-only} {
-    font-size: unquote("max(4.4vw, 14px)");
-  }
 
   @media #{$media-tablet} {
     font-size: 16px;
