@@ -2714,13 +2714,6 @@ input[type='radio'].visually-hidden
 
     color: #222;
 }
-@media screen and (max-width: 767px)
-{
-    .product__title
-    {
-        font-size: max(5vw, 16px);
-    }
-}
 @media screen and (min-width: 768px)
 {
     .product__title
@@ -2793,13 +2786,6 @@ input[type='radio'].visually-hidden
     margin: 0;
 
     color: #444;
-}
-@media screen and (max-width: 767px)
-{
-    .product__properties-item
-    {
-        font-size: max(3.8vw, 12px);
-    }
 }
 @media screen and (min-width: 768px)
 {
@@ -3009,13 +2995,6 @@ input[type='radio'].visually-hidden
 
     grid-area: title;
 }
-@media screen and (max-width: 767px)
-{
-    .product-extra__title
-    {
-        font-size: max(5vw, 16px);
-    }
-}
 @media screen and (min-width: 768px)
 {
     .product-extra__title
@@ -3038,13 +3017,6 @@ input[type='radio'].visually-hidden
     font-size: 14px; 
 
     color: #444;
-}
-@media screen and (max-width: 767px)
-{
-    .product-extra__desc
-    {
-        font-size: max(4.4vw, 14px);
-    }
 }
 @media screen and (min-width: 768px)
 {
