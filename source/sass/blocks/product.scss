@@ -67,6 +67,11 @@
     margin-bottom: 19px;
     text-align: center;
     font-size: 20px;
+
+    @media #{$media-desktop} {
+      line-height: 23px;
+      margin-bottom: 23px;
+    }
   }
 
   &--showmore {
