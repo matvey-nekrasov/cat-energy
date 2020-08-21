@@ -36,8 +36,9 @@ section.selection
         +form-radio('Не знаю (Нужен ваш совет)')(name='purpose' value='dont-know' type='radio')
 
 
-    h3.selection__subtitle-contacts.heading-middle.heading-middle--multiline Контактные данные<br>(владельца кота)
     .container.container--narrow
+      .heading-line.selection__subtitle-contacts
+        h3.heading-line__text Контактные данные<br>(владельца кота)
       fieldset.selection__fieldset-contacts
         .selection__grid-contacts
           legend.visually-hidden Контактные данные владельца кота
@@ -52,13 +53,15 @@ section.selection
             svg.form-text__img.form-text__img--phone(width='20' height='20')
               use(href=`${path.sprite}#icon-phone`)
 
-    h3.selection__subtitle-comment.heading-middle Комментарий
     .container.container--narrow
+      .heading-line.selection__subtitle-comment
+        h3.heading-line__text Комментарий
       fieldset.selection__fieldset-comment
         textarea.selection__comment(name='comment' placeholder='Расскажите обо всех повадках кота')
 
-    h3.selection__subtitle-additionally.heading-middle Дополнительно
     .container.container--narrow
+      .heading-line.selection__subtitle-additionally
+        h3.heading-line__text Дополнительно
       fieldset.selection__fieldset-additionally
         .selection__grid-additionally
           +form-checkbox('Сахарозаменитель')(name='sugar-substitute' type='checkbox' checked)

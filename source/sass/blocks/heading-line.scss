@@ -1,0 +1,47 @@
+.heading-line {
+  &::before {
+    content: "";
+    position: absolute;
+    border-top: 2px solid $color-green-2;
+    left: $width-padding;
+    right: 0;
+    margin-top: 16px;
+
+    @media #{$media-tablet} {
+      margin-top: 22px;
+      left: 0;
+    }
+  }
+}
+
+.heading-line__text {
+  margin: 0;
+  padding: 0;
+  padding-right: 22px;
+  font-family: $font-oswald;
+  font-size: 24px;
+  line-height: 26px;
+  font-weight: 400;
+  color: $color-text-1;
+  display: inline-block;
+  position: relative;
+  background-color: white;
+
+  @media #{$media-tablet} {
+    font-size: 36px;
+    line-height: 1;
+    margin-left: -40px;
+    padding-right: 40px;
+    padding-left: 40px;
+
+    br {
+      display: none;
+    }
+  }
+
+  @media #{$media-desktop} {
+    margin-left: -40px;
+    padding-left: 40px;
+    padding-right: 35px;
+  }
+}
