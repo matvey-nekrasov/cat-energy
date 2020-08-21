@@ -48,6 +48,10 @@
   display: block;
   margin: 0 auto;
   width: 100%;
+
+  @media #{$media-desktop} {
+    padding-bottom: 10px;
+  }
 }
 
 .product__title {
