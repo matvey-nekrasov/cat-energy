@@ -86,12 +86,14 @@
               </label>
             </fieldset>
           </div>
-          <h3 class="selection__subtitle-contacts heading-middle heading-middle--multiline">Контактные данные
-            <br>(владельца кота)</h3>
           <div class="container container--narrow">
+            <div class="heading-line selection__subtitle-contacts">
+              <h3 class="heading-line__text">Контактные данные
+                <br>(владельца кота)</h3>
+            </div>
             <fieldset class="selection__fieldset-contacts">
+              <legend class="visually-hidden">Контактные данные владельца кота</legend>
               <div class="selection__grid-contacts">
-                <legend class="visually-hidden">Контактные данные владельца кота</legend>
                 <label class="form-text form-text--email selection__row-contacts">
                   <span class="form-text__text">E-mail:*</span>
                   <input class="form-text__input form-text__input--icon" name="email" value="kuklachev@gmail.com" type="email" required>
@@ -109,14 +111,18 @@
               </div>
             </fieldset>
           </div>
-          <h3 class="selection__subtitle-comment heading-middle">Комментарий</h3>
           <div class="container container--narrow">
+            <div class="heading-line selection__subtitle-comment">
+              <h3 class="heading-line__text">Комментарий</h3>
+            </div>
             <fieldset class="selection__fieldset-comment">
               <textarea class="selection__comment" name="comment" placeholder="Расскажите обо всех повадках кота"></textarea>
             </fieldset>
           </div>
-          <h3 class="selection__subtitle-additionally heading-middle">Дополнительно</h3>
           <div class="container container--narrow">
+            <div class="heading-line selection__subtitle-additionally">
+              <h3 class="heading-line__text">Дополнительно</h3>
+            </div>
             <fieldset class="selection__fieldset-additionally">
               <div class="selection__grid-additionally">
                 <label class="form-checkbox">
@@ -142,7 +148,7 @@
               </div>
             </fieldset>
             <div class="selection__wrapper-submit">
-              <a class="button button--submit selection__submit-btn" href="#" type="submit">Отправить заявку</a>
+              <button class="button button--submit selection__submit-btn" type="submit">Отправить заявку</button>
               <p class="selection__required">* — Обязательные поля</p>
             </div>
           </div>

@@ -495,18 +495,20 @@ input[type='radio'].visually-hidden
 {
     font-family: 'Oswald', arial, sans-serif;
     font-size: 14px;
-    font-weight: 400; 
+    font-weight: 400;
     line-height: 18px;
 
     display: block;
 
     padding: 11px 10px;
 
+    cursor: pointer; 
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
 
     color: #fff;
+    border: none;
     background-color: #68b738;
 }
 .button:hover
@@ -558,7 +560,9 @@ input[type='radio'].visually-hidden
 }
 .button--submit
 {
-    font-size: 16px;
+    font-size: 16px; 
+
+    width: 100%;
 }
 @media screen and (min-width: 768px)
 {
@@ -774,7 +778,6 @@ input[type='radio'].visually-hidden
     padding-bottom: 27px; 
 
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
     align-items: center;
 }
 @media screen and (min-width: 768px)
@@ -808,6 +811,7 @@ input[type='radio'].visually-hidden
     line-height: 20px;
 
     margin: 0;
+    margin-right: 15px;
 
     text-transform: uppercase; 
 
@@ -1033,12 +1037,21 @@ input[type='radio'].visually-hidden
     width: 136px;
     margin: 0 auto;
     padding: 0;
+    padding-right: 11px;
 
     list-style: none; 
 
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+}
+@media screen and (min-width: 768px)
+{
+    .footer__socials-list
+    {
+        padding-right: 0;
+        padding-bottom: 3px;
+    }
 }
 
 .footer__wrapper-links
@@ -1183,86 +1196,69 @@ input[type='radio'].visually-hidden
     }
 }
 
-.heading-middle
+.heading-line::before
+{
+    position: absolute;
+    right: 0;
+    left: 20px;
+
+    margin-top: 16px; 
+
+    content: '';
+
+    border-top: 2px solid #68b738;
+}
+@media screen and (min-width: 768px)
+{
+    .heading-line::before
+    {
+        left: 0; 
+
+        margin-top: 22px;
+    }
+}
+
+.heading-line__text
 {
     font-family: 'Oswald', arial, sans-serif;
     font-size: 24px;
     font-weight: 400;
     line-height: 26px;
 
-    display: flex;
+    position: relative;
+
+    display: inline-block;
 
     margin: 0;
+    padding: 0;
+    padding-right: 22px;
 
     color: #000;
-
-    align-items: baseline;
+    background-color: white;
 }
 @media screen and (min-width: 768px)
 {
-    .heading-middle
+    .heading-line__text
     {
         font-size: 36px;
         line-height: 1;
+
+        margin-left: -40px;
+        padding-right: 40px;
+        padding-left: 40px;
     }
-}
-.heading-middle::before
-{
-    margin-right: 20px; 
-
-    content: '';
-}
-@media screen and (min-width: 768px)
-{
-    .heading-middle::before
+    .heading-line__text br
     {
-        width: calc((100vw - 708px) / 2); 
-        margin-right: 37px;
-        padding-bottom: .3em;
-
-        border-top: 2px solid #68b738;
+        display: none;
     }
 }
 @media screen and (min-width: 1280px)
 {
-    .heading-middle::before
+    .heading-line__text
     {
-        width: calc((100vw - 1220px) / 2 - 40px); 
-        margin-right: 40px;
-    }
-}
-.heading-middle::after
-{
-    margin-left: 22px;
-    padding: 0;
-    padding-bottom: .3em;
-
-    content: '';
-
-    border-top: 2px solid #68b738; 
-
-    flex-grow: 1;
-}
-@media screen and (min-width: 768px)
-{
-    .heading-middle::after
-    {
-        margin-left: 35px;
-    }
-}
-.heading-middle--multiline::after
-{
-    margin-left: 15px;
-}
-@media screen and (min-width: 768px)
-{
-    .heading-middle--multiline::after
-    {
-        margin-left: 35px;
-    }
-    .heading-middle--multiline br
-    {
-        display: none;
+        margin-left: -40px;
+        padding-right: 35px; 
+        padding-left: 40px;
     }
 }
 
@@ -2698,6 +2694,13 @@ input[type='radio'].visually-hidden
     width: 100%; 
     margin: 0 auto;
 }
+@media screen and (min-width: 1280px)
+{
+    .product__img
+    {
+        padding-bottom: 10px;
+    }
+}
 
 .product__title
 {
@@ -2725,6 +2728,15 @@ input[type='radio'].visually-hidden
         margin-bottom: 19px;
 
         text-align: center;
+    }
+}
+@media screen and (min-width: 768px) and (min-width: 1280px)
+{
+    .product__title
+    {
+        line-height: 23px;
+
+        margin-bottom: 23px;
     }
 }
 .product__title--showmore
@@ -2842,21 +2854,21 @@ input[type='radio'].visually-hidden
 {
     margin: 0;
     margin-top: 28px;
-    margin-bottom: 33px;
+    margin-bottom: 31px;
 }
 @media screen and (min-width: 768px)
 {
     .products-extra__title
     {
-        margin-top: 68px;
-        margin-bottom: 80px;
+        margin-top: 67px;
+        margin-bottom: 79px;
     }
 }
 @media screen and (min-width: 1280px)
 {
     .products-extra__title
     {
-        margin-top: 77px;
+        margin-top: 75px;
         margin-bottom: 78px;
     }
 }
@@ -3309,13 +3321,13 @@ input[type='radio'].visually-hidden
 
 .selection__subtitle-contacts
 {
-    margin-bottom: 32px;
+    margin-bottom: 29px;
 }
 @media screen and (min-width: 768px)
 {
     .selection__subtitle-contacts
     {
-        margin-bottom: 76px;
+        margin-bottom: 75px;
     }
 }
 
@@ -3331,14 +3343,14 @@ input[type='radio'].visually-hidden
 {
     .selection__fieldset-contacts
     {
-        margin-bottom: 66px;
+        margin-bottom: 65px;
     }
 }
 @media screen and (min-width: 1280px)
 {
     .selection__fieldset-contacts
     {
-        margin-bottom: 68px;
+        margin-bottom: 67px;
     }
 }
 
@@ -3361,7 +3373,7 @@ input[type='radio'].visually-hidden
 {
     .selection__subtitle-comment
     {
-        margin-bottom: 76px;
+        margin-bottom: 74px;
     }
 }
 
@@ -3377,7 +3389,7 @@ input[type='radio'].visually-hidden
 {
     .selection__fieldset-comment
     {
-        margin-bottom: 66px;
+        margin-bottom: 65px;
     }
 }
 @media screen and (min-width: 1280px)
@@ -3390,13 +3402,13 @@ input[type='radio'].visually-hidden
 
 .selection__subtitle-additionally
 {
-    margin-bottom: 34px;
+    margin-bottom: 31px;
 }
 @media screen and (min-width: 768px)
 {
     .selection__subtitle-additionally
     {
-        margin-bottom: 57px;
+        margin-bottom: 55px;
     }
 }
 
@@ -3412,7 +3424,7 @@ input[type='radio'].visually-hidden
 {
     .selection__fieldset-additionally
     {
-        margin-bottom: 53px;
+        margin-bottom: 54px;
     }
 }
 @media screen and (min-width: 1280px)
