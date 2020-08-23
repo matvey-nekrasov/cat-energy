@@ -1,8 +1,8 @@
-.before-after {
+.slider-cats {
   //
 }
 
-.before-after__btn {
+.slider-cats__btn {
   color: $color-text-2;
   font-family: $font-oswald;
   font-size: 16px;
@@ -28,7 +28,7 @@
   }
 }
 
-.before-after__wrapper-buttons {
+.slider-cats__wrapper-buttons {
   margin: 0 auto;
   padding-bottom: 10px;
   width: 197px;
@@ -41,7 +41,7 @@
   }
 }
 
-.before-after__range {
+.slider-cats__range {
   @media #{$media-tablet} {
     position: relative;
     width: 428px;
@@ -51,7 +51,7 @@
   }
 }
 
-.before-after__handle {
+.slider-cats__handle {
   position: relative;
   box-sizing: border-box;
   width: 84px;
@@ -81,7 +81,7 @@
   }
 }
 
-.before-after__point {
+.slider-cats__point {
   position: absolute;
   top: 3px;
   left: 5px;
@@ -99,7 +99,7 @@
   }
 }
 
-.before-after__photo {
+.slider-cats__photo {
   display: block;
   margin: 0 auto;
   margin-bottom: 28px;

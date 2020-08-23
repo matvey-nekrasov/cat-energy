@@ -35,6 +35,6 @@
     "js": "js/"
   },
   "dev": {
-    "isPixelGlass": false
+    "isPixelGlass": true
   }
 }
