@@ -1,12 +1,10 @@
 section.example
 
-  .example__wrapper-title
-    .container
-      h2.example__title.heading-big Живой пример
+  .container
 
-  .example__wrapper-desc-bg
-    .example__wrapper-desc-cat
+    .example__wrapper-desc-slider
       .example__wrapper-desc
+        h2.example__title.heading-big Живой пример
         p.example__desc.paragraph.
           Борис сбросил 5 кг за 2 месяца, просто
           заменив свой обычный корм на Cat
@@ -27,22 +25,22 @@ section.example
             span.example__cost 15 000 руб.
 
       .example__wrapper-slider-cats.slider-cats
-        +picture(
-          '',
-          'example__photo slider-cats__photo slider-cats__photo--fat',
-          'before',
-          ['png', 'png', 'png'],
-          '320', '240',
-          'Толстый кот')
-
-        +picture(
-          '',
-          'example__photo slider-cats__photo slider-cats__photo--fat slider-cats__photo--hidden',
-          'after',
-          ['png', 'png', 'png'],
-          '320', '240',
-          'Худой кот')
-
+        .slider-cats__image.slider-cats__image--left
+          +picture(
+            '',
+            'slider-cats__img slider-cats__img--left',
+            'before',
+            ['png', 'png', 'png'],
+            '320', '240',
+            'Толстый кот')
+        .slider-cats__image.slider-cats__image--right.slider-cats__image--hidden-mobile
+          +picture(
+            '',
+            'slider-cats__img slider-cats__img--right',
+            'after',
+            ['png', 'png', 'png'],
+            '320', '240',
+            'Худой кот')
         .slider-cats__wrapper-buttons
           a.slider-cats__btn(href='#') Было
           .slider-cats__range
