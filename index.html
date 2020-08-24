@@ -113,14 +113,10 @@
         </div>
       </section>
       <section class="example">
-        <div class="example__wrapper-title">
-          <div class="container">
-            <h2 class="example__title heading-big">Живой пример</h2>
-          </div>
-        </div>
-        <div class="example__wrapper-desc-bg">
-          <div class="example__wrapper-desc-cat">
+        <div class="container">
+          <div class="example__wrapper-desc-slider">
             <div class="example__wrapper-desc">
+              <h2 class="example__title heading-big">Живой пример</h2>
               <p class="example__desc paragraph">Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на Cat Energy Slim. Отличный результат без изнуряющих тренировок! При этом он не менял своих привычек и по-прежнему спит по 16 часов в день.</p>
               <div class="example__wrapper-plates-cost">
                 <div class="example__wrapper-plates">
@@ -139,41 +135,45 @@
                 </div>
               </div>
             </div>
-            <div class="example__wrapper-before-after before-after">
-              <picture>
-                <source type="image/webp" media="(min-width: 1280px)" srcset="img/before-desktop@2x.webp 2x,
+            <div class="example__wrapper-slider-cats slider-cats">
+              <div class="slider-cats__image slider-cats__image--left">
+                <picture>
+                  <source type="image/webp" media="(min-width: 1280px)" srcset="img/before-desktop@2x.webp 2x,
           img/before-desktop@1x.webp 1x">
-                <source type="image/webp" media="(min-width: 768px)" srcset="img/before-tablet@2x.webp 2x,
+                  <source type="image/webp" media="(min-width: 768px)" srcset="img/before-tablet@2x.webp 2x,
           img/before-tablet@1x.webp 1x">
-                <source type="image/webp" srcset="img/before-mobile@2x.webp 2x,
+                  <source type="image/webp" srcset="img/before-mobile@2x.webp 2x,
           img/before-mobile@1x.webp 1x">
-                <source type="image/png" media="(min-width: 1280px)" srcset="img/before-desktop@2x.png 2x,
+                  <source type="image/png" media="(min-width: 1280px)" srcset="img/before-desktop@2x.png 2x,
           img/before-desktop@1x.png 1x">
-                <source type="image/png" media="(min-width: 768px)" srcset="img/before-tablet@2x.png 2x,
+                  <source type="image/png" media="(min-width: 768px)" srcset="img/before-tablet@2x.png 2x,
           img/before-tablet@1x.png 1x">
-                <img class="example__photo before-after__photo before-after__photo--fat" srcset="img/before-mobile@2x.png 2x" src="img/before-mobile@1x.png" width="320" height="240" alt="Толстый кот">
-              </picture>
-              <picture>
-                <source type="image/webp" media="(min-width: 1280px)" srcset="img/after-desktop@2x.webp 2x,
+                  <img class="slider-cats__img slider-cats__img--left" srcset="img/before-mobile@2x.png 2x" src="img/before-mobile@1x.png" width="320" height="240" alt="Толстый кот">
+                </picture>
+              </div>
+              <div class="slider-cats__image slider-cats__image--right slider-cats__image--hidden-mobile">
+                <picture>
+                  <source type="image/webp" media="(min-width: 1280px)" srcset="img/after-desktop@2x.webp 2x,
           img/after-desktop@1x.webp 1x">
-                <source type="image/webp" media="(min-width: 768px)" srcset="img/after-tablet@2x.webp 2x,
+                  <source type="image/webp" media="(min-width: 768px)" srcset="img/after-tablet@2x.webp 2x,
           img/after-tablet@1x.webp 1x">
-                <source type="image/webp" srcset="img/after-mobile@2x.webp 2x,
+                  <source type="image/webp" srcset="img/after-mobile@2x.webp 2x,
           img/after-mobile@1x.webp 1x">
-                <source type="image/png" media="(min-width: 1280px)" srcset="img/after-desktop@2x.png 2x,
+                  <source type="image/png" media="(min-width: 1280px)" srcset="img/after-desktop@2x.png 2x,
           img/after-desktop@1x.png 1x">
-                <source type="image/png" media="(min-width: 768px)" srcset="img/after-tablet@2x.png 2x,
+                  <source type="image/png" media="(min-width: 768px)" srcset="img/after-tablet@2x.png 2x,
           img/after-tablet@1x.png 1x">
-                <img class="example__photo before-after__photo before-after__photo--fat before-after__photo--hidden" srcset="img/after-mobile@2x.png 2x" src="img/after-mobile@1x.png" width="320" height="240" alt="Худой кот">
-              </picture>
-              <div class="before-after__wrapper-buttons">
-                <a class="before-after__btn" href="#">Было</a>
-                <div class="before-after__range">
-                  <div class="before-after__handle">
-                    <div class="before-after__point"></div>
+                  <img class="slider-cats__img slider-cats__img--right" srcset="img/after-mobile@2x.png 2x" src="img/after-mobile@1x.png" width="320" height="240" alt="Худой кот">
+                </picture>
+              </div>
+              <div class="slider-cats__wrapper-buttons">
+                <a class="slider-cats__btn" href="#">Было</a>
+                <div class="slider-cats__range">
+                  <div class="slider-cats__handle">
+                    <div class="slider-cats__point"></div>
                   </div>
                 </div>
-                <a class="before-after__btn" href="#">Стало</a>
+                <a class="slider-cats__btn" href="#">Стало</a>
               </div>
             </div>
           </div>
