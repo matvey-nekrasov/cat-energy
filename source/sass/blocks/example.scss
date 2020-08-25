@@ -2,6 +2,7 @@ $example-btn-border-width: 1px;
 $example-btn-padding-width: 4px;
 
 .example {
+  position: relative;
   background-color: $color-bg-3;
 
   @media #{$media-tablet} {
@@ -11,6 +12,18 @@ $example-btn-padding-width: 4px;
 
   @media #{$media-desktop} {
     --bg-offset: 165px;
+    background-image: linear-gradient($color-bg-1 var(--bg-offset), $color-bg-2 var(--bg-offset));
+  }
+}
+
+.example__right-cat-bg {
+  @media #{$media-desktop} {
+    position: absolute;
+    top: var(--bg-offset);
+    right: 0;
+    bottom: 0;
+    left: calc(50% + 325px);
+    background-color: $color-bg-3;
   }
 }
 
