@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: flex-end;
     width: $width-tablet;
-    padding: 4px $width-padding;
+    padding: 4px $width-padding-mobile;
     margin: 0 auto;
     margin-top: 20px;
   }
@@ -28,7 +28,7 @@
 
 .nav__logo-link {
   line-height: 0;
-  padding: 0 $width-padding;
+  padding: 0 $width-padding-mobile;
   padding-top: 11px;
   padding-bottom: 16px;
   text-decoration: none;
@@ -67,7 +67,7 @@
   .nav__toggle {
     display: block;
     position: relative;
-    width: 24px + $width-padding * 2;
+    width: 24px + $width-padding-mobile * 2;
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -78,8 +78,8 @@
       position: absolute;
       content: "";
       top: 24px;
-      left: $width-padding;
-      right: $width-padding;
+      left: $width-padding-mobile;
+      right: $width-padding-mobile;
       height: 2px;
       background-color: $color-text-1;
       box-shadow: 0 8px 0 0 $color-text-1, 0 16px 0 0 $color-text-1;
@@ -92,8 +92,8 @@
       position: absolute;
       content: "";
       top: 32px;
-      left: $width-padding;
-      right: $width-padding;
+      left: $width-padding-mobile;
+      right: $width-padding-mobile;
       height: 2px;
       background-color: $color-text-1;
     }

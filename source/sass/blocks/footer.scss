@@ -64,10 +64,16 @@
   flex-wrap: wrap;
   margin: 0 auto;
   padding: 0;
+  padding-right: 11px;
   width: 136px;
   justify-content: space-between;
   align-items: center;
   list-style: none;
+
+  @media #{$media-tablet} {
+    padding-right: 0;
+    padding-bottom: 3px;
+  }
 }
 
 .footer__wrapper-links {

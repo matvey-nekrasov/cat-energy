@@ -1,8 +1,8 @@
 .button {
   display: block;
   padding: 11px 10px;
+  border: none;
   text-align: center;
-
   color: $color-text-light-1;
   font-family: $font-oswald;
   font-size: 14px;
@@ -11,6 +11,7 @@
   line-height: 18px;
   background-color: $color-green-2;
   font-weight: 400;
+  cursor: pointer;
 
   &:hover {
     background-color: $color-green-3;
@@ -51,6 +52,7 @@
   }
 
   &--submit {
+    width: 100%;
     font-size: 16px;
 
     @media #{$media-tablet} {

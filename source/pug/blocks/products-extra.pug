@@ -6,7 +6,9 @@ mixin product-extra(item)
     +button-order('Заказать')(href='#').product-extra__button
 
 section.products-extra
-  h2.products-extra__title.heading-middle Дополнительные товары
+  .container.container--narrow
+    .heading-line.products-extra__title
+      h2.heading-line__text Дополнительные товары
   .container
     .products-extra__wrapper
       ul.products-extra__list

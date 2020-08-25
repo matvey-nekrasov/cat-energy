@@ -9,7 +9,6 @@
 .cooperation__wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
   align-items: center;
   padding-top: 27px;
   padding-bottom: 27px;
@@ -31,6 +30,7 @@
 
 .cooperation__title {
   margin: 0;
+  margin-right: 15px;
   color: $color-text-2;
   font-family: $font-oswald;
   font-size: 16px;

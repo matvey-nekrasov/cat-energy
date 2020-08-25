@@ -5,15 +5,15 @@
 .products-extra__title {
   margin: 0;
   margin-top: 28px;
-  margin-bottom: 33px;
+  margin-bottom: 31px;
 
   @media #{$media-tablet} {
-    margin-top: 68px;
-    margin-bottom: 80px;
+    margin-top: 67px;
+    margin-bottom: 79px;
   }
 
   @media #{$media-desktop} {
-    margin-top: 77px;
+    margin-top: 75px;
     margin-bottom: 78px;
   }
 }

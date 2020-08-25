@@ -44,7 +44,7 @@
   @media #{$media-tablet} {
     margin: 0 auto;
     width: $width-tablet-form;
-    padding: 0 $width-padding;
+    padding: 0 $width-padding-tablet;
   }
 
   @media #{$media-desktop} {
@@ -58,7 +58,7 @@
 
 .selection__fieldset-base {
   margin: 0;
-  padding: 0 $width-padding;
+  padding: 0 $width-padding-mobile;
   margin-bottom: 22px;
   border: none;
 
@@ -74,7 +74,7 @@
 
 .selection__fieldset-purpose {
   margin: 0;
-  padding: 0 $width-padding;
+  padding: 0 $width-padding-mobile;
   padding-top: 20px;
   padding-bottom: 20px;
   border: none;
@@ -94,10 +94,10 @@
 }
 
 .selection__subtitle-contacts {
-  margin-bottom: 32px;
+  margin-bottom: 29px;
 
   @media #{$media-tablet} {
-    margin-bottom: 76px;
+    margin-bottom: 75px;
   }
 }
 
@@ -108,11 +108,11 @@
   margin-bottom: 27px;
 
   @media #{$media-tablet} {
-    margin-bottom: 66px;
+    margin-bottom: 65px;
   }
 
   @media #{$media-desktop} {
-    margin-bottom: 68px;
+    margin-bottom: 67px;
   }
 }
 
@@ -128,7 +128,7 @@
   margin-bottom: 32px;
 
   @media #{$media-tablet} {
-    margin-bottom: 76px;
+    margin-bottom: 74px;
   }
 }
 
@@ -139,7 +139,7 @@
   margin-bottom: 27px;
 
   @media #{$media-tablet} {
-    margin-bottom: 66px;
+    margin-bottom: 65px;
   }
 
   @media #{$media-desktop} {
@@ -148,10 +148,10 @@
 }
 
 .selection__subtitle-additionally {
-  margin-bottom: 34px;
+  margin-bottom: 31px;
 
   @media #{$media-tablet} {
-    margin-bottom: 57px;
+    margin-bottom: 55px;
   }
 }
 
@@ -162,7 +162,7 @@
   margin-bottom: 34px;
 
   @media #{$media-tablet} {
-    margin-bottom: 53px;
+    margin-bottom: 54px;
   }
 
   @media #{$media-desktop} {

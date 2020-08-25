@@ -17,7 +17,6 @@ $shift-mobile-img: -139px;
     left: 50%;
     background-color: $color-green-1;
     background-repeat: no-repeat;
-    // background-size: cover;
     background-size: 720px auto;
     background-image: url(#{$path-images}index-background-desktop@1x.jpg);
 
@@ -68,7 +67,7 @@ $shift-mobile-img: -139px;
 .tagline__wrapper-img-button {
   margin: 0 auto;
   position: relative;
-  padding: 0 $width-padding;
+  padding: 0 $width-padding-mobile;
   padding-bottom: 22px;
   text-align: center;
 

@@ -30,15 +30,17 @@ $width-mobile: 280px;
 $width-tablet: 708px;
 $width-tablet-form: 630px;
 $width-desktop: 1220px;
-$width-padding: 20px;
+$width-padding-mobile: 20px;
+$width-padding-tablet: 20px;
+$width-padding-desktop: 40px;
 $width-scrollbar: 20px;
 
 //Медиа
-$media-mobile: "screen and (min-width: #{$width-mobile + $width-padding * 2 + $width-scrollbar})";
-$media-tablet: "screen and (min-width: #{$width-tablet + $width-padding * 2 + $width-scrollbar})";
-$media-desktop: "screen and (min-width: #{$width-desktop + $width-padding * 2 + $width-scrollbar})";
-$media-mobile-only: "screen and (max-width: #{$width-tablet + $width-padding * 2 + $width-scrollbar - 1})";
-$media-tablet-only: "screen and (min-width: #{$width-tablet + $width-padding * 2 + $width-scrollbar}) and (max-width: #{$width-desktop + $width-padding * 2 + $width-scrollbar - 1})";
+$media-mobile: "screen and (min-width: #{$width-mobile + $width-padding-mobile * 2 + $width-scrollbar})";
+$media-tablet: "screen and (min-width: #{$width-tablet + $width-padding-tablet * 2 + $width-scrollbar})";
+$media-desktop: "screen and (min-width: #{$width-desktop + $width-padding-desktop * 2 + $width-scrollbar})";
+$media-mobile-only: "screen and (max-width: #{$width-tablet + $width-padding-mobile * 2 + $width-scrollbar - 1})";
+$media-tablet-only: "screen and (min-width: #{$width-tablet + $width-padding-tablet * 2 + $width-scrollbar}) and (max-width: #{$width-desktop + $width-padding-desktop * 2 + $width-scrollbar - 1})";
 $media-2x: "screen and (min-resolution: 2dppx)";
 
 //Пути
