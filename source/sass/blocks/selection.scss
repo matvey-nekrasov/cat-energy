@@ -44,7 +44,7 @@
   @media #{$media-tablet} {
     margin: 0 auto;
     width: $width-tablet-form;
-    padding: 0 $width-padding;
+    padding: 0 $width-padding-tablet;
   }
 
   @media #{$media-desktop} {
@@ -58,7 +58,7 @@
 
 .selection__fieldset-base {
   margin: 0;
-  padding: 0 $width-padding;
+  padding: 0 $width-padding-mobile;
   margin-bottom: 22px;
   border: none;
 
@@ -74,7 +74,7 @@
 
 .selection__fieldset-purpose {
   margin: 0;
-  padding: 0 $width-padding;
+  padding: 0 $width-padding-mobile;
   padding-top: 20px;
   padding-bottom: 20px;
   border: none;

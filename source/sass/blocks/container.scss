@@ -1,26 +1,26 @@
 .container {
   margin: 0 auto;
-  padding: 0 $width-padding;
+  padding: 0 $width-padding-mobile;
 
   @media #{$media-tablet} {
     width: $width-tablet;
-    padding: 0 $width-padding;
+    padding: 0 $width-padding-tablet;
   }
 
   @media #{$media-desktop} {
     width: $width-desktop;
-    padding: 0 $width-padding;
+    padding: 0 $width-padding-tablet;
   }
 
   &--narrow {
     @media #{$media-tablet} {
       width: $width-tablet-form;
-      padding: 0 $width-padding;
+      padding: 0 $width-padding-tablet;
     }
 
     @media #{$media-desktop} {
       width: $width-desktop;
-      padding: 0 $width-padding;
+      padding: 0 $width-padding-tablet;
     }
   }
 }

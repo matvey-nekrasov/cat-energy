@@ -105,8 +105,8 @@
 
 .slider-cats__image {
   margin-bottom: 28px;
-  margin-left: -$width-padding;
-  margin-right: -$width-padding;
+  margin-left: -$width-padding-mobile;
+  margin-right: -$width-padding-mobile;
   text-align: center;
 
   @media #{$media-tablet} {
