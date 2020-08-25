@@ -2075,6 +2075,8 @@ input[type='radio'].visually-hidden
 
 .example
 {
+    position: relative;
+
     background-color: #eaeaea;
 }
 @media screen and (min-width: 768px)
@@ -2090,7 +2092,23 @@ input[type='radio'].visually-hidden
 {
     .example
     {
+        background-image: linear-gradient(#fff var(--bg-offset), #f2f2f2 var(--bg-offset)); 
+
         --bg-offset: 165px;
+    }
+}
+
+@media screen and (min-width: 1280px)
+{
+    .example__right-cat-bg
+    {
+        position: absolute;
+        top: var(--bg-offset);
+        right: 0;
+        bottom: 0;
+        left: calc(50% + 325px);
+
+        background-color: #eaeaea;
     }
 }
 
@@ -2361,7 +2379,7 @@ input[type='radio'].visually-hidden
 {
     .example-plate__desc
     {
-        background-color: #eaeaea;
+        background-color: #f2f2f2;
     }
 }
 
