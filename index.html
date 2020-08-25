@@ -10,6 +10,30 @@
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
     <title>Cat Energy - Главная</title>
+    <style>
+      html {
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        background-image: url("img/pg-index-mobile.png");
+      }
+
+      /* Tablet */
+      @media (min-width: 768px) {
+        html {
+          background-image: url("img/pg-index-tablet.png");
+        }
+      }
+
+      /* Desktop */
+      @media (min-width: 1320px) {
+        html {
+          background-image: url("img/pg-index-desktop.png");
+        }
+      }
+
+    </style>
+    <link href="css/pixel-glass.css" rel="stylesheet">
+    <script src="js/pixel-glass.js"></script>
   </head>
   <body class="body">
     <header class="header header--green">
@@ -17,7 +41,7 @@
         <div class="nav__wrapper">
           <a class="nav__logo-link">
             <picture>
-              <source media="(min-width:1280px)" srcset="img/logo-desktop.svg">
+              <source media="(min-width:1320px)" srcset="img/logo-desktop.svg">
               <source media="(min-width:768px)" srcset="img/logo-tablet.svg">
               <img class="nav__logo-img" src="img/logo-mobile.svg" width="191" height="38" alt="На главную">
             </picture>
@@ -52,13 +76,13 @@
           </div>
           <div class="tagline__wrapper-img-button">
             <picture>
-              <source type="image/webp" media="(min-width: 1280px)" srcset="img/index-can-desktop@2x.webp 2x,
+              <source type="image/webp" media="(min-width: 1320px)" srcset="img/index-can-desktop@2x.webp 2x,
           img/index-can-desktop@1x.webp 1x">
               <source type="image/webp" media="(min-width: 768px)" srcset="img/index-can-tablet@2x.webp 2x,
           img/index-can-tablet@1x.webp 1x">
               <source type="image/webp" srcset="img/index-can-mobile@2x.webp 2x,
           img/index-can-mobile@1x.webp 1x">
-              <source type="image/png" media="(min-width: 1280px)" srcset="img/index-can-desktop@2x.png 2x,
+              <source type="image/png" media="(min-width: 1320px)" srcset="img/index-can-desktop@2x.png 2x,
           img/index-can-desktop@1x.png 1x">
               <source type="image/jpeg" media="(min-width: 768px)" srcset="img/index-can-tablet@2x.jpg 2x,
           img/index-can-tablet@1x.jpg 1x">
@@ -139,13 +163,13 @@
             <div class="example__wrapper-slider-cats slider-cats">
               <div class="slider-cats__image slider-cats__image--left">
                 <picture>
-                  <source type="image/webp" media="(min-width: 1280px)" srcset="img/before-desktop@2x.webp 2x,
+                  <source type="image/webp" media="(min-width: 1320px)" srcset="img/before-desktop@2x.webp 2x,
           img/before-desktop@1x.webp 1x">
                   <source type="image/webp" media="(min-width: 768px)" srcset="img/before-tablet@2x.webp 2x,
           img/before-tablet@1x.webp 1x">
                   <source type="image/webp" srcset="img/before-mobile@2x.webp 2x,
           img/before-mobile@1x.webp 1x">
-                  <source type="image/png" media="(min-width: 1280px)" srcset="img/before-desktop@2x.png 2x,
+                  <source type="image/png" media="(min-width: 1320px)" srcset="img/before-desktop@2x.png 2x,
           img/before-desktop@1x.png 1x">
                   <source type="image/png" media="(min-width: 768px)" srcset="img/before-tablet@2x.png 2x,
           img/before-tablet@1x.png 1x">
@@ -154,13 +178,13 @@
               </div>
               <div class="slider-cats__image slider-cats__image--right slider-cats__image--hidden-mobile">
                 <picture>
-                  <source type="image/webp" media="(min-width: 1280px)" srcset="img/after-desktop@2x.webp 2x,
+                  <source type="image/webp" media="(min-width: 1320px)" srcset="img/after-desktop@2x.webp 2x,
           img/after-desktop@1x.webp 1x">
                   <source type="image/webp" media="(min-width: 768px)" srcset="img/after-tablet@2x.webp 2x,
           img/after-tablet@1x.webp 1x">
                   <source type="image/webp" srcset="img/after-mobile@2x.webp 2x,
           img/after-mobile@1x.webp 1x">
-                  <source type="image/png" media="(min-width: 1280px)" srcset="img/after-desktop@2x.png 2x,
+                  <source type="image/png" media="(min-width: 1320px)" srcset="img/after-desktop@2x.png 2x,
           img/after-desktop@1x.png 1x">
                   <source type="image/png" media="(min-width: 768px)" srcset="img/after-tablet@2x.png 2x,
           img/after-tablet@1x.png 1x">
